@@ -1,0 +1,1133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DA178F7E-27B9-48F1-9307-266EE4B3AD28}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IsAxtaris</RootNamespace>
+    <AssemblyName>IsAxtaris</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="appclass\settings.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Context.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\tbl_CCVV.cs" />
+    <Compile Include="Models\tbl_istifadeci.cs" />
+    <Compile Include="Models\tbl_kategoriya.cs" />
+    <Compile Include="Models\tbl_resm.cs" />
+    <Compile Include="Models\tbl_vakansiya.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ana.css" />
+    <Content Include="anim.css" />
+    <Content Include="aos.css" />
+    <Content Include="border.css" />
+    <Content Include="but.css" />
+    <Content Include="car.css" />
+    <Content Include="card.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\css\demo.css" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\css\font-awesome.css" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\css\noJS.css" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\css\style.css" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\font\fontawesome-webfont.svg" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\images\bg.jpg" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\index.html" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\index2.html" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\index3.html" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\index4.html" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\index5.html" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\js\modernizr.custom.79639.js" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\__MACOSX\._index.html" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\__MACOSX\._index2.html" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\__MACOSX\._index3.html" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\__MACOSX\._index4.html" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\__MACOSX\._index5.html" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\__MACOSX\css\._demo.css" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\__MACOSX\css\._font-awesome.css" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\__MACOSX\css\._noJS.css" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\__MACOSX\css\._style.css" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\__MACOSX\font\._fontawesome-webfont.svg" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\__MACOSX\images\._bg.jpg" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\__MACOSX\js\._modernizr.custom.79639.js" />
+    <Content Include="Content\display-popup-on-page-load\close-icon.png" />
+    <Content Include="Content\display-popup-on-page-load\index.html" />
+    <Content Include="Content\display-popup-on-page-load\san-web-corner.png" />
+    <Content Include="Content\display-popup-on-page-load\swc.css" />
+    <Content Include="Content\display-popup-on-page-load\swc.js" />
+    <Content Include="Content\Hover-master\css\demo-page.css" />
+    <Content Include="Content\Hover-master\css\hover-min.css" />
+    <Content Include="Content\Hover-master\css\hover.css" />
+    <Content Include="Content\Hover-master\Gruntfile.js" />
+    <Content Include="Content\Hover-master\hover.jpg" />
+    <Content Include="Content\Hover-master\index.html" />
+    <Content Include="Content\Hover-master\license.txt" />
+    <Content Include="Content\Hover-master\logo-transparent.png" />
+    <Content Include="Content\Hover-master\modern-slide-in.png" />
+    <Content Include="Content\Hover-master\photo-stack.png" />
+    <Content Include="Content\Hover-master\sequence-logo.png" />
+    <Content Include="Content\Hover-master\two-up.png" />
+    <Content Include="Content\login-signup-modal-master\css\demo.css" />
+    <Content Include="Content\login-signup-modal-master\css\reset.css" />
+    <Content Include="Content\login-signup-modal-master\css\style.css" />
+    <Content Include="Content\login-signup-modal-master\img\cd-icon-close.svg" />
+    <Content Include="Content\login-signup-modal-master\img\cd-icon-email.svg" />
+    <Content Include="Content\login-signup-modal-master\img\cd-icon-menu.svg" />
+    <Content Include="Content\login-signup-modal-master\img\cd-icon-password.svg" />
+    <Content Include="Content\login-signup-modal-master\img\cd-icon-username.svg" />
+    <Content Include="Content\login-signup-modal-master\img\cd-logo.svg" />
+    <Content Include="Content\login-signup-modal-master\index.html" />
+    <Content Include="Content\login-signup-modal-master\js\main.js" />
+    <Content Include="Content\login-signup-modal-master\js\placeholders.min.js" />
+    <Content Include="Content\Login_v9\Login_v9\css\main.css" />
+    <Content Include="Content\Login_v9\Login_v9\css\util.css" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\iconic\css\material-design-iconic-font.css" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\iconic\css\material-design-iconic-font.min.css" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\JosefinSans\OFL.txt" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\source-sans-pro\OFL.txt" />
+    <Content Include="Content\Login_v9\Login_v9\images\bg-01.jpg" />
+    <Content Include="Content\Login_v9\Login_v9\images\icons\favicon.ico" />
+    <Content Include="Content\Login_v9\Login_v9\images\icons\icon-google.png" />
+    <Content Include="Content\Login_v9\Login_v9\images\icons\map-marker.png" />
+    <Content Include="Content\Login_v9\Login_v9\index.html" />
+    <Content Include="Content\Login_v9\Login_v9\js\main.js" />
+    <Content Include="Content\Login_v9\Login_v9\js\map-custom.js" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\animate\animate.css" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\animsition\css\animsition.css" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\animsition\css\animsition.min.css" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\animsition\js\animsition.js" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\animsition\js\animsition.min.js" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\bootstrap\js\popper.js" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\daterangepicker\moment.js" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\daterangepicker\moment.min.js" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\select2\select2.css" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\select2\select2.js" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\select2\select2.min.css" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\select2\select2.min.js" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\._index.html" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\css\._main.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\css\._util.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\._HELP-US-OUT.txt" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\css\._font-awesome.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\css\._font-awesome.min.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\fonts\._fontawesome-webfont.svg" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\iconic\css\._material-design-iconic-font.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\iconic\css\._material-design-iconic-font.min.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\iconic\fonts\._Material-Design-Iconic-Font.svg" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\JosefinSans\._OFL.txt" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\source-sans-pro\._OFL.txt" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\images\._bg-01.jpg" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\images\icons\._favicon.ico" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\images\icons\._icon-google.png" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\images\icons\._map-marker.png" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\js\._main.js" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\js\._map-custom.js" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\animate\._animate.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\animsition\css\._animsition.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\animsition\css\._animsition.min.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\animsition\js\._animsition.js" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\animsition\js\._animsition.min.js" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\bootstrap\css\._bootstrap-grid.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\bootstrap\css\._bootstrap-grid.min.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\bootstrap\css\._bootstrap-reboot.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\bootstrap\css\._bootstrap-reboot.min.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\bootstrap\css\._bootstrap.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\bootstrap\css\._bootstrap.min.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\bootstrap\js\._bootstrap.js" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\bootstrap\js\._bootstrap.min.js" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\bootstrap\js\._popper.js" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\bootstrap\js\._popper.min.js" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\bootstrap\js\._tooltip.js" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\countdowntime\._countdowntime.js" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\css-hamburgers\._hamburgers.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\css-hamburgers\._hamburgers.min.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\daterangepicker\._daterangepicker.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\daterangepicker\._daterangepicker.js" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\daterangepicker\._moment.js" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\daterangepicker\._moment.min.js" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\jquery\._jquery-3.2.1.min.js" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\perfect-scrollbar\._perfect-scrollbar.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\perfect-scrollbar\._perfect-scrollbar.min.js" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\select2\._select2.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\select2\._select2.js" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\select2\._select2.min.css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\select2\._select2.min.js" />
+    <Content Include="Content\ModalWindowEffects\css\component.css" />
+    <Content Include="Content\ModalWindowEffects\css\default.css" />
+    <Content Include="Content\ModalWindowEffects\fonts\codropsicons\codropsicons.svg" />
+    <Content Include="Content\ModalWindowEffects\fonts\codropsicons\license.txt" />
+    <Content Include="Content\ModalWindowEffects\index.html" />
+    <Content Include="Content\ModalWindowEffects\js\classie.js" />
+    <Content Include="Content\ModalWindowEffects\js\css-filters-polyfill.js" />
+    <Content Include="Content\ModalWindowEffects\js\cssParser.js" />
+    <Content Include="Content\ModalWindowEffects\js\modalEffects.js" />
+    <Content Include="Content\ModalWindowEffects\js\modernizr.custom.js" />
+    <Content Include="Content\Notiflix-master\dist\notiflix-2.4.0.min.css" />
+    <Content Include="Content\Notiflix-master\dist\notiflix-2.4.0.min.js" />
+    <Content Include="Content\Notiflix-master\dist\notiflix-aio-2.4.0.min.js" />
+    <Content Include="Content\Notiflix-master\docs\test.html" />
+    <Content Include="Content\Notiflix-master\github-assets\favicon.png" />
+    <Content Include="Content\Notiflix-master\github-assets\notiflix-logo.svg" />
+    <Content Include="Content\Notiflix-master\github-assets\welcome-to-notiflix.gif" />
+    <Content Include="Content\Notiflix-master\helpers\notiflix-dev-allinone.js" />
+    <Content Include="Content\Notiflix-master\helpers\notiflix-dev-constants.js" />
+    <Content Include="Content\Notiflix-master\helpers\notiflix-dev-minifier.js" />
+    <Content Include="Content\Notiflix-master\src\all-in-one\notiflix-aio.js" />
+    <Content Include="Content\Notiflix-master\src\notiflix.css" />
+    <Content Include="Content\Notiflix-master\src\notiflix.js" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\read more popup box\img\1.jpg" />
+    <Content Include="Content\read more popup box\img\2.jpg" />
+    <Content Include="Content\read more popup box\index.html" />
+    <Content Include="Content\read more popup box\script.js" />
+    <Content Include="Content\read more popup box\style.css" />
+    <Content Include="Content\Smooth-Card-Carousel-jQuery-CSS3\index.html" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\css\libs\animate.css" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\css\site.css" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\demo.html" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\dist\wow.js" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\dist\wow.min.js" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\Gruntfile.js" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\spec\javascripts\fixtures\custom.html" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\spec\javascripts\fixtures\simple.html" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\spec\javascripts\helpers\SpecHelper.js" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\spec\javascripts\libs\jasmine-jquery.js" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\spec\javascripts\libs\jquery.js" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\spec\javascripts\wow-spec.js" />
+    <Content Include="fa.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="footer.css" />
+    <Content Include="girbutton.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="href.css" />
+    <Content Include="indexfooter.css" />
+    <Content Include="ist.css" />
+    <Content Include="JavaScript.js" />
+    <Content Include="jk.css" />
+    <Content Include="learn.css" />
+    <Content Include="loginyeri.css" />
+    <Content Include="mm.js" />
+    <Content Include="modal.css" />
+    <Content Include="na.css" />
+    <Content Include="os.css" />
+    <Content Include="ox.css" />
+    <Content Include="oxsarcv.css" />
+    <Content Include="page.css" />
+    <Content Include="raaa.css" />
+    <Content Include="sa.css" />
+    <Content Include="sc.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include=".bin\git.cmd" />
+    <None Include=".bin\grunt.cmd" />
+    <None Include=".bin\node.cmd" />
+    <None Include=".bin\npm.cmd" />
+    <Content Include="Content\login-signup-modal-master\README.md" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\iconic\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\iconic\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\iconic\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\iconic\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\JosefinSans\JosefinSans-Bold.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\JosefinSans\JosefinSans-BoldItalic.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\JosefinSans\JosefinSans-Italic.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\JosefinSans\JosefinSans-Light.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\JosefinSans\JosefinSans-LightItalic.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\JosefinSans\JosefinSans-Regular.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\JosefinSans\JosefinSans-SemiBold.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\JosefinSans\JosefinSans-SemiBoldItalic.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\JosefinSans\JosefinSans-Thin.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\JosefinSans\JosefinSans-ThinItalic.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\source-sans-pro\SourceSansPro-Black.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\source-sans-pro\SourceSansPro-BlackItalic.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\source-sans-pro\SourceSansPro-Bold.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\source-sans-pro\SourceSansPro-BoldItalic.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\source-sans-pro\SourceSansPro-ExtraLight.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\source-sans-pro\SourceSansPro-ExtraLightItalic.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\source-sans-pro\SourceSansPro-Italic.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\source-sans-pro\SourceSansPro-Light.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\source-sans-pro\SourceSansPro-LightItalic.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\source-sans-pro\SourceSansPro-Regular.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\source-sans-pro\SourceSansPro-SemiBold.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\fonts\source-sans-pro\SourceSansPro-SemiBoldItalic.ttf" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\Login_v9\Login_v9\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\Login_v9\__MACOSX\._Login_v9" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\._css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\._fonts" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\._images" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\._js" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\._vendor" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\._font-awesome-4.7.0" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\._iconic" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\._JosefinSans" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\._source-sans-pro" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\._css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\._fonts" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\._less" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\._scss" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\fonts\._fontawesome-webfont.eot" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\fonts\._fontawesome-webfont.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\fonts\._fontawesome-webfont.woff" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\fonts\._fontawesome-webfont.woff2" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\fonts\._FontAwesome.otf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\less\._animated.less" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\less\._bordered-pulled.less" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\less\._core.less" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\less\._fixed-width.less" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\less\._font-awesome.less" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\less\._icons.less" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\less\._larger.less" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\less\._list.less" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\less\._mixins.less" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\less\._path.less" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\less\._rotated-flipped.less" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\less\._screen-reader.less" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\less\._stacked.less" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\less\._variables.less" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\scss\._font-awesome.scss" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\scss\.__animated.scss" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\scss\.__bordered-pulled.scss" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\scss\.__core.scss" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\scss\.__fixed-width.scss" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\scss\.__icons.scss" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\scss\.__larger.scss" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\scss\.__list.scss" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\scss\.__mixins.scss" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\scss\.__path.scss" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\scss\.__rotated-flipped.scss" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\scss\.__screen-reader.scss" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\scss\.__stacked.scss" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\font-awesome-4.7.0\scss\.__variables.scss" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\iconic\._css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\iconic\._fonts" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\iconic\fonts\._Material-Design-Iconic-Font.eot" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\iconic\fonts\._Material-Design-Iconic-Font.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\iconic\fonts\._Material-Design-Iconic-Font.woff" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\iconic\fonts\._Material-Design-Iconic-Font.woff2" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\JosefinSans\._JosefinSans-Bold.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\JosefinSans\._JosefinSans-BoldItalic.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\JosefinSans\._JosefinSans-Italic.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\JosefinSans\._JosefinSans-Light.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\JosefinSans\._JosefinSans-LightItalic.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\JosefinSans\._JosefinSans-Regular.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\JosefinSans\._JosefinSans-SemiBold.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\JosefinSans\._JosefinSans-SemiBoldItalic.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\JosefinSans\._JosefinSans-Thin.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\JosefinSans\._JosefinSans-ThinItalic.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\source-sans-pro\._SourceSansPro-Black.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\source-sans-pro\._SourceSansPro-BlackItalic.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\source-sans-pro\._SourceSansPro-Bold.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\source-sans-pro\._SourceSansPro-BoldItalic.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\source-sans-pro\._SourceSansPro-ExtraLight.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\source-sans-pro\._SourceSansPro-ExtraLightItalic.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\source-sans-pro\._SourceSansPro-Italic.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\source-sans-pro\._SourceSansPro-Light.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\source-sans-pro\._SourceSansPro-LightItalic.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\source-sans-pro\._SourceSansPro-Regular.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\source-sans-pro\._SourceSansPro-SemiBold.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\fonts\source-sans-pro\._SourceSansPro-SemiBoldItalic.ttf" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\images\._icons" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\._animate" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\._animsition" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\._bootstrap" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\._countdowntime" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\._css-hamburgers" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\._daterangepicker" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\._jquery" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\._perfect-scrollbar" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\._select2" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\animsition\._css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\animsition\._js" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\bootstrap\._css" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\bootstrap\._js" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\bootstrap\css\._bootstrap-grid.css.map" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\bootstrap\css\._bootstrap-grid.min.css.map" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\bootstrap\css\._bootstrap-reboot.css.map" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\bootstrap\css\._bootstrap-reboot.min.css.map" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\bootstrap\css\._bootstrap.css.map" />
+    <Content Include="Content\Login_v9\__MACOSX\Login_v9\vendor\bootstrap\css\._bootstrap.min.css.map" />
+    <Content Include="Content\ModalWindowEffects\.DS_Store" />
+    <Content Include="Content\ModalWindowEffects\css\.DS_Store" />
+    <Content Include="Content\ModalWindowEffects\fonts\.DS_Store" />
+    <Content Include="Content\ModalWindowEffects\fonts\codropsicons\.DS_Store" />
+    <Content Include="Content\ModalWindowEffects\fonts\codropsicons\codropsicons.eot" />
+    <Content Include="Content\ModalWindowEffects\fonts\codropsicons\codropsicons.ttf" />
+    <Content Include="Content\ModalWindowEffects\fonts\codropsicons\codropsicons.woff" />
+    <Content Include="Content\ModalWindowEffects\js\.DS_Store" />
+    <Content Include="Content\ModalWindowEffects\README.md" />
+    <Content Include="Content\Notiflix-master\.eslintrc.json" />
+    <Content Include="Content\Notiflix-master\.github\ISSUE_TEMPLATE\bugreport.md" />
+    <Content Include="Content\Notiflix-master\.github\ISSUE_TEMPLATE\featurerequest.md" />
+    <Content Include="Content\Notiflix-master\.gitignore" />
+    <Content Include="Content\Notiflix-master\.stylelintrc.json" />
+    <Content Include="Content\Notiflix-master\CHANGELOG.md" />
+    <Content Include="Content\Notiflix-master\CNAME" />
+    <Content Include="Content\Notiflix-master\CODE_OF_CONDUCT.md" />
+    <Content Include="Content\Notiflix-master\CONTRIBUTING.md" />
+    <Content Include="Content\Notiflix-master\LICENSE" />
+    <Content Include="Content\Notiflix-master\package-lock.json" />
+    <Content Include="Content\Notiflix-master\package.json" />
+    <Content Include="Content\Notiflix-master\README.md" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\css\.DS_Store" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\font\fontawesome-webfont.eot" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\font\fontawesome-webfont.woff" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\js\.DS_Store" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\__MACOSX\._css" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\__MACOSX\._font" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\__MACOSX\._js" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\__MACOSX\css\._.DS_Store" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\__MACOSX\font\._fontawesome-webfont.eot" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\__MACOSX\font\._fontawesome-webfont.ttf" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\__MACOSX\font\._fontawesome-webfont.woff" />
+    <Content Include="Content\CustomDropDownListStyling %281%29\__MACOSX\js\._.DS_Store" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\.gitignore" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\.travis.yml" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\bower.json" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\LICENSE-MIT" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\package.json" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\README.md" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\spec\coffeescripts\helpers\SpecHelper.coffee" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\spec\coffeescripts\wow-spec.coffee" />
+    <Content Include="Content\WOW-20848c410fe32d161c2330e1d261b59512094f81\src\wow.coffee" />
+    <Content Include="Content\Hover-master\.editorconfig" />
+    <Content Include="Content\Hover-master\.gitignore" />
+    <Content Include="Content\Hover-master\bower.json" />
+    <Content Include="Content\Hover-master\CONTRIBUTING.md" />
+    <Content Include="Content\Hover-master\css\hover.css.map" />
+    <Content Include="Content\Hover-master\HISTORY.md" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_backward.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_bob.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_bounce-in.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_bounce-out.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_buzz-out.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_buzz.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_float.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_forward.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_grow-rotate.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_grow.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_hang.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_pop.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_pulse-grow.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_pulse-shrink.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_pulse.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_push.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_rotate.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_shrink.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_sink.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_skew-backward.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_skew-forward.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_skew.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_wobble-bottom.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_wobble-horizontal.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_wobble-skew.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_wobble-to-bottom-right.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_wobble-to-top-right.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_wobble-top.less" />
+    <Content Include="Content\Hover-master\less\effects\2d-transitions\_wobble-vertical.less" />
+    <Content Include="Content\Hover-master\less\effects\background-transitions\_back-pulse.less" />
+    <Content Include="Content\Hover-master\less\effects\background-transitions\_bounce-to-bottom.less" />
+    <Content Include="Content\Hover-master\less\effects\background-transitions\_bounce-to-left.less" />
+    <Content Include="Content\Hover-master\less\effects\background-transitions\_bounce-to-right.less" />
+    <Content Include="Content\Hover-master\less\effects\background-transitions\_bounce-to-top.less" />
+    <Content Include="Content\Hover-master\less\effects\background-transitions\_fade.less" />
+    <Content Include="Content\Hover-master\less\effects\background-transitions\_radial-in.less" />
+    <Content Include="Content\Hover-master\less\effects\background-transitions\_radial-out.less" />
+    <Content Include="Content\Hover-master\less\effects\background-transitions\_rectangle-in.less" />
+    <Content Include="Content\Hover-master\less\effects\background-transitions\_rectangle-out.less" />
+    <Content Include="Content\Hover-master\less\effects\background-transitions\_shutter-in-horizontal.less" />
+    <Content Include="Content\Hover-master\less\effects\background-transitions\_shutter-in-vertical.less" />
+    <Content Include="Content\Hover-master\less\effects\background-transitions\_shutter-out-horizontal.less" />
+    <Content Include="Content\Hover-master\less\effects\background-transitions\_shutter-out-vertical.less" />
+    <Content Include="Content\Hover-master\less\effects\background-transitions\_sweep-to-bottom.less" />
+    <Content Include="Content\Hover-master\less\effects\background-transitions\_sweep-to-left.less" />
+    <Content Include="Content\Hover-master\less\effects\background-transitions\_sweep-to-right.less" />
+    <Content Include="Content\Hover-master\less\effects\background-transitions\_sweep-to-top.less" />
+    <Content Include="Content\Hover-master\less\effects\border-transitions\_border-fade.less" />
+    <Content Include="Content\Hover-master\less\effects\border-transitions\_hollow.less" />
+    <Content Include="Content\Hover-master\less\effects\border-transitions\_outline-in.less" />
+    <Content Include="Content\Hover-master\less\effects\border-transitions\_outline-out.less" />
+    <Content Include="Content\Hover-master\less\effects\border-transitions\_overline-from-center.less" />
+    <Content Include="Content\Hover-master\less\effects\border-transitions\_overline-from-left.less" />
+    <Content Include="Content\Hover-master\less\effects\border-transitions\_overline-from-right.less" />
+    <Content Include="Content\Hover-master\less\effects\border-transitions\_overline-reveal.less" />
+    <Content Include="Content\Hover-master\less\effects\border-transitions\_reveal.less" />
+    <Content Include="Content\Hover-master\less\effects\border-transitions\_ripple-in.less" />
+    <Content Include="Content\Hover-master\less\effects\border-transitions\_ripple-out.less" />
+    <Content Include="Content\Hover-master\less\effects\border-transitions\_round-corners.less" />
+    <Content Include="Content\Hover-master\less\effects\border-transitions\_trim.less" />
+    <Content Include="Content\Hover-master\less\effects\border-transitions\_underline-from-center.less" />
+    <Content Include="Content\Hover-master\less\effects\border-transitions\_underline-from-left.less" />
+    <Content Include="Content\Hover-master\less\effects\border-transitions\_underline-from-right.less" />
+    <Content Include="Content\Hover-master\less\effects\border-transitions\_underline-reveal.less" />
+    <Content Include="Content\Hover-master\less\effects\curls\_curl-bottom-left.less" />
+    <Content Include="Content\Hover-master\less\effects\curls\_curl-bottom-right.less" />
+    <Content Include="Content\Hover-master\less\effects\curls\_curl-top-left.less" />
+    <Content Include="Content\Hover-master\less\effects\curls\_curl-top-right.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-back.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-bob.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-bounce-out.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-bounce.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-buzz-out.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-buzz.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-down.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-drop.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-fade.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-float-away.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-float.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-forward.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-grow-rotate.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-grow.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-hang.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-pop.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-pulse-grow.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-pulse-shrink.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-pulse.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-push.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-rotate.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-shrink.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-sink-away.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-sink.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-spin.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-up.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-wobble-horizontal.less" />
+    <Content Include="Content\Hover-master\less\effects\icons\_icon-wobble-vertical.less" />
+    <Content Include="Content\Hover-master\less\effects\shadow-and-glow-transitions\_box-shadow-inset.less" />
+    <Content Include="Content\Hover-master\less\effects\shadow-and-glow-transitions\_box-shadow-outset.less" />
+    <Content Include="Content\Hover-master\less\effects\shadow-and-glow-transitions\_float-shadow.less" />
+    <Content Include="Content\Hover-master\less\effects\shadow-and-glow-transitions\_glow.less" />
+    <Content Include="Content\Hover-master\less\effects\shadow-and-glow-transitions\_grow-shadow.less" />
+    <Content Include="Content\Hover-master\less\effects\shadow-and-glow-transitions\_shadow-radial.less" />
+    <Content Include="Content\Hover-master\less\effects\shadow-and-glow-transitions\_shadow.less" />
+    <Content Include="Content\Hover-master\less\effects\speech-bubbles\_bubble-bottom.less" />
+    <Content Include="Content\Hover-master\less\effects\speech-bubbles\_bubble-float-bottom.less" />
+    <Content Include="Content\Hover-master\less\effects\speech-bubbles\_bubble-float-left.less" />
+    <Content Include="Content\Hover-master\less\effects\speech-bubbles\_bubble-float-right.less" />
+    <Content Include="Content\Hover-master\less\effects\speech-bubbles\_bubble-float-top.less" />
+    <Content Include="Content\Hover-master\less\effects\speech-bubbles\_bubble-left.less" />
+    <Content Include="Content\Hover-master\less\effects\speech-bubbles\_bubble-right.less" />
+    <Content Include="Content\Hover-master\less\effects\speech-bubbles\_bubble-top.less" />
+    <Content Include="Content\Hover-master\less\hover.less" />
+    <Content Include="Content\Hover-master\less\_hacks.less" />
+    <Content Include="Content\Hover-master\less\_mixins.less" />
+    <Content Include="Content\Hover-master\less\_options.less" />
+    <Content Include="Content\Hover-master\package.json" />
+    <Content Include="Content\Hover-master\README.md" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_backward.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_bob.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_bounce-in.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_bounce-out.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_buzz-out.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_buzz.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_float.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_forward.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_grow-rotate.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_grow.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_hang.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_pop.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_pulse-grow.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_pulse-shrink.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_pulse.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_push.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_rotate.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_shrink.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_sink.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_skew-backward.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_skew-forward.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_skew.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_wobble-bottom.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_wobble-horizontal.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_wobble-skew.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_wobble-to-bottom-right.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_wobble-to-top-right.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_wobble-top.scss" />
+    <Content Include="Content\Hover-master\scss\effects\2d-transitions\_wobble-vertical.scss" />
+    <Content Include="Content\Hover-master\scss\effects\background-transitions\_back-pulse.scss" />
+    <Content Include="Content\Hover-master\scss\effects\background-transitions\_bounce-to-bottom.scss" />
+    <Content Include="Content\Hover-master\scss\effects\background-transitions\_bounce-to-left.scss" />
+    <Content Include="Content\Hover-master\scss\effects\background-transitions\_bounce-to-right.scss" />
+    <Content Include="Content\Hover-master\scss\effects\background-transitions\_bounce-to-top.scss" />
+    <Content Include="Content\Hover-master\scss\effects\background-transitions\_fade.scss" />
+    <Content Include="Content\Hover-master\scss\effects\background-transitions\_radial-in.scss" />
+    <Content Include="Content\Hover-master\scss\effects\background-transitions\_radial-out.scss" />
+    <Content Include="Content\Hover-master\scss\effects\background-transitions\_rectangle-in.scss" />
+    <Content Include="Content\Hover-master\scss\effects\background-transitions\_rectangle-out.scss" />
+    <Content Include="Content\Hover-master\scss\effects\background-transitions\_shutter-in-horizontal.scss" />
+    <Content Include="Content\Hover-master\scss\effects\background-transitions\_shutter-in-vertical.scss" />
+    <Content Include="Content\Hover-master\scss\effects\background-transitions\_shutter-out-horizontal.scss" />
+    <Content Include="Content\Hover-master\scss\effects\background-transitions\_shutter-out-vertical.scss" />
+    <Content Include="Content\Hover-master\scss\effects\background-transitions\_sweep-to-bottom.scss" />
+    <Content Include="Content\Hover-master\scss\effects\background-transitions\_sweep-to-left.scss" />
+    <Content Include="Content\Hover-master\scss\effects\background-transitions\_sweep-to-right.scss" />
+    <Content Include="Content\Hover-master\scss\effects\background-transitions\_sweep-to-top.scss" />
+    <Content Include="Content\Hover-master\scss\effects\border-transitions\_border-fade.scss" />
+    <Content Include="Content\Hover-master\scss\effects\border-transitions\_hollow.scss" />
+    <Content Include="Content\Hover-master\scss\effects\border-transitions\_outline-in.scss" />
+    <Content Include="Content\Hover-master\scss\effects\border-transitions\_outline-out.scss" />
+    <Content Include="Content\Hover-master\scss\effects\border-transitions\_overline-from-center.scss" />
+    <Content Include="Content\Hover-master\scss\effects\border-transitions\_overline-from-left.scss" />
+    <Content Include="Content\Hover-master\scss\effects\border-transitions\_overline-from-right.scss" />
+    <Content Include="Content\Hover-master\scss\effects\border-transitions\_overline-reveal.scss" />
+    <Content Include="Content\Hover-master\scss\effects\border-transitions\_reveal.scss" />
+    <Content Include="Content\Hover-master\scss\effects\border-transitions\_ripple-in.scss" />
+    <Content Include="Content\Hover-master\scss\effects\border-transitions\_ripple-out.scss" />
+    <Content Include="Content\Hover-master\scss\effects\border-transitions\_round-corners.scss" />
+    <Content Include="Content\Hover-master\scss\effects\border-transitions\_trim.scss" />
+    <Content Include="Content\Hover-master\scss\effects\border-transitions\_underline-from-center.scss" />
+    <Content Include="Content\Hover-master\scss\effects\border-transitions\_underline-from-left.scss" />
+    <Content Include="Content\Hover-master\scss\effects\border-transitions\_underline-from-right.scss" />
+    <Content Include="Content\Hover-master\scss\effects\border-transitions\_underline-reveal.scss" />
+    <Content Include="Content\Hover-master\scss\effects\curls\_curl-bottom-left.scss" />
+    <Content Include="Content\Hover-master\scss\effects\curls\_curl-bottom-right.scss" />
+    <Content Include="Content\Hover-master\scss\effects\curls\_curl-top-left.scss" />
+    <Content Include="Content\Hover-master\scss\effects\curls\_curl-top-right.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-back.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-bob.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-bounce-out.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-bounce.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-buzz-out.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-buzz.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-down.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-drop.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-fade.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-float-away.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-float.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-forward.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-grow-rotate.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-grow.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-hang.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-pop.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-pulse-grow.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-pulse-shrink.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-pulse.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-push.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-rotate.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-shrink.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-sink-away.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-sink.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-spin.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-up.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-wobble-horizontal.scss" />
+    <Content Include="Content\Hover-master\scss\effects\icons\_icon-wobble-vertical.scss" />
+    <Content Include="Content\Hover-master\scss\effects\shadow-and-glow-transitions\_box-shadow-inset.scss" />
+    <Content Include="Content\Hover-master\scss\effects\shadow-and-glow-transitions\_box-shadow-outset.scss" />
+    <Content Include="Content\Hover-master\scss\effects\shadow-and-glow-transitions\_float-shadow.scss" />
+    <Content Include="Content\Hover-master\scss\effects\shadow-and-glow-transitions\_glow.scss" />
+    <Content Include="Content\Hover-master\scss\effects\shadow-and-glow-transitions\_grow-shadow.scss" />
+    <Content Include="Content\Hover-master\scss\effects\shadow-and-glow-transitions\_shadow-radial.scss" />
+    <Content Include="Content\Hover-master\scss\effects\shadow-and-glow-transitions\_shadow.scss" />
+    <Content Include="Content\Hover-master\scss\effects\speech-bubbles\_bubble-bottom.scss" />
+    <Content Include="Content\Hover-master\scss\effects\speech-bubbles\_bubble-float-bottom.scss" />
+    <Content Include="Content\Hover-master\scss\effects\speech-bubbles\_bubble-float-left.scss" />
+    <Content Include="Content\Hover-master\scss\effects\speech-bubbles\_bubble-float-right.scss" />
+    <Content Include="Content\Hover-master\scss\effects\speech-bubbles\_bubble-float-top.scss" />
+    <Content Include="Content\Hover-master\scss\effects\speech-bubbles\_bubble-left.scss" />
+    <Content Include="Content\Hover-master\scss\effects\speech-bubbles\_bubble-right.scss" />
+    <Content Include="Content\Hover-master\scss\effects\speech-bubbles\_bubble-top.scss" />
+    <Content Include="Content\Hover-master\scss\hover.scss" />
+    <Content Include="Content\Hover-master\scss\_hacks.scss" />
+    <Content Include="Content\Hover-master\scss\_mixins.scss" />
+    <Content Include="Content\Hover-master\scss\_options.scss" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="sekil.css" />
+    <Content Include="Sekiller\16x16.png" />
+    <Content Include="Sekiller\2776881.jpg" />
+    <Content Include="Sekiller\2777040.jpg" />
+    <Content Include="Sekiller\656665.jpg" />
+    <Content Include="Sekiller\656871.jpg" />
+    <Content Include="Sekiller\account %281%29.png" />
+    <Content Include="Sekiller\account.png" />
+    <Content Include="Sekiller\backgroundis.jpg" />
+    <Content Include="Sekiller\backgroundsekil.mp4" />
+    <Content Include="Sekiller\boyukVK.jpg" />
+    <Content Include="Sekiller\clock.png" />
+    <Content Include="Sekiller\CVkicikWoman.png" />
+    <Content Include="Sekiller\down-arrow.png" />
+    <Content Include="Sekiller\echo-dot.png" />
+    <Content Include="Sekiller\eye %281%29.png" />
+    <Content Include="Sekiller\eye.png" />
+    <Content Include="Sekiller\facebook %281%29.png" />
+    <Content Include="Sekiller\facebook %282%29.png" />
+    <Content Include="Sekiller\facebook.png" />
+    <Content Include="Sekiller\kicikVK.jpg" />
+    <Content Include="Sekiller\location.png" />
+    <Content Include="Sekiller\mail.png" />
+    <Content Include="Sekiller\man %281%29.png" />
+    <Content Include="Sekiller\man.png" />
+    <Content Include="Sekiller\more %281%29.png" />
+    <Content Include="Sekiller\more.png" />
+    <Content Include="Sekiller\phone %281%29.png" />
+    <Content Include="Sekiller\phone %282%29.png" />
+    <Content Include="Sekiller\phone.png" />
+    <Content Include="Sekiller\pin.png" />
+    <Content Include="Sekiller\resimyoxdur.jpg" />
+    <Content Include="Sekiller\right.png" />
+    <Content Include="Sekiller\seen.png" />
+    <Content Include="Sekiller\success.svg" />
+    <Content Include="Sekiller\tick.png" />
+    <Content Include="Sekiller\user.png" />
+    <Content Include="Sekiller\vacancy %281%29.png" />
+    <Content Include="Sekiller\vacancy.png" />
+    <Content Include="Sekiller\watch.png" />
+    <Content Include="Sekiller\woman %282%29.png" />
+    <Content Include="Sekiller\woman %284%29.png" />
+    <Content Include="Sekiller\woman.png" />
+    <Content Include="Sekiller\YeniBoyukVK.jpg" />
+    <Content Include="Sekiller\YeniKicikVK.jpg" />
+    <Content Include="shar.css" />
+    <Content Include="siiirr.css" />
+    <Content Include="silmebuttonu.css" />
+    <Content Include="slider.css" />
+    <Content Include="svg.css" />
+    <Content Include="ta.css" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\.grenrc.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\build\css\demo.css" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\build\css\intlTelInput.css" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\build\css\intlTelInput.min.css" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\build\img\flags%402x.png" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\build\img\flags.png" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\build\js\data.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\build\js\data.min.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\build\js\intlTelInput-jquery.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\build\js\intlTelInput-jquery.min.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\build\js\intlTelInput.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\build\js\intlTelInput.min.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\build\js\utils.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\demo.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\css\countrySync.css" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\css\isValidNumber.css" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\css\prism.css" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\gen\country-sync.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\gen\default-country-ip.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\gen\display-number.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\gen\hidden-input.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\gen\init-promise.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\gen\is-valid-number.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\gen\js\countrySync.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\gen\js\defaultCountryIp.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\gen\js\displayNumber.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\gen\js\hiddenInput.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\gen\js\initPromise.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\gen\js\isValidNumber.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\gen\js\modifyCountryData.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\gen\js\multipleInstances.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\gen\js\nationalMode.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\gen\js\onlyCountriesEurope.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\gen\modify-country-data.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\gen\multiple-instances.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\gen\national-mode.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\gen\only-countries-europe.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\js\prism.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\partials\countrySync.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\partials\defaultCountryIp.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\partials\displayNumber.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\partials\hiddenInput.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\partials\initPromise.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\partials\isValidNumber.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\partials\multipleInstances.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\partials\nationalMode.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\partials\simpleInput.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\Gruntfile.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\grunt\babel.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\grunt\bump.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\grunt\concat.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\grunt\cssmin.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\grunt\eslint.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\grunt\exec.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\grunt\imagemin.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\grunt\jasmine.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\grunt\replace.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\grunt\responsive_images.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\grunt\retinafy.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\grunt\sass.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\grunt\shell.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\grunt\sprite.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\grunt\template.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\grunt\uglify.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\grunt\watch.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\index.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\screenshots\separateDialCode.png" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\screenshots\vanilla.png" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\spec.html" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\js\data.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\js\intlTelInput.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\js\intro-data.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\js\intro-jquery.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\js\intro.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\js\outro-data.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\js\outro-jquery.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\js\outro.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\js\utils.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\helpers\helpers.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\core\closecountrydropdownEvent.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\core\countrychangeEvent.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\core\dropdownShortcuts.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\core\initialValues.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\core\multipleInstances.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\core\usingDropdown.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\core\usingInput.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\methods\destroy.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\methods\getExtension.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\methods\getNumber.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\methods\getNumberType.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\methods\getSelectedCountryData.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\methods\getValidationError.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\methods\isValidNumber.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\methods\setCountry.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\methods\setNumber.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\methods\setPlaceholderNumberType.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\options\allowDropdown.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\options\autoHideDialCode.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\options\autoPlaceholder.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\options\customContainer.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\options\customPlaceholder.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\options\dropdownContainer.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\options\excludeCountries.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\options\formatOnDisplay.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\options\geoIpLookup.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\options\initialCountry.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\options\nationalMode.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\options\onlyCountries.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\options\placeholderNumberType.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\options\preferredCountries.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\options\separateDialCode.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\options\utilsScript.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\static\defaults.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\static\getCountryData.js" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\spec\tests\static\loadUtils.js" />
+    <Content Include="text.css" />
+    <Content Include="user.css" />
+    <Content Include="vakansiyalar.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\Saytlayout.cshtml" />
+    <Content Include="Views\Home\Nav.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\CVyaz.cshtml" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\.eslintignore" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\.eslintrc" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\.github\CONTRIBUTING.md" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\.github\FUNDING.yml" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\.gitignore" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\.travis.yml" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\bower.json" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\CHANGELOG.md" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\composer.json" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\js\countrySync.js.ejs" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\js\defaultCountryIp.js.ejs" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\js\displayNumber.js.ejs" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\js\hiddenInput.js.ejs" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\js\initPromise.js.ejs" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\js\isValidNumber.js.ejs" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\js\modifyCountryData.js.ejs" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\js\multipleInstances.js.ejs" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\js\nationalMode.js.ejs" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\js\onlyCountriesEurope.js.ejs" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\examples\template.html.ejs" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\grunt\tmpl\sprite.scss.mustache" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\LICENSE" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\package-lock.json" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\package.json" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\README.md" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\css\demo.scss" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\css\intlTelInput.scss" />
+    <Content Include="telefon\intl-tel-input-master\intl-tel-input-master\src\css\sprite.scss" />
+    <Content Include="Views\Home\Vakansiyayaz.cshtml" />
+    <Content Include="Views\Home\Vakansiyalar.cshtml" />
+    <Content Include="Views\Home\CVler.cshtml" />
+    <Content Include="Views\Home\Butunvakansiyalar.cshtml" />
+    <Content Include="Views\Home\VakansiyaDetails.cshtml" />
+    <Content Include="Views\Home\Oxsarvakansiyalar.cshtml" />
+    <Content Include="Views\Home\CVDetails.cshtml" />
+    <Content Include="Views\Home\Oxsarcvler.cshtml" />
+    <Content Include="Views\Home\Giris.cshtml" />
+    <Content Include="Views\Home\Qeydiyyatt.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\IstifadeciCV.cshtml" />
+    <Content Include="Views\Home\IstifadeciVakansiya.cshtml" />
+    <Content Include="Views\Home\KategoriyaVakansiya.cshtml" />
+    <Content Include="Views\Home\KatV.cshtml" />
+    <Content Include="Views\Home\KatCV.cshtml" />
+    <Content Include="Views\Home\ButunCVler.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\CVSekiller\Boyuk\" />
+    <Folder Include="Content\CVSekiller\Kicik\" />
+    <Folder Include="Content\Sekiller\Boyuk\" />
+    <Folder Include="Content\Sekiller\Kicik\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50521</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50521/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

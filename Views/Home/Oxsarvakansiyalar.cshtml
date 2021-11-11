@@ -1,0 +1,229 @@
+﻿@model IEnumerable<IsAxtaris.Models.tbl_vakansiya>
+
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+
+<link rel="stylesheet" href="~/os.css" />
+<link rel="stylesheet" href="~/border.css" />
+<link rel="stylesheet" href="~/but.css" />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+<table>
+    <tr>
+        <td>
+            <h1 style="margin-left:400px;margin-top:-200px;color:#122c3c;" class="h11">Oxşar İş Elanları</h1>
+        </td>
+        <td>
+            <a href="/Home/Vakansiyayaz">
+                <button type="button" id="btn-23" class="button ripple" data-ripple-color="#888" style="margin-top:-200px;float:left;width:200px;height:60px;margin-left:170px">İş Elan Et</button>
+            </a>
+        </td>
+    </tr>
+</table>
+<script>
+    (function () {
+        document.querySelectorAll('.ripple').forEach(setRippleElement);
+    })()
+
+    function setRippleElement(el) {
+        const dot = document.createElement('SPAN');
+        const largestSide = Math.sqrt(
+            Math.pow(el.offsetWidth, 2) +
+            Math.pow(el.offsetHeight, 2)
+        );
+        const dotSize = Math.ceil((largestSide * 2) / 100);
+        const rippleColor = el.dataset.rippleColor || '#768b8c';
+
+        dot.style = `
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: ${dotSize}px;
+                        height: ${dotSize}px;
+                        z-index: 3;
+                        border-radius: 50%;
+                        background: white;
+                        transform: translate(-50%, -50%) scale(1);
+                        opacity: 0.5;
+                        animation: ripple 1s ease-out forwards;
+                    `;
+
+        el.style.position = 'relative';
+        el.style.overflow = 'hidden';
+
+        el.addEventListener('click', ({ pageX, pageY, currentTarget }) => {
+            // x and y in percentages
+            const x = ((pageX - currentTarget.offsetLeft) * 100) / currentTarget.offsetWidth;
+            const y = ((pageY - currentTarget.offsetTop) * 100) / currentTarget.offsetHeight;
+
+            el.appendChild(dot);
+
+            dot.style.left = x + '%';
+            dot.style.top = y + '%';
+        })
+
+    }
+</script>
+
+<style>
+    #btn-23 {
+        background-image: linear-gradient(to right, #6fb2d1 0%, #a1c4fd 80%, #c2e9fb 100%);
+        color: #fff;
+        font-size: 20px;
+        border: none;
+        border-radius: 3px;
+    }
+</style>
+
+@if (Convert.ToInt32(Model.Select(x => x.tbl_kategoriya.id).Count()) > 1)
+{
+    <div class="animated-box in" style="padding-left:0px;padding-right:0px;padding-bottom:0px;padding-top:0px;margin-left:94px;">
+        <div class="tbody">
+            <div class="slider" style="background-color:transparent;height:300px;margin-top:-100px;">
+                <input type="radio" name="toggle" id="btn-1" checked>
+                <input type="radio" name="toggle" id="btn-2">
+                <input type="radio" name="toggle" id="btn-3">
+                <input type="radio" name="toggle" id="btn-4">
+                <input type="radio" name="toggle" id="btn-5">
+                <input type="radio" name="toggle" id="btn-6">
+                <input type="radio" name="toggle" id="btn-7">
+
+                @if (Model.ToList().Count == 1)
+                {
+                    <div class="slider-controls" style="margin-bottom:15px;">
+                        <label for="btn-1"></label>
+                    </div>
+                }
+                else if (Model.ToList().Count == 2)
+                {
+                    <div class="slider-controls" style="margin-bottom:15px;">
+                        <label for="btn-1"></label>
+                        <label for="btn-2"></label>
+                    </div>
+                }
+                else if (Model.ToList().Count == 3)
+                {
+                    <div class="slider-controls" style="margin-bottom:15px;">
+                        <label for="btn-1"></label>
+                        <label for="btn-2"></label>
+                        <label for="btn-3"></label>
+                    </div>
+                }
+                else if (Model.ToList().Count == 4)
+                {
+                    <div class="slider-controls" style="margin-bottom:15px;">
+                        <label for="btn-1"></label>
+                        <label for="btn-2"></label>
+                        <label for="btn-3"></label>
+                        <label for="btn-4"></label>
+                    </div>
+                }
+                else if (Model.ToList().Count == 5)
+                {
+                    <div class="slider-controls" style="margin-bottom:15px;">
+                        <label for="btn-1"></label>
+                        <label for="btn-2"></label>
+                        <label for="btn-3"></label>
+                        <label for="btn-4"></label>
+                        <label for="btn-5"></label>
+                    </div>
+                }
+                else
+                {
+                    <div class="slider-controls" style="margin-bottom:15px;">
+                        <label for="btn-1"></label>
+                        <label for="btn-2"></label>
+                        <label for="btn-3"></label>
+                        <label for="btn-4"></label>
+                        <label for="btn-5"></label>
+                        <label for="btn-6"></label>
+                    </div>
+                }
+                @*<div class="slider-controls" style="margin-bottom:15px;">
+                        <label for="btn-1"></label>
+                        <label for="btn-2"></label>
+                        <label for="btn-3"></label>
+                        <label for="btn-4"></label>
+                        <label for="btn-5"></label>
+                        <label for="btn-6"></label>
+                        <label for="btn-7"></label>
+                    </div>*@
+                <style>
+                    .wrapword {
+                        white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+                        white-space: -pre-wrap; /* Opera 4-6 */
+                        white-space: -o-pre-wrap; /* Opera 7 */
+                        white-space: pre-wrap; /* css-3 */
+                        word-wrap: break-word; /* Internet Explorer 5.5+ */
+                        white-space: -webkit-pre-wrap; /* Newer versions of Chrome/Safari*/
+                        word-break: break-all;
+                        white-space: normal;
+                    }
+                </style>
+                <ul class="slides">
+
+                    @foreach (var item in Model)
+                    {
+                        <li class="slide">
+
+                            <div class="slide-content" style="margin-top:-100px;">
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <div style="max-width:600px;width:440px;height:30px;">
+                                    <p class="wrapword" style="font-family:Meiryo;font-size:23px;font-weight:400;margin-left:60px;">@item.isinadi dasdasasasdasd  asa ssa</p>
+                                </div>
+                                <br />
+                                <br />
+
+                                <span style="font-family:'MS PGothic';font-size:21px;border-left-width:3px;border-left-style:solid;border-left-color:#2bbecc;padding-left:8px;padding-left:-200px;margin-right:370px;">@item.sirketadi</span>
+                                <br />
+                                <br />
+
+
+                                <p style="padding-top:10px;font-size:18px;border-radius:10px;width:160px;background-color:#c1ff06;text-align:center;height:50px;color:black;float:left;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">@item.minemekhaqqi-@item.maxemekhaqqi AZN</p>
+                                <a href="/Home/VakansiyaDetails/@item.id" style="text-decoration:none">
+                                    <div class="btne">
+                                        <span class="noselect">Ətraflı Bax</span>
+                                    </div>
+                                </a>
+                            </div>
+
+
+                            <p class="slide-image">
+                                @if (item.tbl_resm.Count > 0)
+                                {
+                                    <img style="margin-top:10px;margin-left:110px;" src="@item.tbl_resm.FirstOrDefault(x => x.varsayilan == true).boyukolculu" alt="stuff" width="350" height="170">
+                                }
+                                else
+                                {
+                                    <img style="margin-top:10px;margin-left:110px;" src="~/Sekiller/YeniBoyukVK.jpg" alt="stuff" width="350" height="170">
+                                }
+                            </p>
+
+                        </li>
+                    }
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <h1 style="color:#122c3c;font-size:25px;margin-left:280px;" class="h11">Bu Vakansiyaya Oxşar İş Elanları Yoxdur</h1>
+}
+<br />
+
+
+
+<style>
+    .animated-box:after {
+        background: linear-gradient(150deg, #fff,#2bbecc, #9c1f1f);
+        background-size: 300% 300%;
+        clip-path: polygon(0% 100%, 3px 100%, 3px 3px, calc(100% - 3px) 3px, calc(100% - 3px) calc(100% - 3px), 3px calc(100% - 3px), 3px 100%, 100% 100%, 100% 0%, 0% 0%);
+    }
+</style>

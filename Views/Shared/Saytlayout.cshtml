@@ -1,0 +1,61 @@
+﻿
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7 no-js" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8 no-js" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en" class="no-js">
+
+<head>
+    <!-- Basic need -->
+    <title>@ViewBag.Title</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <link rel="profile" href="#">
+    <!--Google Font-->
+  
+</head>
+<body>
+
+    <header>
+
+        @{
+            Html.RenderAction("Nav", "Home");
+        }
+
+    </header>
+
+    <div>
+    @RenderBody()
+        </div>
+    
+    
+
+</body>
+
+</html>
+<style>
+
+
+        ::-webkit-scrollbar {
+            width: 9px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(transparent,#00c6ff);
+            border-radius: 6px;
+        }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: linear-gradient(transparent,#27768d);
+                border-radius: 6px;
+            }
+
+
+      
+</style>

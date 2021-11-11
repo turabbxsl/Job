@@ -1,0 +1,36 @@
+﻿.button {
+    
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    padding: 8px 15px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 35px;
+    width: 85px;  
+}
+.h11 {
+    position:relative;
+    font-family:'Calisto MT'
+}
+
+
+#btn-23 {
+    background-image: linear-gradient(to right, #6fb2d1 0%, #a1c4fd 80%, #c2e9fb 100%);
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius:3px;
+}
+
+@keyframes ripple {
+    100% {
+        transform: translate(-50%, -50%) scale(100);
+        opacity: 0;
+    }
+}

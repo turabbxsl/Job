@@ -1,0 +1,945 @@
+﻿
+@model IsAxtaris.Models.tbl_CCVV
+
+@{
+    ViewBag.Title = "CVDetails";
+    Layout = "~/Views/Shared/Saytlayout.cshtml";
+}
+
+
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/indexfooter.css" />
+    <link rel="stylesheet" href="~/ta.css" />
+    <link rel="stylesheet" href="~/sosical.css" />
+    <link rel="stylesheet" href="~/shar.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .ds {
+            margin-top: -35px;
+        }
+
+        .ss {
+            margin-top: -10px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <div style="width:40px;height:30px;margin-top:90px;margin-left:870px;">
+                    <img src="~/Sekiller/seen.png" style="" />
+                </div>
+
+            </td>
+            <td>
+                @if (Model.goruntulenme > 0)
+                {
+                    <div style="width:200px;height:30px;margin-top:90px;">
+                        <p style="color:black;font-size:20px;font-family:Calibri" class="eye">@Model.goruntulenme İzlənmə </p>
+                    </div>
+
+                }
+                else
+                {
+                    <div style="width:200px;height:30px;margin-top:90px;">
+                        <p style="color:black;font-size:20px;font-family:Calibri" class="eye">İzlənmə Yoxdur </p>
+                    </div>
+                }
+            </td>
+        </tr>
+    </table>
+
+
+
+
+    <div style="width:900px;height:1340px;background-color:#e8f1f1;-webkit-box-shadow: 0px 10px 13px -7px #000000, 0px 2px 12px -1px #000000;
+box-shadow: 0px 10px 13px -7px #000000, 0px 2px 12px -1px #000000;margin-top:30px;margin-left:130px;float:left">
+        <div style="width:900px;height:130px;background-color:#f5fdfd;">
+            <table>
+                <tr>
+                    <td>
+                        <div style="width:700px;">
+                            <p class="wrapword" style="color:#152342;font-size:28px;text-align:left;margin-left:20px;font-family:Meiryo"> @Model.vezifesi</p>
+                        </div>
+
+                    </td>
+                    <td>
+                        <div style="width:160px;margin-left:15px;margin-top:20px;">
+                            <p style="padding-top:10px;font-size:18px;border-radius:10px;width:160px;background-color:#c1ff06;text-align:center;height:50px;color:black;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">@Model.emekhaqqi AZN</p>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+            <p style="font-family:'MS PGothic';font-size:19px;margin-left:23px;margin-top:10px;border-left-width:3px;border-left-style:solid;border-left-color:#2bbecc;padding-left:5px;">@Model.adi @Model.soyadi</p>
+        </div>
+        <div style="width:900px;height:430px;background-color:#bfe3e3;padding-top:30px;color:#152342;">
+            <table>
+                <tr>
+                    <td><p style="margin-left:20px;font-family:'Lucida Sans';font-size:17px;margin-top:-10px;">Cinsiyyət</p></td>
+                    <td>
+                        <div style="margin-left:270px;width:200px;margin-top:-10px;">
+                            <p style="text-align:left;font-family:'Lucida Sans';font-size:17px;">
+                                @Model.cinsiyyeti
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td><p style="margin-left:20px;font-family:'Lucida Sans';font-size:17px;">Şəhər</p></td>
+                    <td>
+                        <div style="margin-left:300px;width:200px;">
+                            <p style="text-align:left;font-family:'Lucida Sans';font-size:17px;">
+                                @Model.seheri
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td><p style="margin-left:20px;font-family:'Lucida Sans';font-size:17px;margin-top:10px;">Yaş</p></td>
+                    <td>
+                        <div style="margin-left:315px;width:170px;margin-top:10px;">
+                            <p style="text-align:left;font-family:'Lucida Sans';font-size:17px;">
+                                @Model.yasi yaş
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td><p style="margin-left:20px;font-family:'Lucida Sans';font-size:17px;margin-top:10px;">Kateqoriyası</p></td>
+                    <td>
+                        <div style="margin-left:242px;width:400px;margin-top:10px;">
+                            <p style="text-align:left;font-family:'Lucida Sans';font-size:17px;">
+                                @Model.tbl_kategoriya.kategoriyaadi
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td><p style="margin-left:20px;font-family:'Lucida Sans';font-size:17px;margin-top:10px;">Təhsili</p></td>
+                    <td>
+                        <div style="margin-left:290px;width:400px;margin-top:10px;">
+                            <p style="text-align:left;font-family:'Lucida Sans';font-size:17px;">
+                                @Model.tehsili
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td><p style="margin-left:20px;font-family:'Lucida Sans';font-size:17px;margin-top:10px;">İş Təcrübəsi</p></td>
+                    <td>
+                        <div style="margin-left:248px;width:400px;margin-top:10px;">
+                            <p style="text-align:left;font-family:'Lucida Sans';font-size:17px;">
+                                @Model.istecrubesi
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td><p style="margin-left:20px;font-family:'Lucida Sans';font-size:17px;margin-top:10px;">Elanın Tarixi</p></td>
+                    <td>
+                        <div style="margin-left:240px;width:400px;margin-top:10px;">
+                            <p style="text-align:left;font-family:'Lucida Sans';font-size:17px;">
+                                @Convert.ToDateTime(Model.tarix).ToString("dd.MM.yyyy")
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td><p style="margin-left:20px;font-family:'Lucida Sans';font-size:17px;margin-top:10px;">Elanın Bitmə Tarixi</p></td>
+                    <td>
+                        <div style="margin-left:188px;width:270px;margin-top:10px;">
+                            <p style="text-align:left;font-family:'Lucida Sans';font-size:17px;">
+                                @if (Model.bitmetarixi != null)
+                                {
+                                    @Convert.ToDateTime(Model.bitmetarixi).ToString("dd.MM.yyyy")
+                                }
+                                else
+                                {
+                                    @Convert.ToDateTime(Model.tarix).ToString("dd.MM.yyyy")
+                                }
+
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td><p style="margin-left:20px;font-family:'Lucida Sans';font-size:17px;margin-top:10px;">E-Mail</p></td>
+                    <td>
+                        <div style="margin-left:295px;width:400px;margin-top:10px;">
+                            <p style="text-align:left;font-family:'Lucida Sans';font-size:17px;">
+                                @Model.email
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td><p style="margin-left:20px;font-family:'Lucida Sans';font-size:17px;width:200px;margin-top:10px;">Əlaqə Nömrəsi</p></td>
+                    <td>
+                        <div style="margin-left:143px;width:400px;margin-top:10px;">
+                            <p style="text-align:left;font-family:'Lucida Sans';font-size:17px;">
+                                @Model.telefon
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+        @if (Model.bacarigi.Length < 800)
+        {
+            <div class="pricing-table wrapword">
+                <div class="pricing-option" style="height:400px;">
+                    <h3 style="color:#1e90b3">Şəxsin Bacarığı</h3>
+                    <hr class="hhr" />
+                    <p class="op" style="color:black;font-family:'Book Antiqua'">@Model.bacarigi</p>
+                   
+                    <div class="price">
+                        <div class="back">
+                            @*<a href="#" class="oa obutton">Purchase now</a>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            var sayi = Model.bacarigi.Substring(800, Model.bacarigi.Length - 1);
+
+            <div class="pricing-table wrapword">
+                <div class="pricing-option" style="height:400px;" id="divimiz">
+                    <h3 style="color:#1e90b3">Şəxsin Bacarığı</h3>
+                    <hr class="hhr" />
+                    <p class="op" style="color:black;font-family:'Book Antiqua';line-height:25px;">@Model.bacarigi<span id="dots">....</span> <span id="more" style="color:black;font-family:'Book Antiqua';line-height:25px;">@sayi</span> </p>
+                    
+                    <div class="price">
+                        <div style="margin-top:10px;">
+                            <button type="button" class="iubutton" id="read" onclick="read()">Ətraflı Oxu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (Model.tehsilmelumati.Length < 800)
+        {
+            <div class="pricing-table wrapword">
+                <div class="pricing-option" style="height:400px;">
+                    <h3 style="color:#1e90b3">Təhsili Ətraflı Şəkildə</h3>
+                    <hr class="hhr" />
+                    <p class="op" style="color:black;font-family:'Book Antiqua'">@Model.tehsilmelumati </p>
+                
+                    <div class="price">
+                        <div class="back">
+                            @*<a href="#" class="oa obutton">Purchase now</a>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            var telebsayi = Model.tehsilmelumati.Substring(800, Model.tehsilmelumati.Length - 1);
+
+            <div class="pricing-table wrapword">
+                <div class="pricing-option" style="height:400px;" id="divimiz">
+                    <h3 style="color:#1e90b3">Təhsili Ətraflı Şəkildə</h3>
+                    <hr class="hhr" />
+                    <p class="op" style="color:black;font-family:'Book Antiqua';line-height:25px;">@Model.tehsilmelumati<span id="dots">....</span> <span id="more" style="color:black;font-family:'Book Antiqua';line-height:25px;">@telebsayi</span> </p>
+                   
+                    <div class="price">
+                        <div style="margin-top:10px;">
+                            <button type="button" class="iubutton" id="read" onclick="read()">Ətraflı Oxu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        <hr />
+        @if (Model.elavemelumati.Length < 800)
+        {
+            <div class="pricing-table wrapword">
+                <div class="pricing-option" style="height:380px;width:100%;">
+                    <h3 style="color:#1e90b3">Əlavə Digər Məlumatları</h3>
+                    <hr class="hhr" />
+                    <p class="op" style="color:black;font-family:'Book Antiqua'">@Model.elavemelumati </p>
+                    
+                    <div class="price">
+                        <div class="back">
+                            @*<a href="#" class="oa obutton">Purchase now</a>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            var telebsayi = Model.elavemelumati.Substring(800, Model.elavemelumati.Length - 1);
+
+            <div class="pricing-table wrapword">
+                <div class="pricing-option" style="height:400px;" id="divimiz">
+                    <h3 style="color:#1e90b3">Əlavə Digər Məlumatlarır</h3>
+                    <hr class="hhr" />
+                    <p class="op" style="color:black;font-family:'Book Antiqua';line-height:25px;">@Model.elavemelumati<span id="dots">....</span> <span id="more" style="color:black;font-family:'Book Antiqua';line-height:25px;">@telebsayi</span> </p>
+                    
+                    <div class="price">
+                        <div style="margin-top:10px;">
+                            <button type="button" class="iubutton" id="read" onclick="read()">Ətraflı Oxu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <br />
+    <br />
+
+    <div class="cptn07" style="width:400px;height:400px;border:none;margin-top:-790px;margin-left:1080px;position:relative">
+        @if (Model.tbl_resm1.Count > 0)
+        {
+            <img src="@Model.tbl_resm1.FirstOrDefault(x => x.varsayilan == true).boyukolculu" width="400" style="margin-left:0px;" height="610" alt="">
+        }
+        else
+        {
+            if (Model.cinsiyyeti == "Kişi")
+            {
+                <div class="containerg">
+                    <div class="containerg__image" >
+                        <img  src="~/Sekiller/man (1).png" style="margin-left:70px;margin-top:80px" />
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="containerg">
+                    <div class="containerg__image">
+                        <img src="~/Sekiller/woman (4).png" style="margin-left:70px;margin-top:80px" />
+                    </div>
+                </div>
+            }
+        }
+        <div class="cptn">
+            <div>
+                <h3>@Model.adi @Model.soyadi</h3>
+                <p class="pp">@Model.vezifesi</p>
+            </div>
+
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    @{
+        Html.RenderAction("Oxsarcvler", "Home", new { ID = Model.kategoriyaid,ozid = Model.id});
+    }
+
+
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(window).load(function () {
+
+            $('#loadOverlay').fadeOut('slow');
+
+        })
+
+    })
+
+
+    var i = 0;
+    function read() {
+        if (!i) {
+            document.getElementById("more").style.display = "inline";
+            document.getElementById("dots").style.display = "none";
+            document.getElementById("read").innerHTML = "Qısalt";
+            document.getElementById("divimiz").style.height = "auto";
+            i = 1;
+        }
+        else {
+            document.getElementById("more").style.display = "none";
+            document.getElementById("dots").style.display = "inline";
+            document.getElementById("read").innerHTML = "Ətraflı Oxu";
+            i = 0;
+        }
+    }
+</script>
+
+
+
+
+
+
+<footer class="footer-distributed" style="margin-top:-70px;border-top-left-radius:15px;border-top-right-radius:15px;width:1526px;margin-left:0px;">
+
+    <div class="footer-left">
+
+        <h3>TURAB<span>BL</span></h3>
+
+        <p class="footer-links">
+            <a href="#">Ana Səhifə</a>
+            |
+            <a href="#">CV</a>
+            |
+            <a href="#">Vakansiya Elan Et</a>
+            |
+            <a href="#">Əlaqə</a>
+        </p>
+
+        <table>
+            <tr>
+                <td><p style="color:white;margin-top:20px;">Bizə Dəstək Ol :)</p></td>
+                <td>
+                    <div class="ssdiv" style="margin-left:130px;margin-top:10px;">
+                        <a href="#" class="ssa"><span>Facebook</span></a>
+                        <a href="#" class="ssa"><span>Twitter</span></a>
+                        <a href="#" class="ssa"><span>Instagram</span></a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <br /> <br /> <br />
+        <p class="footer-company-name">© 2020 TURABBL Tərəfindən Yaradılmışdır</p>
+    </div>
+
+    <div class="footer-center" style="margin-left:62px;">
+        <div>
+            <div style="width:70px;height:40px;margin-left:-50px;float:left">
+                <img src="~/Sekiller/location.png" style="margin-left:30px;margin-top:10px;" />
+            </div>
+            <p>
+                <span>
+                    Sabunçu Rayonu.,
+                    Maştağa Qəsəbəsi
+
+                </span>
+                Daş Karxanası
+            </p>
+        </div>
+
+        <div>
+            <div style="width:70px;height:40px;margin-left:-50px;float:left;margin-top:20px;">
+                <img src="~/Sekiller/phone (1).png" style="margin-left:30px;margin-top:10px;" />
+            </div>
+            <p style="margin-top:30px;">+994703067050</p>
+        </div>
+        <div>
+            <div style="width:70px;height:40px;margin-left:-50px;float:left;margin-top:20px;">
+                <img src="~/Sekiller/mail.png" style="margin-left:10px;margin-top:10px;" />
+            </div>
+            <p style="margin-top:30px;margin-left:-18px;"><a href="mailto:turabbl@gmail.com">turabbl@gmail.com</a></p>
+        </div>
+    </div>
+
+    <div class="footer-right" style="margin-left:-130px;">
+        <p style="color:white;margin-bottom:10px;">E-Mail</p>
+        <label class="field a-field a-field_a1" style="margin-top:-50px;">
+            <input required class="field__input a-field__input" type="text" name="sirketadi" placeholder="">
+            <span class="a-field__label-wrap">
+                <span class="a-field__label"></span>
+            </span>
+        </label>
+        <br />
+        <br />
+        <div style="width:560px;float:left">
+            <textarea name="telebler" id="field5" placeholder="Mesajiniz..." class="field-long field-textarea" style="border-radius:4px;width:390px;height:120px;float:left;max-height:150px;max-width:390px;font-size:16px;min-width:390px;min-height:150px;border: none;
+    overflow: auto;
+    outline: none;-webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;padding:2px;"></textarea>
+
+            <div class="button_cont" align="center"><a class="example_a" href="add-website-here" target="_blank" rel="nofollow noopener">Bize Gonder</a></div>
+        </div>
+    </div>
+
+
+</footer>
+
+<style>
+    .example_a {
+        color: #fff !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        background: #7c9e16;
+        padding: 20px;
+        border-radius: 5px;
+        display: inline-block;
+        border: none;
+        margin-left: 20px;
+        margin-top: 92px;
+        transition: all 0.4s ease 0s;
+    }
+
+        .example_a:hover {
+            letter-spacing: 1px;
+            -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+            -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+            box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+            transition: all 0.4s ease 0s;
+        }
+
+
+    .field {
+        --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #ffffff);
+    }
+
+    .field__input {
+        background-color: transparent;
+        border-radius: 3px;
+        border: none;
+        color: white;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        font-family: inherit;
+        font-size: 1em;
+    }
+
+        .field__input:focus::-webkit-input-placeholder {
+            color: #698bad;
+            font-size: 13px;
+        }
+
+        .field__input:focus::-moz-placeholder {
+            color: var(--uiFieldPlaceholderColor);
+            opacity: 1;
+        }
+
+    /*
+        =====
+        LEVEL 2. CORE STYLES
+        =====
+        */
+
+    .a-field {
+        display: inline-block;
+    }
+
+    .a-field__input {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+        .a-field__input:focus {
+            outline: none;
+        }
+
+    /*
+        =====
+        LEVEL 3. PRESENTATION STYLES
+        =====
+        */
+
+    /* a-field */
+
+    .a-field {
+        --uiFieldHeight: var(--fieldHeight, 2.5rem);
+        --uiFieldBorderWidth: var(--fieldBorderWidth, 2px);
+        --uiFieldBorderColor: var(--fieldBorderColor);
+        --uiFieldFontSize: var(--fieldFontSize, 1rem);
+        --uiFieldHintFontSize: var(--fieldHintFontSize, 1rem);
+        --uiFieldPaddingRight: var(--fieldPaddingRight, 1rem);
+        --uiFieldPaddingBottom: var(--fieldPaddingBottom, 1rem);
+        --uiFieldPaddingLeft: var(--fieldPaddingLeft, 1rem);
+        position: relative;
+        box-sizing: border-box;
+        font-size: var(--uiFieldFontSize);
+        padding-top: 1rem;
+    }
+
+    .a-field__input {
+        height: var(--uiFieldHeight);
+        padding: 0 var(--uiFieldPaddingRight) 0 var(--uiFieldPaddingLeft);
+        border-bottom: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColor);
+    }
+
+        .a-field__input::-webkit-input-placeholder {
+            opacity: 0;
+            transition: opacity .2s ease-out;
+        }
+
+        .a-field__input::-moz-placeholder {
+            opacity: 0;
+            transition: opacity .2s ease-out;
+        }
+
+        .a-field__input:not(:placeholder-shown) ~ .a-field__label-wrap .a-field__label {
+            opacity: 0;
+            bottom: var(--uiFieldPaddingBottom);
+        }
+
+        .a-field__input:focus::-webkit-input-placeholder {
+            opacity: 1;
+            transition-delay: .2s;
+        }
+
+        .a-field__input:focus::-moz-placeholder {
+            opacity: 1;
+            transition-delay: .2s;
+        }
+
+    .a-field__label-wrap {
+        box-sizing: border-box;
+        width: 100%;
+        height: var(--uiFieldHeight);
+        pointer-events: none;
+        cursor: text;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .a-field__label {
+        position: absolute;
+        left: var(--uiFieldPaddingLeft);
+        bottom: calc(50% - .5em);
+        line-height: 1;
+        font-size: var(--uiFieldHintFontSize);
+        pointer-events: none;
+        transition: bottom .2s cubic-bezier(0.9, -0.15, 0.1, 1.15), opacity .2s ease-out;
+        will-change: bottom, opacity;
+        color: white;
+    }
+
+    .a-field__input:focus ~ .a-field__label-wrap .a-field__label {
+        opacity: 1;
+        bottom: var(--uiFieldHeight);
+    }
+
+    /* a-field_a1 */
+
+    .a-field_a1 .a-field__input {
+        transition: border-color .2s ease-out;
+        will-change: border-color;
+    }
+
+        .a-field_a1 .a-field__input:focus {
+            border-color: var(--fieldBorderColorActive);
+        }
+
+    /* a-field_a2 */
+
+    .a-field_a2 .a-field__label-wrap::after {
+        content: "";
+        box-sizing: border-box;
+        width: 0;
+        height: var(--uiFieldBorderWidth);
+        background-color: var(--fieldBorderColorActive);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        will-change: width;
+        transition: width .285s ease-out;
+    }
+
+    .a-field_a2 .a-field__input:focus ~ .a-field__label-wrap::after {
+        width: 100%;
+    }
+
+    /* a-field_a3 */
+
+    .a-field_a3 {
+        padding-top: 1.5rem;
+    }
+
+        .a-field_a3 .a-field__label-wrap::after {
+            content: "";
+            box-sizing: border-box;
+            width: 100%;
+            height: 0;
+            opacity: 0;
+            border: var(--uiFieldBorderWidth) solid var(--fieldBorderColorActive);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            will-change: opacity, height;
+            transition: height .2s ease-out, opacity .2s ease-out;
+        }
+
+        .a-field_a3 .a-field__input:focus ~ .a-field__label-wrap::after {
+            height: 100%;
+            opacity: 1;
+        }
+
+        .a-field_a3 .a-field__input:focus ~ .a-field__label-wrap .a-field__label {
+            bottom: calc(var(--uiFieldHeight) + .5em);
+        }
+
+    /*
+        =====
+        LEVEL 4. SETTINGS
+        =====
+        */
+
+    .field {
+        --fieldBorderColor: #5a92cf;
+        --fieldBorderColorActive: white;
+    }
+
+    /*
+        =====
+        DEMO
+        =====
+        */
+
+
+    .page {
+        box-sizing: border-box;
+        width: 410px;
+        max-width: 430px;
+        margin-left: 13px;
+        margin-top: 100px;
+        padding: 10px;
+        display: grid;
+        grid-gap: 30px;
+        align-items: flex-end;
+        order: 1;
+    }
+
+    media (min-width: 481px) {
+        .page
+
+    {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    }
+
+
+
+
+
+    .cptn07 {
+        width: 400px;
+        position: relative;
+        overflow: hidden;
+        position: fixed;
+        margin-left: 800px;
+        background-color: transparent
+    }
+
+        .cptn07 img {
+            margin-left: 50px;
+            bottom: 0;
+            position: relative;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+        .cptn07 .cptn {
+            background: #a3cedb;
+            margin-left: 0px;
+            width: 400px;
+            height: 70px;
+            top: 0;
+            position: absolute;
+            left: 0;
+            -webkit-transform-origin: top;
+            -moz-transform-origin: top;
+            -ms-transform-origin: top;
+            -o-transform-origin: top;
+            transform-origin: top;
+            -webkit-transform: perspective(600px) rotateX(-90deg);
+            -moz-transform: perspective(600px) rotateX(-90deg);
+            -ms-transform: perspective(600px) rotateX(-90deg);
+            -o-transform: perspective(600px) rotateX(-90deg);
+            transform: perspective(600px) rotateX(-90deg);
+            overflow: auto;
+            padding: 0 15px;
+            opacity: 0;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+            .cptn07 .cptn div {
+                float: left;
+                height: 100%;
+            }
+
+            .cptn07 .cptn .faa {
+                -wibkit-box-sizing: content-box;
+                -moz-box-sizing: content-box;
+                box-sizing: content-box;
+                -webkit-transition: all 0.3s;
+                -moz-transition: all 0.3s;
+                -o-transition: all 0.3s;
+                transition: all 0.3s;
+                border: 2px solid #fff;
+                -wibkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
+                color: #fff;
+                display: block;
+                float: right;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                text-decoration: none;
+                width: 30px;
+                margin-top: 10px;
+                opacity: 0.3;
+            }
+
+                .cptn07 .cptn .faa:hover {
+                    opacity: 1;
+                }
+
+            .cptn07 .cptn h3 {
+                color: #fff;
+                margin-top: 10px;
+                margin-bottom: 0;
+                font-size: 16px;
+                font-weight: normal;
+            }
+
+            .cptn07 .cptn .pp {
+                color: #6a6a6a;
+                font-size: 14px;
+            }
+
+        .cptn07:hover .cptn {
+            opacity: 1;
+            -webkit-transform: perspective(600px) rotateX(0deg);
+            -moz-transform: perspective(600px) rotateX(0deg);
+            -ms-transform: perspective(600px) rotateX(0deg);
+            -o-transform: perspective(600px) rotateX(0deg);
+            transform: perspective(600px) rotateX(0deg);
+        }
+
+
+    #sekil:hover {
+        transform: scale(1.10);
+        transition: 0.5s ease;
+    }
+
+    #sekil:before {
+        transform: scale(0);
+        transition: 0.5s ease;
+    }
+
+
+    #more {
+        display: none;
+    }
+
+    .iubutton {
+        border-radius: 10px;
+        background-color: #da0808;
+        border: none;
+        outline: none;
+        color: white;
+        font-size: 16px;
+        padding: 5px;
+    }
+
+        .iubutton:hover {
+            cursor: pointer;
+        }
+
+    .wrapword {
+        white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        white-space: pre-wrap; /* css-3 */
+        word-wrap: break-word; /* Internet Explorer 5.5+ */
+        white-space: -webkit-pre-wrap; /* Newer versions of Chrome/Safari*/
+        word-break: break-all;
+        white-space: normal;
+    }
+</style>

@@ -1,0 +1,1974 @@
+﻿@model IsAxtaris.Models.tbl_vakansiya
+
+
+@{
+    ViewBag.Title = "Vakansiyayaz";
+    Layout = "~/Views/Shared/Saytlayout.cshtml";
+}
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/telefon/intl-tel-input-master/intl-tel-input-master/build/css/intlTelInput.css" />
+    <link rel="stylesheet" href="~/fa.css">
+    <link rel="stylesheet" href="~/footer.css" />
+    <link rel="stylesheet" href="~/shar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <style>
+        .ds {
+            margin-top: -35px;
+        }
+
+        .ss {
+            margin-top: -10px;
+        }
+    </style>
+</head>
+<body style="background-color:#547e9e;">
+
+
+    <form id="form" action="/Home/Vakansiyayaz" method="post" name="validate" enctype="multipart/form-data">
+
+        <div style="background-color:#033c5c;width:470px;border-radius:10px;margin-left:130px;height:2000px;">
+
+            <div class="page">
+                <h1 style="text-align:center;font-size:20px;color:white;">Vakansiya Yerləşdir</h1>
+                <p style="color:white;"><span style="color:red;font-size:20px;margin-right:3px;">*</span>İşin Adı</p>
+                <label class="field a-field a-field_a1" style="margin-top:-50px;">
+                    <input required class="field__input a-field__input" type="text" name="isinadi" placeholder="Elan Etmək İstədiyiniz İşin Adı">
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label"></span>
+                    </span>
+                </label>
+                <p style="color:white;"><span style="color:red;font-size:20px;margin-right:3px;">*</span>Şirkətin/Müəssisənin Adı</p>
+                <label class="field a-field a-field_a1" style="margin-top:-50px;">
+                    <input required class="field__input a-field__input" type="text" name="sirketadi" placeholder="Şirkətin Və Ya Müəssisənin Adi">
+                    <span class="a-field__label-wrap">
+                        <span class="a-field__label"></span>
+                    </span>
+                </label>
+
+                <div class="cont_select_center" style="margin-left:-613px;margin-top:-25px;">
+
+
+                    <p style="color:white;"><span style="color:red;font-size:20px;margin-right:3px;">*</span>Kateqoriya Seç</p>
+                    <div class="select_mate" data-mate-select="active" style="margin-top:4px;">
+                        <select required name="kategoriyaid" onchange="" onclick="return false;" id="">
+
+                            @foreach (var kategoriya in ViewBag.Kategoriyalar)
+                            {
+                                <option value="@kategoriya.id">@kategoriya.kategoriyaadi</option>
+                            }
+                        </select>
+                        <p class="selecionado_opcion" onclick="open_select(this)"></p><span onclick="open_select(this)" class="icon_select_mate">
+                            <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                                <path d="M0-.75h24v24H0z" fill="none" />
+                            </svg>
+                        </span>
+                        <div class="cont_list_select_mate">
+                            <ul class="cont_select_int">  </ul>
+                        </div>
+                    </div>
+
+
+
+                    <br />
+                    <br />
+                    <br />
+
+                    <table>
+                        <tr>
+                            <td>
+                                <p style="color:white;margin-left:0px;"><span style="color:red;margin-bottom:50px;font-size:20px;margin-right:3px;">*</span>Min Əmək Haqqı</p>
+                                <br />
+                                <br />
+
+                                <div class="select_mate" data-mate-select="active" style="margin-top:-35px;width:130px;">
+                                    <select required name="minemekhaqqi" onchange="" onclick="return false;" id="">
+                                        <option selected value="100">100AZN</option>
+                                        <option value="200">200AZN</option>
+                                        <option value="300">300AZN</option>
+                                        <option value="400">400AZN</option>
+                                        <option value="500">500AZN</option>
+                                        <option value="600">600AZN</option>
+                                        <option value="700">700AZN</option>
+                                        <option value="800">800AZN</option>
+                                        <option value="900">900AZN</option>
+                                        <option value="1000">1000AZN</option>
+                                        <option value="1100">1100AZN</option>
+                                        <option value="1200">1200AZN</option>
+                                        <option value="1300">1300AZN</option>
+                                        <option value="1400">1400AZN</option>
+                                        <option value="1500">1500AZN</option>
+                                        <option value="1600">1600AZN</option>
+                                        <option value="1700">1700AZN</option>
+                                        <option value="1800">1800AZN</option>
+                                        <option value="1900">1900AZN</option>
+                                        <option value="2000">2000AZN</option>
+                                        <option value="2100">2100AZN</option>
+                                        <option value="2200">2200AZN</option>
+                                        <option value="2300">2300AZN</option>
+                                        <option value="2400">2400AZN</option>
+                                        <option value="2500">2500AZN</option>
+                                        <option value="2600">2600AZN</option>
+                                        <option value="2700">2700AZN</option>
+                                        <option value="2800">2800AZN</option>
+                                        <option value="2900">2900AZN</option>
+                                        <option value="3000">3000AZN</option>
+                                        <option value="3100">3100AZN</option>
+                                        <option value="3200">3200AZN</option>
+                                        <option value="3300">3300AZN</option>
+                                        <option value="3400">3400AZN</option>
+                                        <option value="3500">3500AZN</option>
+                                        <option value="3600">3600AZN</option>
+                                        <option value="3700">3700AZN</option>
+                                        <option value="3800">3800AZN</option>
+                                        <option value="3900">3900AZN</option>
+                                        <option value="4000">4000AZN</option>
+                                        <option value="4100">4100AZN</option>
+                                        <option value="4200">4200AZN</option>
+                                        <option value="4300">4300AZN</option>
+                                        <option value="4400">4400AZN</option>
+                                        <option value="4500">4500AZN</option>
+                                        <option value="4600">4600AZN</option>
+                                        <option value="4700">4700AZN</option>
+                                        <option value="4800">4800AZN</option>
+                                        <option value="4900">4900AZN</option>
+                                        <option value="5000">5000AZN</option>
+                                        <option value="5100">5100AZN</option>
+                                        <option value="5200">5200AZN</option>
+                                        <option value="5300">5300AZN</option>
+                                        <option value="5400">5400AZN</option>
+                                        <option value="5500">5500AZN</option>
+                                        <option value="5600">5600AZN</option>
+                                        <option value="5700">5700AZN</option>
+                                        <option value="5800">5800AZN</option>
+                                        <option value="5900">5900AZN</option>
+                                        <option value="6000">6000AZN</option>
+
+
+                                    </select>
+                                    <p class="selecionado_opcion" onclick="open_select(this)"></p><span onclick="open_select(this)" class="icon_select_mate">
+                                        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                                            <path d="M0-.75h24v24H0z" fill="none" />
+                                        </svg>
+                                    </span>
+                                    <div class="cont_list_select_mate">
+                                        <ul class="cont_select_int">  </ul>
+                                    </div>
+                                </div>
+                                <br />
+                                <br />
+                            </td>
+                            <td>
+                                <p style="color:white;margin-left:23px;"><span style="color:red;margin-bottom:50px;font-size:20px;margin-right:3px;">*</span>Max Əmək Haqqı</p>
+                                <br />
+                                <br />
+
+                                <div class="select_mate" data-mate-select="active" style="margin-top:-35px;left:30px;width:130px;">
+                                    <select required name="maxemekhaqqi" onchange="" onclick="return false;" id="">
+                                        <option selected value="100">100AZN</option>
+                                        <option value="200">200AZN</option>
+                                        <option value="300">300AZN</option>
+                                        <option value="400">400AZN</option>
+                                        <option value="500">500AZN</option>
+                                        <option value="600">600AZN</option>
+                                        <option value="700">700AZN</option>
+                                        <option value="800">800AZN</option>
+                                        <option value="900">900AZN</option>
+                                        <option value="1000">1000AZN</option>
+                                        <option value="1100">1100AZN</option>
+                                        <option value="1200">1200AZN</option>
+                                        <option value="1300">1300AZN</option>
+                                        <option value="1400">1400AZN</option>
+                                        <option value="1500">1500AZN</option>
+                                        <option value="1600">1600AZN</option>
+                                        <option value="1700">1700AZN</option>
+                                        <option value="1800">1800AZN</option>
+                                        <option value="1900">1900AZN</option>
+                                        <option value="2000">2000AZN</option>
+                                        <option value="2100">2100AZN</option>
+                                        <option value="2200">2200AZN</option>
+                                        <option value="2300">2300AZN</option>
+                                        <option value="2400">2400AZN</option>
+                                        <option value="2500">2500AZN</option>
+                                        <option value="2600">2600AZN</option>
+                                        <option value="2700">2700AZN</option>
+                                        <option value="2800">2800AZN</option>
+                                        <option value="2900">2900AZN</option>
+                                        <option value="3000">3000AZN</option>
+                                        <option value="3100">3100AZN</option>
+                                        <option value="3200">3200AZN</option>
+                                        <option value="3300">3300AZN</option>
+                                        <option value="3400">3400AZN</option>
+                                        <option value="3500">3500AZN</option>
+                                        <option value="3600">3600AZN</option>
+                                        <option value="3700">3700AZN</option>
+                                        <option value="3800">3800AZN</option>
+                                        <option value="3900">3900AZN</option>
+                                        <option value="4000">4000AZN</option>
+                                        <option value="4100">4100AZN</option>
+                                        <option value="4200">4200AZN</option>
+                                        <option value="4300">4300AZN</option>
+                                        <option value="4400">4400AZN</option>
+                                        <option value="4500">4500AZN</option>
+                                        <option value="4600">4600AZN</option>
+                                        <option value="4700">4700AZN</option>
+                                        <option value="4800">4800AZN</option>
+                                        <option value="4900">4900AZN</option>
+                                        <option value="5000">5000AZN</option>
+                                        <option value="5100">5100AZN</option>
+                                        <option value="5200">5200AZN</option>
+                                        <option value="5300">5300AZN</option>
+                                        <option value="5400">5400AZN</option>
+                                        <option value="5500">5500AZN</option>
+                                        <option value="5600">5600AZN</option>
+                                        <option value="5700">5700AZN</option>
+                                        <option value="5800">5800AZN</option>
+                                        <option value="5900">5900AZN</option>
+                                        <option value="6000">6000AZN</option>
+
+                                    </select>
+                                    <p class="selecionado_opcion" onclick="open_select(this)"></p><span onclick="open_select(this)" class="icon_select_mate">
+                                        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                                            <path d="M0-.75h24v24H0z" fill="none" />
+                                        </svg>
+                                    </span>
+                                    <div class="cont_list_select_mate">
+                                        <ul class="cont_select_int">  </ul>
+                                    </div>
+                                </div>
+                                <br />
+                                <br />
+                            </td>
+                        </tr>
+                    </table>
+                 
+
+                    <p style="color:white;">İş Barəsində Məlumat</p>
+                    <textarea name="isbaresindemelumat" id="field5" placeholder="Elan Etmək İstədiyiniz İş Haqqında Ətraflı Məlumat Yazın..." class="field-long field-textarea" style="border-radius:4px;width:390px;height:150px;max-height:150px;max-width:390px;"></textarea>
+                    <br />
+                    <br />
+
+                    <p style="color:white;"><span style="color:red;font-size:20px;margin-right:3px;">*</span>Tələbləriniz</p>
+                    <textarea name="telebler" id="field5" placeholder="Tələblərinizi Bura Qeyd Edin ..." class="field-long field-textarea" style="border-radius:4px;width:390px;height:150px;max-height:150px;max-width:390px;"></textarea>
+                    <br />
+                    <br />
+
+
+                    <p style="color:white;"><span style="color:red;font-size:20px;margin-right:3px;">*</span>Şəhər</p>
+                    s
+                    <div class="select_mate" data-mate-select="active">
+                        <select style="width:200px;" required name="seher" onchange="" onclick="return false;" id="">
+
+                            <option value="Ağdam">Ağdam</option>
+                            <option value="Ağdaş">Ağdaş</option>
+                            <option value="Ağcabədi">Ağcabədi</option>
+                            <option value="Ağstafa">Ağstafa</option>
+                            <option value="Ağsu">Ağsu</option>
+                            <option value="Astara">Astara</option>
+                            <option value="Bakı">Bakı</option>
+                            <option value="Babək">Babək</option>
+                            <option value="Balakən">Balakən</option>
+                            <option value="Bərdə">Bərdə</option>
+                            <option value="Beyləqan">Beyləqan</option>
+                            <option value="Biləsuvar">Biləsuvar</option>
+                            <option value="Cəbrayıl">Cəbrayıl</option>
+                            <option value="Cəlilabad">Cəlilabad</option>
+                            <option value="Culfa">Culfa</option>
+                            <option value="Daşkəsən">Daşkəsən</option>
+                            <option value="Füzuli">Füzuli</option>
+                            <option value="Gədəbəy">Gədəbəy</option>
+                            <option value="Goranboy">Goranboy</option>
+                            <option value="Göyçay">Göyçay</option>
+                            <option value="Göygöl">Göygöl</option>
+                            <option value="Hacıqabul">Hacıqabul</option>
+                            <option value="Xaçmaz">Xaçmaz</option>
+                            <option value="Xızı">Xızı</option>
+                            <option value="Xocalı">Xocalı</option>
+                            <option value="Xocavənd">Xocavənd</option>
+                            <option value="İmişli">İmişli</option>
+                            <option value="İsmayıllı">İsmayıllı</option>
+                            <option value="Kəlbəcər">Kəlbəcər</option>
+                            <option value="Kəngərli">Kəngərli</option>
+                            <option value="Kürdəmir">Kürdəmir</option>
+                            <option value="Qəbələ">Qəbələ</option>
+                            <option value="Qax">Qax</option>
+                            <option value="Qazax">Qazax</option>
+                            <option value="Qobustan">Qobustan</option>
+                            <option value="Quba">Quba</option>
+                            <option value="Qubadlı">Qubadlı</option>
+                            <option value="Qusar">Qusar</option>
+                            <option value="Laçın">Laçın</option>
+                            <option value="Lənkəran">Lənkəran</option>
+                            <option value="Lerik">Lerik</option>
+                            <option value="Masallı">Masallı</option>
+                            <option value="Neftçala">Neftçala</option>
+                            <option value="Oğuz">Oğuz</option>
+                            <option value="Ordubad">Ordubad</option>
+                            <option value="Saatlı">Saatlı</option>
+                            <option value="Sabirabad">Sabirabad</option>
+                            <option value="Sədərək">Sədərək</option>
+                            <option value="Salyan">Salyan</option>
+                            <option value="Samux">Samux</option>
+                            <option value="Şabran">Şabran</option>
+                            <option value="Şahbuz">Şahbuz</option>
+                            <option value="Şəki">Şəki</option>
+                            <option value="Şamaxı">Şamaxı</option>
+                            <option value="Şəmkir">Şəmkir</option>
+                            <option value="Şərur">Şərur</option>
+                            <option value="Şuşa">Şuşa</option>
+                            <option value="Siyəzən">Siyəzən</option>
+                            <option value="Tərtər">Tərtər</option>
+                            <option value="Tovuz">Tovuz</option>
+                            <option value="Ucar">Ucar</option>
+                            <option value="Yardımlı">Yardımlı</option>
+                            <option value="Yevlax">Yevlax</option>
+                            <option value="Zəngilan">Zəngilan</option>
+                            <option value="Zaqatala">Zaqatala</option>
+                            <option value="Zərdab">Zərdab</option>
+
+                        </select>
+                        <p class="selecionado_opcion" onclick="open_select(this)"></p><span onclick="open_select(this)" class="icon_select_mate">
+                            <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                                <path d="M0-.75h24v24H0z" fill="none" />
+                            </svg>
+                        </span>
+                        <div class="cont_list_select_mate">
+                            <ul class="cont_select_int">  </ul>
+                        </div>
+                    </div>
+
+                    <br />
+                    <br />
+                    <br />
+
+
+                    <table>
+                        <tr>
+                            <td>
+                                <p style="color:white;margin-left:23px;"><span style="color:red;margin-bottom:50px;font-size:20px;margin-right:3px;">*</span>Min Yaş</p>
+                                <br />
+                                <br />
+
+                                <div class="select_mate" data-mate-select="active" style="margin-top:-50px;text-align:center;width:130px;">
+                                    <select required name="minyas" onchange="" onclick="return false;" id="">
+
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                        <option value="25">25</option>
+                                        <option value="26">26</option>
+                                        <option value="27">27</option>
+                                        <option value="28">28</option>
+                                        <option value="29">29</option>
+                                        <option value="30">30</option>
+                                        <option value="31">31</option>
+                                        <option value="32">32</option>
+                                        <option value="33">33</option>
+                                        <option value="34">34</option>
+                                        <option value="35">35</option>
+                                        <option value="36">36</option>
+                                        <option value="37">37</option>
+                                        <option value="38">38</option>
+                                        <option value="39">39</option>
+                                        <option value="40">40</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option value="43">43</option>
+                                        <option value="44">44</option>
+                                        <option value="45">45</option>
+                                        <option value="46">46</option>
+                                        <option value="47">47</option>
+                                        <option value="48">48</option>
+                                        <option value="49">49</option>
+                                        <option value="50">50</option>
+                                        <option value="51">51</option>
+                                        <option value="52">52</option>
+                                        <option value="53">53</option>
+                                        <option value="54">54</option>
+                                        <option value="55">55</option>
+                                        <option value="56">56</option>
+                                        <option value="57">57</option>
+                                        <option value="58">58</option>
+                                        <option value="59">59</option>
+                                        <option value="60">60</option>
+                                        <option value="61">61</option>
+                                        <option value="62">62</option>
+                                        <option value="63">63</option>
+                                        <option value="64">64</option>
+                                        <option value="65">65</option>
+
+                                    </select>
+                                    <p class="selecionado_opcion" onclick="open_select(this)"></p><span onclick="open_select(this)" class="icon_select_mate">
+                                        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                                            <path d="M0-.75h24v24H0z" fill="none" />
+                                        </svg>
+                                    </span>
+                                    <div class="cont_list_select_mate">
+                                        <ul class="cont_select_int">  </ul>
+                                    </div>
+                                </div>
+                                <br />
+                                <br />
+                            </td>
+                            <td>
+                                <p style="color:white;margin-left:53px;"><span style="color:red;margin-bottom:50px;font-size:20px;margin-right:3px;">*</span>Max Yaş</p>
+                                <br />
+                                <br />
+
+                                <div class="select_mate" data-mate-select="active" style="text-align:center;margin-top:-50px;left:30px;width:130px;">
+                                    <select required name="maxyas" onchange="" onclick="return false;" id="">
+
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                        <option value="25">25</option>
+                                        <option value="26">26</option>
+                                        <option value="27">27</option>
+                                        <option value="28">28</option>
+                                        <option value="29">29</option>
+                                        <option value="30">30</option>
+                                        <option value="31">31</option>
+                                        <option value="32">32</option>
+                                        <option value="33">33</option>
+                                        <option value="34">34</option>
+                                        <option value="35">35</option>
+                                        <option value="36">36</option>
+                                        <option value="37">37</option>
+                                        <option value="38">38</option>
+                                        <option value="39">39</option>
+                                        <option value="40">40</option>
+                                        <option value="41">41</option>
+                                        <option value="42">42</option>
+                                        <option value="43">43</option>
+                                        <option value="44">44</option>
+                                        <option value="45">45</option>
+                                        <option value="46">46</option>
+                                        <option value="47">47</option>
+                                        <option value="48">48</option>
+                                        <option value="49">49</option>
+                                        <option value="50">50</option>
+                                        <option value="51">51</option>
+                                        <option value="52">52</option>
+                                        <option value="53">53</option>
+                                        <option value="54">54</option>
+                                        <option value="55">55</option>
+                                        <option value="56">56</option>
+                                        <option value="57">57</option>
+                                        <option value="58">58</option>
+                                        <option value="59">59</option>
+                                        <option value="60">60</option>
+                                        <option value="61">61</option>
+                                        <option value="62">62</option>
+                                        <option value="63">63</option>
+                                        <option value="64">64</option>
+                                        <option value="65">65</option>
+
+                                    </select>
+                                    <p class="selecionado_opcion" onclick="open_select(this)"></p><span onclick="open_select(this)" class="icon_select_mate">
+                                        <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+                                            <path d="M0-.75h24v24H0z" fill="none" />
+                                        </svg>
+                                    </span>
+                                    <div class="cont_list_select_mate">
+                                        <ul class="cont_select_int">  </ul>
+                                    </div>
+                                </div>
+                                <br />
+                                <br />
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    <p style="color:white;"><span style="color:red;font-size:20px;margin-right:3px;">*</span>Əlaqədar Şəxs</p>
+                    <label class="field a-field a-field_a1" style="width:290px;margin-top:-20px;">
+                        <input required class="field__input a-field__input" type="text" name="elaqedarsexs" placeholder="Şəxsin Adı Və Soyadı">
+                        <span class="a-field__label-wrap">
+                            <span class="a-field__label"></span>
+                        </span>
+                    </label>
+
+
+
+                    <br />
+                    <br />
+
+
+
+
+                    <p style="color:white;">Şirkət/Müəssisə Haqqında</p>
+                    <textarea name="sirkethaqqinda" id="field5" placeholder="Şirkətiniz/Müəssisəniz Haqqında Məlumat Yazın..." class="field-long field-textarea" style="border-radius:4px;width:390px;height:150px;margin-top:4px;max-height:150px;max-width:390px;"></textarea>
+                    <br />
+                    <br />
+                    <p style="color:white;"><span style="color:red;font-size:20px;margin-right:3px;">*</span>E-Mail</p>
+                    <label class="field a-field a-field_a2" style="margin-top:-20px;">
+                        <input class="field__input a-field__input"  required style="width:290px;" type="text" name="email" placeholder="Aktiv E-mail Hesabınızı Yazın">
+                        <span class="a-field__label-wrap">
+                            <span class="a-field__label"></span>
+                        </span>
+                    </label>
+
+                    <div id="novalid" style="float:right;margin-top:41px;margin-left:6px;">
+                        <p>Xahis Edirik,E-mail Adresinizi Düzgün Daxil Edin.</p>
+                    </div>
+                    <div id="valid" style="float:right;margin-top:41px;margin-left:6px;">
+                        <p>E-Mail Adresi Düzgün Qeyd Olundu</p>
+                    </div>
+
+                    <br />
+                    <br />
+
+
+                    <p style="color:white;"><span style="color:red;font-size:20px;margin-right:3px;">*</span>Telefon</p>
+                    <label class="field a-field a-field_a2" style="margin-top:-20px;">
+                        <input class="field__input a-field__input" required style="width:290px;" type="text" name="telefon" placeholder="Əlaqə Nömrənizi Qeyd Edin...">
+                        <span class="a-field__label-wrap">
+                            <span class="a-field__label"></span>
+                        </span>
+                    </label>
+
+
+                </div>
+                <br />
+                <br />
+
+
+
+                @*<div class="page-wrapper">
+            <a class="btn trigger" href="#">click me</a>
+        </div>*@
+
+                <!-- Modal -->
+                @*<div class="modal-wrapper">
+            <div class="modal">
+                <div class="head">
+                    <a class="btn-close trigger" href="#">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="content">
+                    <div class="good-job">
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                        <button type="button">Good Job!</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>*@
+
+
+                <div class="file-upload" style="margin-top:1350px;margin-left:-23px;">
+                    <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )"><span style="color:red;font-size:20px;margin-right:3px;">*</span>Səkil Əlavə Et</button>
+                    <div class="image-upload-wrap">
+                        <input class="file-upload-input" type='file' name="fileupload" onchange="readURL(this);" accept="image/*" />
+                        <div class="drag-text">
+                            <h3>Fayl sürükləyin və ya "Şəkil əlavə et" seçin</h3>
+                        </div>
+                    </div>
+                    <div class="file-upload-content">
+                        <img class="file-upload-image" src="#" alt="your image" />
+                        <div class="image-title-wrap">
+                            <button type="button" onclick="removeUpload()" class="remove-image">Sil <span class="image-title">Uploaded Image</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-3 col-sm-3 col-xs-6 trigger"> <button type="submit" value="validate" id="btn" style="width:250px;height:50px;margin-left:83px;background-color:transparent;font-size:17px;margin-top:0;" class="btn btn-sm animated-button thar-three">Vakansiyanı Yerləşdir</button></div>
+
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </form>
+  
+    <div style="float:right;background-color:#edf3f6;color:black;border-radius:10px;width:660px;height:760px;margin-right:100px;margin-top:-2000px;">
+        <h1 style="text-align:center;">QAYDALAR</h1>
+        <br />
+        <ol style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            <li style="margin-left:50px;margin-bottom:10px;color:#28a457">Vakansiyalarin yerləşdirilməsi pulsuzdur. Hər bir adam 30 gün müddətində yalnız bir rezüme yerləşdirə bilər.</li>
+            <li style="margin-bottom:10px;margin-left:50px;">Eyni mətni hər sahədə təkrarlamayın.</li>
+            <li style="margin-bottom:10px;margin-left:50px;color:#bc3a3a">Ulduz (*) işarəsi ilə geyd olunmuş sahələrin doldurulması mütləqdir.</li>
+            <li style="margin-bottom:10px;margin-left:50px;">Formanin BÖYÜK HƏRFLƏRLƏ doldurulması qadağandır.</li>
+            <li style="margin-bottom:10px;margin-left:50px;">Saytın mövzüsuna aid olmayan məlumatın yerləşdirilməsi qadağandır, həmçinin yalan, böhtan, təhqir, senzuradan kənar sözlər və reklam.</li>
+            <li style="margin-bottom:10px;margin-left:50px;">Sözlərin qısa formalarindan artiq dərəcədə istifadəsi məsləhət görülmür.</li>
+            <li style="margin-bottom:10px;margin-left:50px;">Vakansiyalarin ən qısa müddətdə dərc olunması üçün formanın doldurulmasına dair bütün təlimatlara ciddi riayət olunmalıdır. Səliqəsiz doldurulmuş formalar redaktəyə məruz qalacaq və dərhal dərc olunmayacaq.</li>
+            <li style="margin-bottom:10px;margin-left:50px;">"Sirket Adi" sahəsində iş təklif edən şirkətin rəsmi adı qeyd olunmalıdır. Bəzi hallar istisna olmaqla, bu tələb mütləqdir. Əlavə olaraq fəaliyyət sahəsi göstərilə bilər.</li>
+            <li style="margin-bottom:10px;margin-left:50px;color:#bc3a3a">İşə düzəltmək məqsədi ilə istifadəçilərdən əvvəlcədən ödəniş tələb olunmamalıdır.</li>
+            <li style="margin-bottom:10px;margin-left:50px;color:#2893b3">Vakansiyalarinə şəkil varsa, aşağıdakı şərtlərə cavab verməlidir:</li>
+        </ol>
+        <ul>
+            
+            <li style="list-style-type:disc;margin-left:80px;margin-bottom:10px;color:#2893b3">filtrlərsiz olmalıdır.;</li>
+            <li style="list-style-type:disc;margin-left:80px;color:#2893b3">namizəd və ya şirkət təmsil edən şəkil aydın görünməlidir;</li>
+        </ul>
+
+
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
+<br />
+<br />
+
+<br />
+<br />
+
+
+
+<footer class="footer-distributed" style="border-top-left-radius:15px;border-top-right-radius:15px;">
+
+    <div class="footer-left">
+
+        <h3>TURAB<span>BL</span></h3>
+
+        <p class="footer-links">
+            <a href="#">Ana Səhifə</a>
+            |
+            <a href="#">CV</a>
+            |
+            <a href="#">Vakansiya Elan Et</a>
+            |
+            <a href="#">Əlaqə</a>
+        </p>
+
+        <table>
+            <tr>
+                <td><p style="color:white;margin-top:20px;">Bizə Dəstək Ol :)</p></td>
+                <td>
+                    <div class="ssdiv" style="margin-left:130px;margin-top:10px;">
+                        <a href="#" class="ssa"><span>Facebook</span></a>
+                        <a href="#" class="ssa"><span>Twitter</span></a>
+                        <a href="#" class="ssa"><span>Instagram</span></a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <br /> <br /> <br />
+        <p class="footer-company-name">© 2020 TURABBL Tərəfindən Yaradılmışdır</p>
+    </div>
+
+    <div class="footer-center" style="margin-left:62px;">
+        <div>
+            <div style="width:70px;height:40px;margin-left:-50px;float:left">
+                <img src="~/Sekiller/location.png" style="margin-left:30px;margin-top:10px;" />
+            </div>
+            <p>
+                <span>
+                    Sabunçu Rayonu.,
+                    Maştağa Qəsəbəsi
+
+                </span>
+                Daş Karxanası
+            </p>
+        </div>
+
+        <div>
+            <div style="width:70px;height:40px;margin-left:-50px;float:left;margin-top:20px;">
+                <img src="~/Sekiller/phone (1).png" style="margin-left:30px;margin-top:10px;" />
+            </div>
+            <p style="margin-top:30px;">+994703067050</p>
+        </div>
+        <div>
+            <div style="width:70px;height:40px;margin-left:-50px;float:left;margin-top:20px;">
+                <img src="~/Sekiller/mail.png" style="margin-left:10px;margin-top:10px;" />
+            </div>
+            <p style="margin-top:30px;margin-left:-18px;"><a href="mailto:turabbl@gmail.com">turabbl@gmail.com</a></p>
+        </div>
+    </div>
+    <div class="footer-right" style="margin-left:-130px;">
+        <p style="color:white;margin-bottom:10px;">E-Mail</p>
+        <label class="field a-field a-field_a1" style="margin-top:-50px;">
+            <input required class="field__input a-field__input" type="text" name="sirketadi" placeholder="">
+            <span class="a-field__label-wrap">
+                <span class="a-field__label"></span>
+            </span>
+        </label>
+        <br />
+        <br />
+        <div style="width:560px;float:left">
+            <textarea name="telebler" id="field5" placeholder="Mesajiniz..." class="field-long field-textarea" style="border-radius:4px;width:390px;height:120px;float:left;max-height:150px;max-width:390px;font-size:16px;min-width:390px;min-height:150px;border: none;
+    overflow: auto;
+    outline: none;-webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;padding:2px;"></textarea>
+
+            <div class="button_cont" align="center"><a class="example_a" href="add-website-here" target="_blank" rel="nofollow noopener">Bize Gonder</a></div>
+        </div>
+    </div>
+</footer>
+
+
+<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="~/telefon/intl-tel-input-master/intl-tel-input-master/build/js/intlTelInput.js"></script>
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('.image-upload-wrap').hide();
+
+                $('.file-upload-image').attr('src', e.target.result);
+                $('.file-upload-content').show();
+
+                $('.image-title').html(input.files[0].name);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+
+        } else {
+            removeUpload();
+        }
+    }
+
+    function removeUpload() {
+        $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+        $('.file-upload-content').hide();
+        $('.image-upload-wrap').show();
+    }
+    $('.image-upload-wrap').bind('dragover', function () {
+        $('.image-upload-wrap').addClass('image-dropping');
+    });
+    $('.image-upload-wrap').bind('dragleave', function () {
+        $('.image-upload-wrap').removeClass('image-dropping');
+    });
+
+</script>
+<script>
+
+    //$(document).ready(function () {
+    //    $('.trigger').on('click', function () {
+    //        $('.modal-wrapper').toggleClass('open');
+
+    //        return false;
+    //    });
+
+    //});
+
+</script>
+<script>
+
+    var input = document.querySelector("#phone");
+    intlTelInput(input, {
+        initialCountry: "auto",
+        geoIpLookup: function (success, failure) {
+            $.get("https://ipinfo.io", function () { }, "jsonp").always(function (resp) {
+                var countryCode = (resp && resp.country) ? resp.country : "";
+                success(countryCode);
+            });
+        },
+        utilsScript: "js/utils.js"
+    });
+
+
+    var input = document.querySelector("#phone"),
+        errorMsg = document.querySelector("#error-msg"),
+        validMsg = document.querySelector("#valid-msg");
+
+    // Error messages based on the code returned from getValidationError
+    var errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
+
+    // Initialise plugin
+    var intl = window.intlTelInput(input, {
+        utilsScript: "js/utils.js"
+    });
+
+    var reset = function () {
+        input.classList.remove("error");
+        errorMsg.innerHTML = "";
+        errorMsg.classList.add("hide");
+        validMsg.classList.add("hide");
+    };
+
+    // Validate on blur event
+    input.addEventListener('blur', function () {
+        reset();
+        if (input.value.trim()) {
+            if (intl.isValidNumber()) {
+                validMsg.classList.remove("hide");
+            } else {
+                input.classList.add("error");
+                var errorCode = intl.getValidationError();
+                errorMsg.innerHTML = errorMap[errorCode];
+                errorMsg.classList.remove("hide");
+            }
+        }
+    });
+
+    // Reset on keyup/change event
+    input.addEventListener('change', reset);
+    input.addEventListener('keyup', reset);
+</script>
+
+<script>
+
+
+    //const selected = document.querySelector(".selected");
+    //const optionsContainer = document.querySelector(".options-container");
+    //const searchBox = document.querySelector(".search-box input");
+
+    //const optionsList = document.querySelectorAll(".option");
+
+    //selected.addEventListener("click", () => {
+    //    optionsContainer.classList.toggle("active");
+
+    //    searchBox.value = "";
+    //    filterList("");
+
+    //    if (optionsContainer.classList.contains("active")) {
+    //        searchBox.focus();
+    //    }
+    //});
+
+    //optionsList.forEach(o => {
+    //    o.addEventListener("click", () => {
+    //        selected.innerHTML = o.querySelector("label").innerHTML;
+    //        optionsContainer.classList.remove("active");
+    //    });
+    //});
+
+    //searchBox.addEventListener("keyup", function (e) {
+    //    filterList(e.target.value);
+    //});
+
+    //const filterList = searchTerm => {
+    //    searchTerm = searchTerm.toLowerCase();
+    //    optionsList.forEach(option => {
+    //        let label = option.firstElementChild.nextElementSibling.innerText.toLowerCase();
+    //        if (label.indexOf(searchTerm) != -1) {
+    //            option.style.display = "block";
+    //        } else {
+    //            option.style.display = "none";
+    //        }
+    //    });
+    //};
+
+    window.onload = function () {
+        crear_select();
+    }
+
+    function isMobileDevice() {
+        return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+    };
+
+
+    var li = new Array();
+    function crear_select() {
+        var div_cont_select = document.querySelectorAll("[data-mate-select='active']");
+        var select_ = '';
+        for (var e = 0; e < div_cont_select.length; e++) {
+            div_cont_select[e].setAttribute('data-indx-select', e);
+            div_cont_select[e].setAttribute('data-selec-open', 'false');
+            var ul_cont = document.querySelectorAll("[data-indx-select='" + e + "'] > .cont_list_select_mate > ul");
+            select_ = document.querySelectorAll("[data-indx-select='" + e + "'] >select")[0];
+            if (isMobileDevice()) {
+                select_.addEventListener('change', function () {
+                    _select_option(select_.selectedIndex, e);
+                });
+            }
+            var select_optiones = select_.options;
+            document.querySelectorAll("[data-indx-select='" + e + "']  > .selecionado_opcion ")[0].setAttribute('data-n-select', e);
+            document.querySelectorAll("[data-indx-select='" + e + "']  > .icon_select_mate ")[0].setAttribute('data-n-select', e);
+            for (var i = 0; i < select_optiones.length; i++) {
+                li[i] = document.createElement('li');
+                if (select_optiones[i].selected == true || select_.value == select_optiones[i].innerHTML) {
+                    li[i].className = 'active';
+                    document.querySelector("[data-indx-select='" + e + "']  > .selecionado_opcion ").innerHTML = select_optiones[i].innerHTML;
+                };
+                li[i].setAttribute('data-index', i);
+                li[i].setAttribute('data-selec-index', e);
+                // funcion click al selecionar
+                li[i].addEventListener('click', function () { _select_option(this.getAttribute('data-index'), this.getAttribute('data-selec-index')); });
+
+                li[i].innerHTML = select_optiones[i].innerHTML;
+                ul_cont[0].appendChild(li[i]);
+
+            }; // Fin For select_optiones
+        }; // fin for divs_cont_select
+    } // Fin Function
+
+
+
+    var cont_slc = 0;
+    function open_select(idx) {
+        var idx1 = idx.getAttribute('data-n-select');
+        var ul_cont_li = document.querySelectorAll("[data-indx-select='" + idx1 + "'] .cont_select_int > li");
+        var hg = 0;
+        var slect_open = document.querySelectorAll("[data-indx-select='" + idx1 + "']")[0].getAttribute('data-selec-open');
+        var slect_element_open = document.querySelectorAll("[data-indx-select='" + idx1 + "'] select")[0];
+        if (isMobileDevice()) {
+            if (window.document.createEvent) { // All
+                var evt = window.document.createEvent("MouseEvents");
+                evt.initMouseEvent("mousedown", false, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                slect_element_open.dispatchEvent(evt);
+            } else if (slect_element_open.fireEvent) { // IE
+                slect_element_open.fireEvent("onmousedown");
+            } else {
+                slect_element_open.click();
+            }
+        } else {
+
+
+            for (var i = 0; i < ul_cont_li.length; i++) {
+                hg += ul_cont_li[i].offsetHeight;
+            };
+            if (slect_open == 'false') {
+                document.querySelectorAll("[data-indx-select='" + idx1 + "']")[0].setAttribute('data-selec-open', 'true');
+                document.querySelectorAll("[data-indx-select='" + idx1 + "'] > .cont_list_select_mate > ul")[0].style.height = hg + "px";
+                document.querySelectorAll("[data-indx-select='" + idx1 + "'] > .icon_select_mate")[0].style.transform = 'rotate(180deg)';
+            } else {
+                document.querySelectorAll("[data-indx-select='" + idx1 + "']")[0].setAttribute('data-selec-open', 'false');
+                document.querySelectorAll("[data-indx-select='" + idx1 + "'] > .icon_select_mate")[0].style.transform = 'rotate(0deg)';
+                document.querySelectorAll("[data-indx-select='" + idx1 + "'] > .cont_list_select_mate > ul")[0].style.height = "0px";
+            }
+        }
+
+    } // fin function open_select
+
+    function salir_select(indx) {
+        var select_ = document.querySelectorAll("[data-indx-select='" + indx + "'] > select")[0];
+        document.querySelectorAll("[data-indx-select='" + indx + "'] > .cont_list_select_mate > ul")[0].style.height = "0px";
+        document.querySelector("[data-indx-select='" + indx + "'] > .icon_select_mate").style.transform = 'rotate(0deg)';
+        document.querySelectorAll("[data-indx-select='" + indx + "']")[0].setAttribute('data-selec-open', 'false');
+    }
+
+
+    function _select_option(indx, selc) {
+        if (isMobileDevice()) {
+            selc = selc - 1;
+        }
+        var select_ = document.querySelectorAll("[data-indx-select='" + selc + "'] > select")[0];
+
+        var li_s = document.querySelectorAll("[data-indx-select='" + selc + "'] .cont_select_int > li");
+        var p_act = document.querySelectorAll("[data-indx-select='" + selc + "'] > .selecionado_opcion")[0].innerHTML = li_s[indx].innerHTML;
+        var select_optiones = document.querySelectorAll("[data-indx-select='" + selc + "'] > select > option");
+        for (var i = 0; i < li_s.length; i++) {
+            if (li_s[i].className == 'active') {
+                li_s[i].className = '';
+            };
+            li_s[indx].className = 'active';
+
+        };
+        select_optiones[indx].selected = true;
+        select_.selectedIndex = indx;
+        select_.onchange();
+        salir_select(selc);
+    }
+
+
+</script>
+
+<style>
+    .example_a {
+        color: #fff !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        background: #7c9e16;
+        padding: 20px;
+        border-radius: 5px;
+        display: inline-block;
+        border: none;
+        margin-left: 20px;
+        margin-top: 92px;
+        transition: all 0.4s ease 0s;
+    }
+
+        .example_a:hover {
+            letter-spacing: 1px;
+            -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+            -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+            box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+            transition: all 0.4s ease 0s;
+        }
+
+
+
+
+
+
+
+
+
+
+    .file-upload {
+        width: 387px;
+        margin: 0 auto;
+        padding: 20px;
+       
+    }
+
+    .file-upload-btn {
+        width: 100%;
+     
+        color: #fff;
+        background: #1FB264;
+        border: none;
+        padding: 10px;
+        border-radius: 9px;
+        border-bottom: 2px solid #15824B;
+        transition: all .2s ease;
+        outline: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 16px;
+        font-family: monospace;
+    }
+
+        .file-upload-btn:hover {
+            background: #fdfdfd;
+            color: #1FB264;
+            transition: all .2s ease;
+            cursor: pointer;
+        }
+
+        .file-upload-btn:active {
+            border: 0;
+            transition: all .2s ease;
+        }
+
+    .file-upload-content {
+        
+        display: none;
+        text-align: center;
+    }
+
+    .file-upload-input {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        outline: none;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .image-upload-wrap {
+        margin-top: 20px;
+        border: 4px solid #1FB264;
+        position: relative;
+    }
+
+        .image-dropping,
+        .image-upload-wrap:hover {
+            background-color: #1FB264;
+            color: white;
+        }
+
+    .image-title-wrap {
+        padding: 0 15px 15px 15px;
+        
+    }
+
+    .drag-text {
+        text-align: center;
+    }
+
+        .drag-text h3 {
+            font-weight: 100;
+            text-transform: uppercase;
+            color: white;
+            padding: 60px 0;
+        }
+
+    .file-upload-image {
+        max-height: 200px;
+        max-width: 200px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .remove-image {
+        width: 200px;
+        margin: 0;
+        color: #fff;
+        background: #cd4535;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        border-bottom: 4px solid #b02818;
+        transition: all .2s ease;
+        outline: none;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+        .remove-image:hover {
+            background: #c13b2a;
+            color: #ffffff;
+            transition: all .2s ease;
+            cursor: pointer;
+        }
+
+        .remove-image:active {
+            border: 0;
+            transition: all .2s ease;
+        }
+
+
+
+
+    .page-wrapper {
+        width: 100%;
+        height: 100%;
+        background: url(https://goo.gl/OeVhun) center no-repeat;
+        background-size: cover;
+    }
+
+    .blur-it {
+        filter: blur(4px);
+    }
+
+    a.btn {
+        width: 200px;
+        padding: 18px 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #fff;
+        border-radius: 0;
+        background: #e2525c;
+    }
+
+    .modal-wrapper {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(41, 171, 164, 0.8);
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.25s ease-in-out;
+    }
+
+        .modal-wrapper.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+    .modal {
+        width: 500px;
+        height: 300px;
+        display: block;
+        margin: 50% 0 0 -200px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        background: #fff;
+        opacity: 0;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .modal-wrapper.open .modal {
+        margin-top: -200px;
+        opacity: 1;
+    }
+
+    .head {
+        width: 90%;
+        height: 32px;
+        padding: 12px 30px;
+        overflow: hidden;
+        background: #e2525c;
+    }
+
+    .btn-close {
+        font-size: 28px;
+        display: block;
+        float: right;
+        color: #fff;
+    }
+
+    .content {
+        padding: 10%;
+    }
+
+    .good-job {
+        text-align: center;
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        color: #e2525c;
+    }
+
+        .good-job .fa-thumbs-o-up {
+            font-size: 60px;
+        }
+
+        .good-job h1 {
+            font-size: 45px;
+        }
+
+    #novalid {
+        color: red;
+        margin: 1em 0 0 0;
+        font-size: 16px;
+        display: none;
+    }
+
+    #valid {
+        color: green;
+        margin: 1em 0 0 0;
+        font-size: 16px;
+        display: none;
+    }
+
+
+    .form-style-1 {
+        margin: 10px auto;
+        max-width: 400px;
+        padding: 20px 12px 10px 20px;
+        font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    }
+
+        .form-style-1 li {
+            padding: 0;
+            display: block;
+            list-style: none;
+            margin: 10px 0 0 0;
+        }
+
+        .form-style-1 label {
+            margin: 0 0 3px 0;
+            padding: 0px;
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-style-1 input[type=text],
+        .form-style-1 input[type=date],
+        .form-style-1 input[type=datetime],
+        .form-style-1 input[type=number],
+        .form-style-1 input[type=search],
+        .form-style-1 input[type=time],
+        .form-style-1 input[type=url],
+        .form-style-1 input[type=email],
+        textarea,
+        select {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            border: 1px solid #BEBEBE;
+            padding: 7px;
+            margin: 0px;
+            -webkit-transition: all 0.30s ease-in-out;
+            -moz-transition: all 0.30s ease-in-out;
+            -ms-transition: all 0.30s ease-in-out;
+            -o-transition: all 0.30s ease-in-out;
+            outline: none;
+        }
+
+            .form-style-1 input[type=text]:focus,
+            .form-style-1 input[type=date]:focus,
+            .form-style-1 input[type=datetime]:focus,
+            .form-style-1 input[type=number]:focus,
+            .form-style-1 input[type=search]:focus,
+            .form-style-1 input[type=time]:focus,
+            .form-style-1 input[type=url]:focus,
+            .form-style-1 input[type=email]:focus,
+            .form-style-1 textarea:focus,
+            .form-style-1 select:focus {
+                -moz-box-shadow: 0 0 8px #88D5E9;
+                -webkit-box-shadow: 0 0 8px #88D5E9;
+                box-shadow: 0 0 8px #88D5E9;
+                border: 1px solid #88D5E9;
+            }
+
+        .form-style-1 .field-divided {
+            width: 49%;
+        }
+
+        .form-style-1 .field-long {
+            width: 100%;
+        }
+
+        .form-style-1 .field-select {
+            width: 100%;
+        }
+
+        .form-style-1 .field-textarea {
+            height: 100px;
+        }
+
+        .form-style-1 input[type=submit], .form-style-1 input[type=button] {
+            background: #4B99AD;
+            border: none;
+            color: #fff;
+        }
+
+            .form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover {
+                background: #4691A4;
+                box-shadow: none;
+                -moz-box-shadow: none;
+                -webkit-box-shadow: none;
+            }
+
+        .form-style-1 .required {
+            color: red;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .cont_select_center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -30px;
+    }
+
+    .cont_heg_50 {
+        position: absolute;
+        height: 50%;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background-color: #fd7b52;
+    }
+    /* ///  END DECORATION CSS  ///  */
+
+    .icon_select_mate {
+        position: absolute;
+        top: 15px;
+        right: 2%;
+        font-size: 16px;
+        height: 22px;
+        transition: all 275ms;
+    }
+
+    .select_mate {
+        position: relative;
+        float: left;
+        min-width: 100px;
+        width: 300px;
+        min-height: 20px;
+        height: 50px;
+        font-family: 'Roboto';
+        color: #1a263d;
+        font-weight: 300;
+        background-color: #fff;
+        box-shadow: 1px 2px 10px -2px rgba(0,0,0,0.3);
+        border-radius: 5px;
+        transition: all 375ms ease-in-out;
+    }
+        /* Oculto el elemento select */
+        .select_mate select {
+            position: absolute;
+            overflow: hidden;
+            height: 0px;
+            opacity: 0;
+            z-index: -1;
+        }
+
+
+
+    .cont_list_select_mate {
+        position: relative;
+        float: left;
+        width: 100%;
+    }
+
+    .cont_select_int {
+        position: absolute;
+        top: -3px;
+        z-index: 999;
+        overflow: hidden;
+        height: 0px;
+        width: 100%;
+        background-color: #fff;
+        padding: 0px;
+        margin-bottom: 0px;
+        max-height: 250px;
+        margin-top: 0px;
+        border-radius: 0px 0px 3px 3px;
+        box-shadow: 1px 4px 10px -2px rgba(0, 0, 0, 0.2);
+        transition: all 300ms ease-in-out;
+        overflow-y: scroll;
+    }
+
+
+
+        .cont_select_int li {
+            position: relative;
+            float: left;
+            width: 100%;
+            border-bottom: 1px solid white;
+            background-color: #295c87;
+            list-style-type: none;
+            padding: 10px 2%;
+            transition: all 275ms ease-in-out;
+            display: block;
+            cursor: pointer;
+            color: white;
+            border-radius: 2px;
+        }
+
+    .class {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .cont_select_int:last-child {
+        border-radius: 3px;
+        border-bottom: 0px;
+    }
+
+    .cont_select_int:hover {
+        background-color: #EEEEEE;
+    }
+
+
+
+    .active {
+        background-color: #EEEEEE;
+    }
+
+
+
+    /* etiqueta <p> con la opcion selecionada  */
+    .selecionado_opcion {
+        padding: 17px 2%;
+        width: 96%;
+        display: block;
+        margin: 0px;
+        cursor: pointer;
+    }
+
+
+
+    /*select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        outline: 0;
+        box-shadow: none;
+        border: 0 !important;
+        background: #2c3e50;
+        background-image: none;
+    }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+    .select {
+        position: relative;
+        display: flex;
+        width: 20em;
+        height: 3em;
+        line-height: 3;
+        background: #2c3e50;
+        overflow: hidden;
+        border-radius: .25em;
+    }
+
+    select {
+
+        flex: 1;
+        padding: 0 .5em;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .select::after {
+        content: '\25BC';
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 1em;
+        background: #34495e;
+        cursor: pointer;
+        pointer-events: none;
+        -webkit-transition: .25s all ease;
+        -o-transition: .25s all ease;
+        transition: .25s all ease;
+    }
+
+    .select:hover::after {
+        color: #f39c12;
+    }
+    .options-container {
+        background: #2f3640;
+        color: #f5f6fa;
+        max-height: 0;
+        width: 100%;
+        opacity: 0;
+        transition: all 0.4s;
+        border-radius: 8px;
+        overflow: hidden;
+        order: 1;
+    }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*.containerr {
+        margin:0;
+    }
+
+    .select-box {
+        position: relative;
+        display: flex;
+        width: 400px;
+        flex-direction: column;
+    }
+
+        .select-box .options-container {
+            background: #2f3640;
+            color: #f5f6fa;
+            max-height: 0;
+            width: 100%;
+            opacity: 0;
+            transition: all 0.4s;
+            border-radius: 8px;
+            overflow: hidden;
+            order: 1;
+        }
+
+    .selected {
+        background: #2f3640;
+        border-radius: 8px;
+        margin-bottom: 8px;
+        color: #f5f6fa;
+        position: relative;
+        order: 0;
+    }
+
+        .selected::after {
+            content: "";
+            background: url("img/arrow-down.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            height: 100%;
+            width: 32px;
+            right: 10px;
+            top: 5px;
+            transition: all 0.4s;
+        }
+
+    .select-box .options-container.active {
+        max-height: 240px;
+        opacity: 1;
+        overflow-y: scroll;
+        margin-top: 54px;
+    }
+
+        .select-box .options-container.active + .selected::after {
+            transform: rotateX(180deg);
+            top: -6px;
+        }
+
+    .select-box .options-container::-webkit-scrollbar {
+        width: 8px;
+        background: #0d141f;
+        border-radius: 0 8px 8px 0;
+    }
+
+    .select-box .options-container::-webkit-scrollbar-thumb {
+        background: #525861;
+        border-radius: 0 8px 8px 0;
+    }
+
+    .select-box .option,
+    .selected {
+        padding: 12px 24px;
+        cursor: pointer;
+    }
+
+        .select-box .option:hover {
+            background: #414b57;
+        }
+
+    .select-box label {
+        cursor: pointer;
+    }
+
+    .select-box .option .radio {
+        display: none;
+    }
+
+    /* Searchbox
+
+    /*.search-box input {
+        width: 100%;
+        padding: 12px 16px;
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        position: absolute;
+        border-radius: 8px 8px 0 0;
+        z-index: 100;
+        border: 8px solid #2f3640;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.4s;
+    }
+
+        .search-box input:focus {
+            outline: none;
+        }
+
+    .select-box .options-container.active ~ .search-box input {
+        opacity: 1;
+        pointer-events: auto;
+    }*/
+
+
+
+
+    /*
+        =====
+        LEVEL 1. RESET STYLES
+        =====
+        */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .field {
+        --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #ffffff);
+    }
+
+    .field__input {
+        background-color: transparent;
+        border-radius: 3px;
+        border: none;
+        color: white;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        font-family: inherit;
+        font-size: 1em;
+    }
+
+        .field__input:focus::-webkit-input-placeholder {
+            color: #698bad;
+            font-size: 13px;
+        }
+
+        .field__input:focus::-moz-placeholder {
+            color: var(--uiFieldPlaceholderColor);
+            opacity: 1;
+        }
+
+    /*
+        =====
+        LEVEL 2. CORE STYLES
+        =====
+        */
+
+    .a-field {
+        display: inline-block;
+    }
+
+    .a-field__input {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+        .a-field__input:focus {
+            outline: none;
+        }
+
+    /*
+        =====
+        LEVEL 3. PRESENTATION STYLES
+        =====
+        */
+
+    /* a-field */
+
+    .a-field {
+        --uiFieldHeight: var(--fieldHeight, 2.5rem);
+        --uiFieldBorderWidth: var(--fieldBorderWidth, 2px);
+        --uiFieldBorderColor: var(--fieldBorderColor);
+        --uiFieldFontSize: var(--fieldFontSize, 1rem);
+        --uiFieldHintFontSize: var(--fieldHintFontSize, 1rem);
+        --uiFieldPaddingRight: var(--fieldPaddingRight, 1rem);
+        --uiFieldPaddingBottom: var(--fieldPaddingBottom, 1rem);
+        --uiFieldPaddingLeft: var(--fieldPaddingLeft, 1rem);
+        position: relative;
+        box-sizing: border-box;
+        font-size: var(--uiFieldFontSize);
+        padding-top: 1rem;
+    }
+
+    .a-field__input {
+        height: var(--uiFieldHeight);
+        padding: 0 var(--uiFieldPaddingRight) 0 var(--uiFieldPaddingLeft);
+        border-bottom: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColor);
+    }
+
+        .a-field__input::-webkit-input-placeholder {
+            opacity: 0;
+            transition: opacity .2s ease-out;
+        }
+
+        .a-field__input::-moz-placeholder {
+            opacity: 0;
+            transition: opacity .2s ease-out;
+        }
+
+        .a-field__input:not(:placeholder-shown) ~ .a-field__label-wrap .a-field__label {
+            opacity: 0;
+            bottom: var(--uiFieldPaddingBottom);
+        }
+
+        .a-field__input:focus::-webkit-input-placeholder {
+            opacity: 1;
+            transition-delay: .2s;
+        }
+
+        .a-field__input:focus::-moz-placeholder {
+            opacity: 1;
+            transition-delay: .2s;
+        }
+
+    .a-field__label-wrap {
+        box-sizing: border-box;
+        width: 100%;
+        height: var(--uiFieldHeight);
+        pointer-events: none;
+        cursor: text;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .a-field__label {
+        position: absolute;
+        left: var(--uiFieldPaddingLeft);
+        bottom: calc(50% - .5em);
+        line-height: 1;
+        font-size: var(--uiFieldHintFontSize);
+        pointer-events: none;
+        transition: bottom .2s cubic-bezier(0.9, -0.15, 0.1, 1.15), opacity .2s ease-out;
+        will-change: bottom, opacity;
+        color: white;
+    }
+
+    .a-field__input:focus ~ .a-field__label-wrap .a-field__label {
+        opacity: 1;
+        bottom: var(--uiFieldHeight);
+    }
+
+    /* a-field_a1 */
+
+    .a-field_a1 .a-field__input {
+        transition: border-color .2s ease-out;
+        will-change: border-color;
+    }
+
+        .a-field_a1 .a-field__input:focus {
+            border-color: var(--fieldBorderColorActive);
+        }
+
+    /* a-field_a2 */
+
+    .a-field_a2 .a-field__label-wrap::after {
+        content: "";
+        box-sizing: border-box;
+        width: 0;
+        height: var(--uiFieldBorderWidth);
+        background-color: var(--fieldBorderColorActive);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        will-change: width;
+        transition: width .285s ease-out;
+    }
+
+    .a-field_a2 .a-field__input:focus ~ .a-field__label-wrap::after {
+        width: 100%;
+    }
+
+    /* a-field_a3 */
+
+    .a-field_a3 {
+        padding-top: 1.5rem;
+    }
+
+        .a-field_a3 .a-field__label-wrap::after {
+            content: "";
+            box-sizing: border-box;
+            width: 100%;
+            height: 0;
+            opacity: 0;
+            border: var(--uiFieldBorderWidth) solid var(--fieldBorderColorActive);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            will-change: opacity, height;
+            transition: height .2s ease-out, opacity .2s ease-out;
+        }
+
+        .a-field_a3 .a-field__input:focus ~ .a-field__label-wrap::after {
+            height: 100%;
+            opacity: 1;
+        }
+
+        .a-field_a3 .a-field__input:focus ~ .a-field__label-wrap .a-field__label {
+            bottom: calc(var(--uiFieldHeight) + .5em);
+        }
+
+    /*
+        =====
+        LEVEL 4. SETTINGS
+        =====
+        */
+
+    .field {
+        --fieldBorderColor: #5a92cf;
+        --fieldBorderColorActive: white;
+    }
+
+    /*
+        =====
+        DEMO
+        =====
+        */
+
+
+    .page {
+        box-sizing: border-box;
+        width: 410px;
+        max-width: 430px;
+        margin-left: 13px;
+        margin-top: 100px;
+        padding: 10px;
+        display: grid;
+        grid-gap: 30px;
+        align-items: flex-end;
+        order: 1;
+    }
+
+    media (min-width: 481px) {
+        .page
+
+    {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    }
+</style>

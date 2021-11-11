@@ -1,0 +1,1519 @@
+﻿@model IsAxtaris.Models.tbl_istifadeci
+
+
+@{
+    ViewBag.Title = "IstifadeciCV";
+    Layout = "~/Views/Shared/Saytlayout.cshtml";
+}
+
+
+
+<html>
+<head>
+
+    <link rel="stylesheet" href="~/but.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/ModalWindowEffects/css/component.css" />
+    <script src="~/Content/ModalWindowEffects/js/modernizr.custom.js"></script>
+    <link rel="stylesheet" href="~/indexfooter.css" />
+
+    <link rel="stylesheet" href="~/sosical.css" />
+    <link rel="stylesheet" href="~/shar.css" />
+    <link rel="stylesheet" href="~/silmebuttonu.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .animated-button1:hover {
+            cursor: pointer;
+        }
+    </style>
+    <style>
+        .example_a {
+            color: #fff !important;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: #7c9e16;
+            padding: 20px;
+            border-radius: 5px;
+            display: inline-block;
+            border: none;
+            margin-left: 20px;
+            margin-top: 92px;
+            transition: all 0.4s ease 0s;
+        }
+
+            .example_a:hover {
+                letter-spacing: 1px;
+                -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+                -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+                box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+                transition: all 0.4s ease 0s;
+            }
+
+
+
+        .wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+            .wrapper .navbar {
+                width: 200px;
+                background: #fff;
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 25px;
+                border-radius: 5px;
+            }
+
+                .wrapper .navbar ul li a {
+                    color: #3077c5;
+                }
+
+                .wrapper .navbar .left ul,
+                .wrapper .navbar .right ul li a {
+                    display: flex;
+                    align-items: center;
+                    height: 23px;
+                }
+
+                .wrapper .navbar .right ul li .dropdown a:hover {
+                    transition: ease-in-out 0.2s ease;
+                    background-color: #3c89b3;
+                    color: white;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                }
+
+
+
+
+                .wrapper .navbar .left ul li,
+                .wrapper .navbar .right img {
+                    margin: 0 10px;
+                }
+
+                .wrapper .navbar .right a {
+                    text-align: right;
+                }
+
+                    .wrapper .navbar .right a span {
+                        font-size: 10px;
+                    }
+
+                .wrapper .navbar .right ul li {
+                    position: relative;
+                }
+
+                    .wrapper .navbar .right ul li .dropdown {
+                        position: absolute;
+                        top: 43px;
+                        right: 0;
+                        background: #fff;
+                        padding: 10px 25px;
+                        border-radius: 5px;
+                        display: none;
+                    }
+
+                        .wrapper .navbar .right ul li .dropdown .fas {
+                            margin-right: 10px;
+                        }
+
+                        .wrapper .navbar .right ul li .dropdown:before {
+                            content: "";
+                            position: absolute;
+                            top: -20px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            border: 10px solid;
+                            border-color: transparent transparent #fff transparent;
+                        }
+
+                    .wrapper .navbar .right ul li.active .dropdown {
+                        display: block;
+                        width: 150px;
+                        border-bottom-left-radius: 0px;
+                        border-bottom-right-radius: 0px;
+                        height: 115px;
+                        margin-left: 100px;
+                    }
+    </style>
+    <style>
+        .wrapper .navbar .right ul li.active .dropdown {
+            height: 100px;
+        }
+
+        .wrapper .navbar .right ul li .dropdown {
+            padding-top: 17px;
+        }
+
+
+
+        .wrapper .navbar .right ul li {
+            list-style-type: none;
+        }
+
+            .wrapper .navbar .right ul li a {
+            }
+
+
+        .field {
+            --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #ffffff);
+        }
+
+        .field__input {
+            background-color: transparent;
+            border-radius: 3px;
+            border: none;
+            color: white;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            font-family: inherit;
+            font-size: 1em;
+        }
+
+            .field__input:focus::-webkit-input-placeholder {
+                color: #698bad;
+                font-size: 13px;
+            }
+
+            .field__input:focus::-moz-placeholder {
+                color: var(--uiFieldPlaceholderColor);
+                opacity: 1;
+            }
+
+        /*
+        =====
+        LEVEL 2. CORE STYLES
+        =====
+        */
+
+        .a-field {
+            display: inline-block;
+        }
+
+        .a-field__input {
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+            .a-field__input:focus {
+                outline: none;
+            }
+
+        /*
+        =====
+        LEVEL 3. PRESENTATION STYLES
+        =====
+        */
+
+        /* a-field */
+
+        .a-field {
+            --uiFieldHeight: var(--fieldHeight, 2.5rem);
+            --uiFieldBorderWidth: var(--fieldBorderWidth, 2px);
+            --uiFieldBorderColor: var(--fieldBorderColor);
+            --uiFieldFontSize: var(--fieldFontSize, 1rem);
+            --uiFieldHintFontSize: var(--fieldHintFontSize, 1rem);
+            --uiFieldPaddingRight: var(--fieldPaddingRight, 1rem);
+            --uiFieldPaddingBottom: var(--fieldPaddingBottom, 1rem);
+            --uiFieldPaddingLeft: var(--fieldPaddingLeft, 1rem);
+            position: relative;
+            box-sizing: border-box;
+            font-size: var(--uiFieldFontSize);
+            padding-top: 1rem;
+        }
+
+        .a-field__input {
+            height: var(--uiFieldHeight);
+            padding: 0 var(--uiFieldPaddingRight) 0 var(--uiFieldPaddingLeft);
+            border-bottom: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColor);
+        }
+
+            .a-field__input::-webkit-input-placeholder {
+                opacity: 0;
+                transition: opacity .2s ease-out;
+            }
+
+            .a-field__input::-moz-placeholder {
+                opacity: 0;
+                transition: opacity .2s ease-out;
+            }
+
+            .a-field__input:not(:placeholder-shown) ~ .a-field__label-wrap .a-field__label {
+                opacity: 0;
+                bottom: var(--uiFieldPaddingBottom);
+            }
+
+            .a-field__input:focus::-webkit-input-placeholder {
+                opacity: 1;
+                transition-delay: .2s;
+            }
+
+            .a-field__input:focus::-moz-placeholder {
+                opacity: 1;
+                transition-delay: .2s;
+            }
+
+        .a-field__label-wrap {
+            box-sizing: border-box;
+            width: 100%;
+            height: var(--uiFieldHeight);
+            pointer-events: none;
+            cursor: text;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .a-field__label {
+            position: absolute;
+            left: var(--uiFieldPaddingLeft);
+            bottom: calc(50% - .5em);
+            line-height: 1;
+            font-size: var(--uiFieldHintFontSize);
+            pointer-events: none;
+            transition: bottom .2s cubic-bezier(0.9, -0.15, 0.1, 1.15), opacity .2s ease-out;
+            will-change: bottom, opacity;
+            color: white;
+        }
+
+        .a-field__input:focus ~ .a-field__label-wrap .a-field__label {
+            opacity: 1;
+            bottom: var(--uiFieldHeight);
+        }
+
+        /* a-field_a1 */
+
+        .a-field_a1 .a-field__input {
+            transition: border-color .2s ease-out;
+            will-change: border-color;
+        }
+
+            .a-field_a1 .a-field__input:focus {
+                border-color: var(--fieldBorderColorActive);
+            }
+
+        /* a-field_a2 */
+
+        .a-field_a2 .a-field__label-wrap::after {
+            content: "";
+            box-sizing: border-box;
+            width: 0;
+            height: var(--uiFieldBorderWidth);
+            background-color: var(--fieldBorderColorActive);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            will-change: width;
+            transition: width .285s ease-out;
+        }
+
+        .a-field_a2 .a-field__input:focus ~ .a-field__label-wrap::after {
+            width: 100%;
+        }
+
+        /* a-field_a3 */
+
+        .a-field_a3 {
+            padding-top: 1.5rem;
+        }
+
+            .a-field_a3 .a-field__label-wrap::after {
+                content: "";
+                box-sizing: border-box;
+                width: 100%;
+                height: 0;
+                opacity: 0;
+                border: var(--uiFieldBorderWidth) solid var(--fieldBorderColorActive);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                will-change: opacity, height;
+                transition: height .2s ease-out, opacity .2s ease-out;
+            }
+
+            .a-field_a3 .a-field__input:focus ~ .a-field__label-wrap::after {
+                height: 100%;
+                opacity: 1;
+            }
+
+            .a-field_a3 .a-field__input:focus ~ .a-field__label-wrap .a-field__label {
+                bottom: calc(var(--uiFieldHeight) + .5em);
+            }
+
+        /*
+        =====
+        LEVEL 4. SETTINGS
+        =====
+        */
+
+        .field {
+            --fieldBorderColor: #5a92cf;
+            --fieldBorderColorActive: white;
+        }
+
+        /*
+        =====
+        DEMO
+        =====
+        */
+
+
+        .page {
+            box-sizing: border-box;
+            width: 410px;
+            max-width: 430px;
+            margin-left: 13px;
+            margin-top: 100px;
+            padding: 10px;
+            display: grid;
+            grid-gap: 30px;
+            align-items: flex-end;
+            order: 1;
+        }
+
+        media (min-width: 481px) {
+            .page
+
+        {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+        }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/but.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <style>
+        .text-black {
+            color: rgba(0,0,0,0.9);
+        }
+
+        .text-muted {
+            color: rgba(0, 0, 0, 0.3);
+        }
+
+
+
+        .text-uppercase {
+            text-transform: uppercase;
+        }
+
+        .ff-serif {
+            font-family: 'Lora', serif;
+        }
+
+        .font-weight-normal {
+            font-weight: normal;
+        }
+
+        .font-weight-medium {
+            font-weight: 500;
+        }
+
+        .lts-1px {
+            letter-spacing: 1px;
+        }
+
+        .lts-2px {
+            letter-spacing: 2px;
+        }
+
+
+        .w-full {
+            width: 100%;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .d-block {
+            display: block;
+        }
+
+        .d-inline-block {
+            display: inline-block;
+        }
+
+        .p-relative {
+            position: relative;
+        }
+
+        .p-absolute {
+            position: absolute
+        }
+
+
+
+        .bg-white {
+            background-color: #fff;
+        }
+
+
+
+
+
+
+        .small {
+            font-size: 0.75rem;
+        }
+
+        .card-heading {
+            font-size: 2.25rem;
+        }
+
+        .styled-link {
+            text-decoration: none;
+            outline: none;
+            color: #2196fe;
+            transition: all 0.25s ease-in;
+        }
+
+            .styled-link:hover,
+            .styled-link:focus,
+            .styled-link:active {
+                color: #536dfe;
+            }
+
+        .shadow-1 {
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,0.15);
+        }
+
+        .blue-hover {
+            transition: all 0.25s ease-in;
+            border-bottom: 5px solid transparent;
+        }
+
+            .blue-hover:hover {
+                transform: translateY(-5px);
+                mar border: none;
+                border-bottom: 5px solid #2196fe;
+            }
+
+
+
+
+
+
+        .float-left {
+            float: left;
+        }
+
+        .float-right {
+            float: right;
+        }
+
+
+
+
+
+
+        .ml-auto {
+            margin-left: auto;
+        }
+
+        .mr-auto {
+            margin-right: auto;
+        }
+
+        .mx-0 {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .mx-1 {
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+
+        .mx-2 {
+            margin-left: 2rem;
+            margin-right: 2rem;
+        }
+
+        .mx-3 {
+            margin-left: 3rem;
+            margin-right: 3rem;
+        }
+
+
+        .my-0 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .my-1 {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .my-2 {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .my-3 {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .mt-0 {
+            margin-top: 0;
+        }
+
+        .mt-1 {
+            margin-top: 1rem;
+        }
+
+        .mt-2 {
+            margin-top: 2rem;
+        }
+
+        .mt-3 {
+            margin-top: 3rem;
+        }
+
+        .mb-0 {
+            margin-bottom: 0;
+        }
+
+        .mb-1 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 3rem;
+        }
+
+        .ml-0 {
+            margin-left: 0;
+        }
+
+        .ml-1 {
+            margin-left: 1rem;
+        }
+
+        .ml-2 {
+            margin-left: 2rem;
+        }
+
+        .ml-3 {
+            margin-left: 3rem;
+        }
+
+
+
+
+        .px-0 {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .px-1 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .px-2 {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .px-3 {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+
+
+        .py-0 {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .py-1 {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .py-2 {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .py-3 {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        .pt-0 {
+            padding-top: 0;
+        }
+
+        .pt-1 {
+            padding-top: 1rem;
+        }
+
+        .pt-2 {
+            padding-top: 2rem;
+        }
+
+        .pt-3 {
+            padding-top: 3rem;
+        }
+
+        .pb-0 {
+            padding-bottom: 0;
+        }
+
+        .pb-1 {
+            padding-bottom: 1rem;
+        }
+
+        .pb-2 {
+            padding-bottom: 2rem;
+        }
+
+        .pb-3 {
+            padding-bottom: 3rem;
+        }
+    </style>
+    @*<link rel="stylesheet" href="~/raaa.css" />*@
+    <link rel="stylesheet" href="~/href.css" />
+    <link rel="stylesheet" href="~/siiirr.css" />
+    <link rel="stylesheet" href="~/learn.css" />
+
+    <style>
+
+
+        .wrapword {
+            white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+            white-space: -pre-wrap; /* Opera 4-6 */
+            white-space: -o-pre-wrap; /* Opera 7 */
+            white-space: pre-wrap; /* css-3 */
+            word-wrap: break-word; /* Internet Explorer 5.5+ */
+            white-space: -webkit-pre-wrap; /* Newer versions of Chrome/Safari*/
+            word-break: break-all;
+            white-space: normal;
+        }
+
+        .ycontainer {
+            position: absolute;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        li {
+            display: inline-block;
+        }
+
+            li a {
+                text-decoration: none;
+                color: #090c25;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida; Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: lighter;
+                font-size: 20px;
+            }
+
+        .cool-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #2bbecc;
+            transition: width .3s;
+        }
+
+        .cool-link:hover::after {
+            width: 100%;
+            transition: width .3s;
+        }
+
+        .cool-linkq::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #c1ff06;
+            transition: width .3s;
+        }
+
+        .cool-linkq:hover::after {
+            width: 100%;
+            transition: width .3s;
+        }
+
+
+
+
+
+        .sae {
+            color: black;
+        }
+
+            .sae:hover {
+                background: #2bbecc;
+                color: white;
+                cursor: pointer;
+            }
+    </style>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/notiflix/Notiflix/master/github-assets/favicon.png" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link id="NotiflixBarlow" href="https://fonts.googleapis.com/css?family=Barlow:100,200,300,400,500,600,700,800,900&amp;subset=latin-ext" rel="stylesheet" />
+</head>
+<body>
+
+    @helper IcerikQisalt(string icerik)
+    {if (icerik.Length > 100)
+        {@icerik.Substring(0, 100)<span style="color:#255288">...</span>
+    }
+    else
+    {
+        @icerik;
+    }
+    }
+    <br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <h2 style="color:#122c3c;margin-left:-230px;font-size:30px;
+    font-family:'Calisto MT';text-align:center;margin-top:-60px;">
+        Vakansiyanız
+    </h2>
+    @if (Model.vakansiyaolar == true)
+    {
+
+
+
+
+    <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="box-shadow: 2px 2px 5px rgba(0,0,0,0.5);width: 350px;height:466px;overflow: hidden;background-color:#f4f9f9;float:left;border-radius: 1px;margin-left:25px;border-top-left-radius:15px;border-top-right-radius:15px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;margin-top:-200px;margin-left:360px;">
+
+        @if (Model.tbl_vakansiya.tbl_resm.Count > 0)
+        {
+            <img style="height:170px;border-bottom-left-radius:3px;border-bottom-right-radius:3px;border-top-left-radius:15px;border-top-right-radius:15px;" src="@Model.tbl_vakansiya.tbl_resm.FirstOrDefault(x => x.varsayilan == true).kicikolculu" alt="Man with backpack"
+                 class="d-block w-full">
+
+        }
+        else
+        {
+
+            <img style="height:170px;border-bottom-left-radius:3px;border-bottom-right-radius:3px;border-top-left-radius:15px;border-top-right-radius:15px;" src="~/Sekiller/YeniKicikVK.jpg" alt="Man with backpack"
+                 class="d-block w-full">
+
+        }
+
+        <div class="px-2 py-2">
+            <table>
+                <tr>
+                    <td>
+                        <div style="margin-top:-14px;margin-left:-20px;">
+                            <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px sae" style="text-align: center;display: inline-block;border: solid 2px #2bbecc;padding: 5px 0;border-radius: 5px;max-height:30px;font-size:10px;width:auto;">
+                                <span style="font-size:13px;margin-left:5px;font-family:Algerian">@Model.tbl_vakansiya.tbl_kategoriya.kategoriyaadi</span>
+                            </p>
+                        </div>
+                    </td>
+
+                </tr>
+            </table>
+
+
+
+
+            <div class="ycontainer wrapword" style="top:57%;left:50%;text-align:center;max-width:350px;max-height:50px;width:350px;height:60px;padding-bottom:20px;">
+
+                <li>
+                    <a href="#" class="cool-link" style="font-family:Georgia, 'Times New Roman', Times, serif;font-size:21px;">@Model.tbl_vakansiya.isinadi</a>
+                </li>
+
+            </div>
+            <br />
+
+            <div class="ycontainer wrapword" style="top:70%;left:50%;text-align:center;width:350px;height:40px;max-width:350px;max-height:50px;">
+
+                <li>
+                    <a href="#" class="cool-linkq" style="font-family:'Mongolian Baiti';font-size:20px;">@Model.tbl_vakansiya.sirketadi</a>
+                </li>
+
+            </div>
+
+        </div>
+        <br />
+        <table style="margin-top:30px;">
+            <tr>
+                <td>
+                    <div class="section" style="margin-bottom:30px;margin-left:13px;background-color:transparent">
+                        <div class="section__item">
+                            <div class="section__box" style="width:130px;background-color:transparent;">
+                                <a href="#0" class="r-link ai-element ai-element_type2 ai-element3">
+                                    <span class="ai-element__label" style="font-family:Impact;color:#b2e616">@Model.tbl_vakansiya.minemekhaqqi - @Model.tbl_vakansiya.minemekhaqqi AZN</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+
+                <td>
+
+                    <p class="text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link" style="font-size:15px;width:150px;margin-left:70px;color:black;font-family:'Cambria Math'"><img style="margin-top:10px;" src="~/Sekiller/watch.png" /> @Convert.ToDateTime(Model.tbl_vakansiya.tarix).ToString("dd.MM.yyyy")</p>
+
+                </td>
+
+            </tr>
+        </table>
+        <a href="/Home/VakansiyaDetails/@Model.tbl_vakansiya.id" style="text-decoration:none;">
+            <div class="basicBox" style="margin-top:-17px;left:32%;">
+
+                Ətraflı Bax
+
+
+                <svg width="130" height="50" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
+                    <rect x='0' y='0' fill='none' width='130' height='65' />
+                </svg>
+            </div>
+        </a>
+    </div>
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <div class="main clearfix" style="margin-top:6px;">
+            <div class="column">
+
+                <button class="md-trigger animated-button1" data-modal="modal-11" style="width:290px;margin-left:-320px;">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span><i class="fa zmdi-delete"></i>Vakansiyanı Sil
+                </button>
+
+            </div>
+        </div>
+
+
+        <div class="md-modal md-effect-11" id="modal-11">
+            <div class="md-content">
+                <h3 style="font-size:20px;background-color:#3d0b0b;">Vakansiya Silmək</h3>
+                <div style="background-color:#811717">
+                    <p style="text-align:center;">Siz Vakansiyanızı Silmək İstədiyinizdən Əminsiniz Mi ?</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <div style="margin-left:90px;margin-top:40px;">
+                                    <a href="/Home/Vakansiyasil/@Model.tbl_vakansiya.id" style="text-decoration:none;">
+                                        <button class="bbb" onclick="Notiflix.Confirm.Show();"><p style="font-size:18px;text-decoration:none;text-align:center;color:white;margin-top:-5px;">Bəli Sil</p></button>
+                                    </a>
+                                </div>
+                            </td>
+                            <td>
+                                <div style="margin-left:40px;margin-top:40px;">
+                                    <button class="bbb2 md-close"><p class="ici " style="font-size:18px;text-align:center;color:#6b1111;margin-top:-5px;">Xeyir</p></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <style>
+                        .bbb {
+                            outline: none;
+                            box-shadow: none;
+                            padding: 2px;
+                            width: 150px;
+                            height: 40px;
+                            border: none;
+                            background-color: #6b1111;
+                        }
+
+                            .bbb:hover {
+                                border: solid 2px white;
+                                transition: all 0.1s ease;
+                                outline: none;
+                                box-shadow: none;
+                            }
+
+                        .bbb2:hover {
+                            border: solid 2px #6b1111;
+                            transition: all 0.1s ease;
+                            outline: none;
+                            box-shadow: none;
+                        }
+
+                        .bbb2 {
+                            outline: none;
+                            box-shadow: none;
+                            padding: 2px;
+                            width: 150px;
+                            height: 40px;
+                            border: none;
+                            background-color: white;
+                        }
+                    </style>
+                    <style>
+
+                        .nx-box {
+                            margin: 0;
+                            padding: 6rem 2rem;
+                            background: #fff;
+                            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), #fff);
+                        }
+
+                        .title {
+                            display: flex;
+                            flex-wrap: wrap;
+                            flex-direction: row;
+                            width: 100%;
+                            font-family: "Barlow", sans-serif;
+                            font-size: 1.5rem;
+                            line-height: 1.2;
+                            font-weight: 300;
+                            padding: 0 0 0 0.5rem;
+                            margin: 0 auto 1.5rem;
+                        }
+
+                            .title span {
+                                display: inline-block;
+                                letter-spacing: -0.15rem;
+                                font-weight: 500;
+                                color: #d4d4d4;
+                                transform: scale(1.15);
+                                transform-origin: left center;
+                                margin: 0 0.375rem 0 0;
+                            }
+
+                        .buttons {
+                            width: 100%;
+                            max-width: 85rem;
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 1rem;
+                            margin: 1rem auto 2rem;
+                            background: #f8f8f8;
+                            border-radius: 1rem;
+                            box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, 0.25);
+                        }
+
+                            .buttons button {
+                                min-width: 15rem;
+                                max-width: 20rem;
+                                flex: 1;
+                                cursor: pointer;
+                                transition: all 0.15s ease-in-out;
+                                transform: scale(1);
+                                padding: 1rem 1rem;
+                                margin: 0.5rem;
+                                border: none;
+                                border-radius: 0.5rem;
+                                background: #00ffb3;
+                                background: linear-gradient(to right bottom, #00ffb3, #00f2aa, #00e5a1, #00d998, #00cc8f);
+                                color: #fff;
+                                box-shadow: 0 0 1.5rem -0.75rem rgba(0, 0, 0, 0.4);
+                                font-size: 0.9375rem;
+                                line-height: 1.5;
+                                font-weight: 500;
+                            }
+
+                                .buttons button:hover {
+                                    transform: scale(0.95);
+                                }
+
+                                .buttons button.nx-report,
+                                .buttons button.nx-loading,
+                                .buttons button.nx-unblock {
+                                    background: #faa161;
+                                    background: linear-gradient(to right bottom, #faa161, #fb975f, #fb8c5f, #fb815f, #fa7661);
+                                }
+
+                        .nx-block-dummy-element {
+                            background: #3bff77;
+                            box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, 0.25);
+                            display: block;
+                            width: 100%;
+                            max-width: 30rem;
+                            height: 12.5rem;
+                            padding: 1rem;
+                            margin: 0 auto 2.5rem;
+                            position: relative;
+                            border-radius: 1rem;
+                        }
+
+                            .nx-block-dummy-element p {
+                                margin: 0;
+                                padding: 0;
+                                font-size: 1rem;
+                                line-height: 1;
+                                font-weight: 400;
+                                color: rgba(0, 0, 0, 0.4);
+                            }
+
+                        .nx-box-selector {
+                            position: absolute;
+                            width: 100%;
+                            left: 0;
+                            bottom: 0;
+                            padding: 1rem;
+                            display: flex;
+                            flex-wrap: wrap;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            justify-content: flex-start;
+                        }
+
+                            .nx-box-selector label {
+                                font-size: 0.75rem;
+                                line-height: 1;
+                                font-weight: 400;
+                                color: rgba(0, 0, 0, 0.4);
+                                margin: 0 0 0.5rem;
+                            }
+
+                            .nx-box-selector input {
+                                font-size: 0.875rem;
+                                line-height: 1;
+                                font-weight: 500;
+                                color: #1e1e1e;
+                                margin: 0;
+                                padding: 0.5rem;
+                                width: 100%;
+                                border: none;
+                                border-radius: 0.5rem;
+                            }
+
+                        .break {
+                            display: flex;
+                            width: 100%;
+                            height: 40px;
+                        }
+                    </style>
+                    <br />
+
+
+
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div style="width:900px;height:100px;margin-left:50px;float:left">
+            <table>
+                <tr>
+                    <td>
+                        <h1 style="margin-left:160px;color:#122c3c;margin-top:-200px;" class="h11">Vakansiyanız Yoxdur</h1>
+                    </td>
+                    <td>
+                        <a href="/Home/Vakansiyayaz">
+                            <button type="button" id="btn-2" class="button ripple" data-ripple-color="#888" style="float:left;width:250px;height:60px;margin-top:-200px;margin-left:110px;background-image: linear-gradient(to right, #6fb2d1 0%, #a1c4fd 80%, #c2e9fb 100%);
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius:3px;">
+                                Vakansiya Elan Et
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <style>
+            
+        </style>
+    }
+    <script>
+
+        (function () {
+            document.querySelectorAll('.ripple').forEach(setRippleElement);
+        })()
+
+        function setRippleElement(el) {
+            const dot = document.createElement('SPAN');
+            const largestSide = Math.sqrt(
+                Math.pow(el.offsetWidth, 2) +
+                Math.pow(el.offsetHeight, 2)
+            );
+            const dotSize = Math.ceil((largestSide * 2) / 100);
+            const rippleColor = el.dataset.rippleColor || '#768b8c';
+
+            dot.style = `
+                                                                                                    position: absolute;
+                                                                                                    left: 0;
+                                                                                                    top: 0;
+                                                                                                            width: ${dotSize}px;
+                                                                                                            height: ${dotSize}px;
+z-index: 3;
+border-radius: 50%;
+background: white;
+transform: translate(-50%, -50%) scale(1);
+opacity: 0.5;
+animation: ripple 1s ease-out forwards;
+`;
+
+            el.style.position = 'relative';
+            el.style.overflow = 'hidden';
+
+            el.addEventListener('click', ({ pageX, pageY, currentTarget }) => {
+                // x and y in percentages
+                const x = ((pageX - currentTarget.offsetLeft) * 100) / currentTarget.offsetWidth;
+                const y = ((pageY - currentTarget.offsetTop) * 100) / currentTarget.offsetHeight;
+
+                el.appendChild(dot);
+
+                dot.style.left = x + '%';
+                dot.style.top = y + '%';
+            })
+
+        }
+    </script>
+
+
+
+
+    <style>
+
+        .nx-box {
+            margin: 0;
+            padding: 6rem 2rem;
+            background: #fff;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), #fff);
+        }
+
+        .title {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            width: 100%;
+            font-family: "Barlow", sans-serif;
+            font-size: 1.5rem;
+            line-height: 1.2;
+            font-weight: 300;
+            padding: 0 0 0 0.5rem;
+            margin: 0 auto 1.5rem;
+        }
+
+            .title span {
+                display: inline-block;
+                letter-spacing: -0.15rem;
+                font-weight: 500;
+                color: #d4d4d4;
+                transform: scale(1.15);
+                transform-origin: left center;
+                margin: 0 0.375rem 0 0;
+            }
+
+        .buttons {
+            width: 100%;
+            max-width: 85rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            margin: 1rem auto 2rem;
+            background: #f8f8f8;
+            border-radius: 1rem;
+            box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, 0.25);
+        }
+
+            .buttons button {
+                min-width: 15rem;
+                max-width: 20rem;
+                flex: 1;
+                cursor: pointer;
+                transition: all 0.15s ease-in-out;
+                transform: scale(1);
+                padding: 1rem 1rem;
+                margin: 0.5rem;
+                border: none;
+                border-radius: 0.5rem;
+                background: #00ffb3;
+                background: linear-gradient(to right bottom, #00ffb3, #00f2aa, #00e5a1, #00d998, #00cc8f);
+                color: #fff;
+                box-shadow: 0 0 1.5rem -0.75rem rgba(0, 0, 0, 0.4);
+                font-size: 0.9375rem;
+                line-height: 1.5;
+                font-weight: 500;
+            }
+
+                .buttons button:hover {
+                    transform: scale(0.95);
+                }
+
+                .buttons button.nx-report,
+                .buttons button.nx-loading,
+                .buttons button.nx-unblock {
+                    background: #faa161;
+                    background: linear-gradient(to right bottom, #faa161, #fb975f, #fb8c5f, #fb815f, #fa7661);
+                }
+
+        .nx-block-dummy-element {
+            background: #3bff77;
+            box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, 0.25);
+            display: block;
+            width: 100%;
+            max-width: 30rem;
+            height: 12.5rem;
+            padding: 1rem;
+            margin: 0 auto 2.5rem;
+            position: relative;
+            border-radius: 1rem;
+        }
+
+            .nx-block-dummy-element p {
+                margin: 0;
+                padding: 0;
+                font-size: 1rem;
+                line-height: 1;
+                font-weight: 400;
+                color: rgba(0, 0, 0, 0.4);
+            }
+
+        .nx-box-selector {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            padding: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+            .nx-box-selector label {
+                font-size: 0.75rem;
+                line-height: 1;
+                font-weight: 400;
+                color: rgba(0, 0, 0, 0.4);
+                margin: 0 0 0.5rem;
+            }
+
+            .nx-box-selector input {
+                font-size: 0.875rem;
+                line-height: 1;
+                font-weight: 500;
+                color: #1e1e1e;
+                margin: 0;
+                padding: 0.5rem;
+                width: 100%;
+                border: none;
+                border-radius: 0.5rem;
+            }
+
+        .break {
+            display: flex;
+            width: 100%;
+            height: 40px;
+        }
+    </style>
+    <script src="~/mm.js"></script>
+    <script>
+        Notiflix.Loading.Init({
+            clickToClose: true,
+            customSvgUrl: 'https://www.notiflix.com/content/media/icon/notiflix-loading-notiflix.svg',
+        });
+
+        console.log(Notiflix);
+    </script>
+    <style>
+        .md-trigger {
+            border: none;
+            width: 250px;
+            height: 60px;
+            margin-left: -305px;
+            margin-top: 300px;
+        }
+    </style>
+
+    <script src="~/Content/ModalWindowEffects/js/classie.js"></script>
+    <script src="~/Content/ModalWindowEffects/js/modalEffects.js"></script>
+
+    <script>
+        // this is important for IEs
+        var polyfilter_scriptpath = '/js/';
+    </script>
+    <script src="~/Content/ModalWindowEffects/js/cssParser.js"></script>
+    <script src="~/Content/ModalWindowEffects/js/css-filters-polyfill.js"></script>
+
+    <style>
+
+
+        .card ul li {
+            position: fixed;
+            top: 68%;
+            left: 26%;
+        }
+
+        .btn {
+            position: fixed;
+            top: 84%;
+            left: 26%;
+        }
+
+        .c {
+            border: 2px #7ea018 solid;
+        }
+
+            .c:hover {
+                background: url('https://iweb.uz/azik/wp-content/uploads/2012/10/samarkand3.jpg');
+                ackground-position: bottom right;
+                transition: 1s linear;
+                background-position: -600px -550px;
+                transform: rotate(360deg);
+            }
+
+
+        .saee {
+            color: white;
+        }
+
+            .saee:hover {
+                background: #7ea018;
+                color: white;
+                cursor: pointer;
+            }
+
+        .wrapword {
+            white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+            white-space: -pre-wrap; /* Opera 4-6 */
+            white-space: -o-pre-wrap; /* Opera 7 */
+            white-space: pre-wrap; /* css-3 */
+            word-wrap: break-word; /* Internet Explorer 5.5+ */
+            white-space: -webkit-pre-wrap; /* Newer versions of Chrome/Safari*/
+            word-break: break-all;
+            white-space: normal;
+        }
+    </style>
+    <style>
+        html {
+            height: 980px;
+        }
+
+        body {
+            min-height: 100%;
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+
+
+        /* Trick: */
+        body {
+            position: relative;
+        }
+
+            body::after {
+                content: '';
+                display: block;
+            }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+
+
+
+
+    <footer class="footer-distributed" style="margin-bottom:-250px;border-top-left-radius:15px;border-top-right-radius:15px;width:1526px;">
+
+        <div class="footer-left">
+
+            <h3>TURAB<span>BL</span></h3>
+
+            <p class="footer-links">
+                <a href="#">Ana Səhifə</a>
+                |
+                <a href="#">CV</a>
+                |
+                <a href="#">Vakansiya Elan Et</a>
+                |
+                <a href="#">Əlaqə</a>
+            </p>
+
+            <table>
+                <tr>
+                    <td><p style="color:white;margin-top:20px;">Bizə Dəstək Ol :)</p></td>
+                    <td>
+                        <div class="ssdiv" style="margin-left:130px;margin-top:10px;">
+                            <a href="#" class="ssa"><span>Facebook</span></a>
+                            <a href="#" class="ssa"><span>Twitter</span></a>
+                            <a href="#" class="ssa"><span>Instagram</span></a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <br /> <br /> <br />
+            <p class="footer-company-name">© 2020 TURABBL Tərəfindən Yaradılmışdır</p>
+        </div>
+
+        <div class="footer-center" style="margin-left:62px;">
+            <div>
+                <div style="width:70px;height:40px;margin-left:-50px;float:left">
+                    <img src="~/Sekiller/location.png" style="margin-left:30px;margin-top:10px;" />
+                </div>
+                <p>
+                    <span>
+                        Sabunçu Rayonu.,
+                        Maştağa Qəsəbəsi
+
+                    </span>
+                    Daş Karxanası
+                </p>
+            </div>
+
+            <div>
+                <div style="width:70px;height:40px;margin-left:-50px;float:left;margin-top:20px;">
+                    <img src="~/Sekiller/phone (1).png" style="margin-left:30px;margin-top:10px;" />
+                </div>
+                <p style="margin-top:30px;">+994703067050</p>
+            </div>
+            <div>
+                <div style="width:70px;height:40px;margin-left:-50px;float:left;margin-top:20px;">
+                    <img src="~/Sekiller/mail.png" style="margin-left:10px;margin-top:10px;" />
+                </div>
+                <p style="margin-top:30px;margin-left:-18px;"><a href="mailto:turabbl@gmail.com">turabbl@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right" style="margin-left:-130px;">
+            <p style="color:white;margin-bottom:10px;">E-Mail</p>
+            <label class="field a-field a-field_a1" style="margin-top:-50px;">
+                <input required class="field__input a-field__input" type="text" name="sirketadi" placeholder="">
+                <span class="a-field__label-wrap">
+                    <span class="a-field__label"></span>
+                </span>
+            </label>
+            <br />
+            <br />
+            <div style="width:560px;float:left">
+                <textarea name="telebler" id="field5" placeholder="Mesajiniz..." class="field-long field-textarea" style="border-radius:4px;width:390px;height:120px;float:left;max-height:150px;max-width:390px;font-size:16px;min-width:390px;min-height:150px;border: none;
+    overflow: auto;
+    outline: none;-webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;padding:2px;"></textarea>
+
+                <div class="button_cont" align="center"><a class="example_a" href="add-website-here" target="_blank" rel="nofollow noopener">Bize Gonder</a></div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,691 @@
+﻿
+@model IEnumerable<IsAxtaris.Models.tbl_vakansiya>
+
+@{
+
+    Layout = "~/Views/Shared/Saytlayout.cshtml";
+}
+
+
+<html>
+<head>
+    <link rel="stylesheet" href="~/ana.css" />
+    <link rel="stylesheet" href="~/indexfooter.css" />
+    <link rel="stylesheet" href="~/text.css" />
+    <link rel="stylesheet" href="~/ox.css" />
+    @*<link rel="stylesheet" href="~/card.css" />*@
+    <link rel="stylesheet" href="~/vakansiyalar.css" />
+    <link rel="stylesheet" href="~/raaa.css" />
+    <link rel="stylesheet" href="~/but.css" />
+    <link rel="stylesheet" href="~/sosical.css" />
+    <link rel="stylesheet" href="~/shar.css" />
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+
+
+    <div class="header">
+        <div class="sides">
+            <div>
+
+            </div>
+
+        </div>
+
+        <div class="sides">
+
+        </div>
+
+        <div class="bbody" style="margin-top:600px;">
+            <span id="I">T</span>
+            <span id="L">U</span>
+            <span id="G">R</span>
+            <span id="H">A</span>
+            <span id="I">B</span>
+            <span id="I">B</span>
+            <span id="T">L</span>
+        </div>
+        @*<div id="fly-in" class="ubody" style="margin-top:-450px;">
+                <div><span>İşləmək</span>İstəyİrsən ?</div>
+                <div>Doğru Yerdəsən<span>Onda</span></div>
+                <div>Elə İndİ<span>Vakansİyalara Bax</span></div>
+                <div><span>Yox</span>İşçİ Axtarırsan ?</div>
+                <div><span>O Halda</span>CV-lərə Bax</div>
+                <div>Mütləq<span>Özünüzə Uyğun</span></div>
+                <div>İşçi<span>Tapacaqsan</span></div>
+                <div><span>Hörmətlə</span>TURABBL</div>
+            </div>*@
+    </div>
+
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+
+    @if (Session["yeniuzv"] != null)
+    {
+        <script>
+            $(document).ready(function myfunction() {
+                alert('Tebrikler.Saytimizdan Qeydiyyatdan Kecdiniz.Tesekkur Edirik.')
+            })
+        </script>
+        {
+            Session["yeniuzv"] = null;
+        }
+    }
+
+
+
+    <link rel="stylesheet" href="~/Content/display-popup-on-page-load/swc.css">
+    <link rel="stylesheet" href="~/sc.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+
+
+    @if (Session["cvyazdi"] != null)
+    {
+        <div id="boxes" class="modall">
+            <div style="top: 50%; left: 50%; display: none;border-radius:15px;border:3px #2b906a solid;position:fixed;" id="dialog" class="window">
+                <div class="m" id="san" style="width:300px;height:300px;">
+
+                    <a href="#" class="close agree"><img src="~/Content/display-popup-on-page-load/close-icon.png" width="25" style="float:right; margin-right: -150px; margin-top: -10px;"></a>
+                    <div class="s" style="background-color:#2b906a;width:447px;height:130px;margin-left:-12px;margin-top:-15px;border-top-left-radius:15px;border-top-right-radius:15px;">
+                        <img src="~/Sekiller/success.svg" width="150" height="100" style="text-align:center;margin-top:15px;" />
+                        <div style="width:380px;height:50px;margin-top:25px;margin-left:30px;">
+                            <p style="color:black;font-size:16px;font-family: 'Ubuntu', sans-serif;">Təbriklər CV-niz Qeydə Alındı.Ən Qısa Müddətdə Saytımıza Yerləşdiriləcək.</p>
+
+                            <p style="color:#20699b;font-size:16px;margin-top:10px;font-family: 'Ubuntu', sans-serif;">Əgər CV-nizə Ehtiyac Yoxdursa Profildən <span style="font-size:16px;font-family: 'Ubuntu', sans-serif;color:#921a1a">Silməyiniz Xahiş Olunur</span>.CV-nizin 30 gün müddəti var.Və Yalnızca Ayda 1 Dəfə CV Yerləşdirmək Mümkündür</p>
+                        </div>
+                    </div>
+                    <style>
+                    </style>
+                    <script>
+
+                    </script>
+                </div>
+            </div>
+            <div style="width: 2478px; font-size: 32pt; color:white; height: 1202px; display: none; opacity: 0.4;" id="mask"></div>
+        </div>
+        {
+            Session["cvyazdi"] = null;
+        }
+    }
+    @if (Session["vakansiyayazdi"] != null)
+    {
+        <div id="boxes" class="modall">
+            <div style="top: 50%; left: 50%; display: none;border-radius:15px;border:3px #2b906a solid;position:fixed;" id="dialog" class="window">
+                <div class="m" id="san" style="width:300px;height:300px;">
+
+                    <a href="#" class="close agree"><img src="~/Content/display-popup-on-page-load/close-icon.png" width="25" style="float:right; margin-right: -150px; margin-top: -10px;"></a>
+                    <div class="s" style="background-color:#2b906a;width:447px;height:130px;margin-left:-12px;margin-top:-15px;border-top-left-radius:15px;border-top-right-radius:15px;">
+                        <img src="~/Sekiller/success.svg" width="150" height="100" style="text-align:center;margin-top:15px;" />
+                        <div style="width:380px;height:50px;margin-top:25px;margin-left:30px;">
+                            <p style="color:black;font-size:16px;font-family: 'Ubuntu', sans-serif;">Təbriklər Vakansiyanız Qeydə Alındı.Ən Qısa Müddətdə Saytımıza Yerləşdiriləcək.</p>
+
+                            <p style="color:#20699b;font-size:16px;margin-top:10px;font-family: 'Ubuntu', sans-serif;">Əgər Vakansiyanıza Ehtiyac Yoxdursa Profildən <span style="font-size:16px;font-family: 'Ubuntu', sans-serif;color:#921a1a">Silməyiniz Xahiş Olunur</span>.Vakansiyanızın 30 gün müddəti var.Və Yalnızca Ayda 1 Dəfə Vakansiya Yerləşdirmək Mümkündür</p>
+                        </div>
+                    </div>
+                    <style>
+                    </style>
+                    <script>
+
+                    </script>
+                </div>
+            </div>
+            <div style="width: 2478px; font-size: 32pt; color:white; height: 1202px; display: none; opacity: 0.4;" id="mask"></div>
+        </div>
+        Session["vakansiyayazdi"] = null;
+    }
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+    <script src="~/Content/display-popup-on-page-load/swc.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+    @{
+        Html.RenderAction("Vakansiyalar", "Home");
+    }
+
+
+    <table>
+        <tr>
+            <td>
+                <div style="margin-top:-636px;">
+
+                    <a class="bax" href="/Home/Butunvakansiyalar" style="color:black;margin-left:1180px;font-size:21px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Bütün Vakansiyaları Göstər</a>
+
+                </div>
+            </td>
+            <td>
+                <a href="/Home/Butunvakansiyalar">
+                    <div class="arrow" style="margin-left:70px;margin-top:-3px;">
+
+
+                    </div>
+                </a>
+            </td>
+        </tr>
+    </table>
+
+
+
+    @{
+        Html.RenderAction("CVler", "Home");
+    }
+
+
+
+
+    <br />
+    <br />
+    <br />
+
+    <a id="button"></a>
+    <style>
+        #button {
+            display: inline-block;
+            background-color: #1bab5b;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            border-radius: 4px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            transition: background-color .3s, opacity .5s, visibility .5s;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+            #button::after {
+                content: "\f077";
+                font-family: FontAwesome;
+                font-weight: normal;
+                font-style: normal;
+                font-size: 2em;
+                line-height: 50px;
+                color: #fff;
+            }
+
+            #button:hover {
+                cursor: pointer;
+                background-color: #333;
+            }
+
+            #button:active {
+                background-color: #555;
+            }
+
+            #button.show {
+                opacity: 1;
+                visibility: visible;
+            }
+    </style>
+    <script>
+        var btn = $('#button');
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 300) {
+                btn.addClass('show');
+            } else {
+                btn.removeClass('show');
+            }
+        });
+
+        btn.on('click', function (e) {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: 0 }, '300');
+        });
+
+
+    </script>
+</body>
+</html>
+<footer class="footer-distributed" style="border-top-left-radius:15px;border-top-right-radius:15px;position:relative">
+
+
+
+
+
+    <div class="footer-left">
+
+        <h3>TURAB<span>BL</span></h3>
+
+        <p class="footer-links">
+            <a href="#">Ana Səhifə</a>
+            |
+            <a href="#">CV</a>
+            |
+            <a href="#">Vakansiya Elan Et</a>
+            |
+            <a href="#">Əlaqə</a>
+        </p>
+
+        <table>
+            <tr>
+                <td><p style="color:white;margin-top:20px;">Bizə Dəstək Ol :)</p></td>
+                <td>
+                    <div class="ssdiv" style="margin-left:130px;margin-top:10px;">
+                        <a href="#" class="ssa"><span>Facebook</span></a>
+                        <a href="#" class="ssa"><span>Twitter</span></a>
+                        <a href="#" class="ssa"><span>Instagram</span></a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <br /> <br /> <br />
+        <p class="footer-company-name">© 2020 TURABBL Tərəfindən Yaradılmışdır</p>
+    </div>
+
+    <div class="footer-center" style="margin-left:62px;">
+        <div>
+            <div style="width:70px;height:40px;margin-left:-50px;float:left">
+                <img src="~/Sekiller/location.png" style="margin-left:30px;margin-top:10px;" />
+            </div>
+            <p>
+                <span>
+                    Sabunçu Rayonu.,
+                    Maştağa Qəsəbəsi
+
+                </span>
+                Daş Karxanası
+            </p>
+        </div>
+
+        <div>
+            <div style="width:70px;height:40px;margin-left:-50px;float:left;margin-top:20px;">
+                <img src="~/Sekiller/phone (1).png" style="margin-left:30px;margin-top:10px;" />
+            </div>
+            <p style="margin-top:30px;">+994703067050</p>
+        </div>
+        <div>
+            <div style="width:70px;height:40px;margin-left:-50px;float:left;margin-top:20px;">
+                <img src="~/Sekiller/mail.png" style="margin-left:10px;margin-top:10px;" />
+            </div>
+            <p style="margin-top:30px;margin-left:-18px;"><a href="mailto:turabbl@gmail.com">turabbl@gmail.com</a></p>
+        </div>
+    </div>
+    <div class="footer-right" style="margin-left:-130px;">
+        <p style="color:white;margin-bottom:10px;">E-Mail</p>
+        <label class="field a-field a-field_a1" style="margin-top:-50px;">
+            <input required class="field__input a-field__input" type="text" name="sirketadi" placeholder="">
+            <span class="a-field__label-wrap">
+                <span class="a-field__label"></span>
+            </span>
+        </label>
+        <br />
+        <br />
+        <div style="width:560px;float:left">
+            <textarea name="telebler" id="field5" placeholder="Mesajiniz..." class="field-long field-textarea" style="border-radius:4px;width:390px;height:120px;float:left;max-height:150px;max-width:390px;font-size:16px;min-width:390px;min-height:150px;border: none;
+    overflow: auto;
+    outline: none;-webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;padding:2px;"></textarea>
+
+            <div class="button_cont" align="center"><a class="example_a" href="add-website-here" target="_blank" rel="nofollow noopener">Bize Gonder</a></div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    var bounceIn = anime({
+        targets: '.letter__part',
+        translateY: {
+            value: [-30, 0],
+            duration: 900,
+            delay: 1000,
+            elasticity: 600,
+            easing: 'easeOutElastic'
+        },
+        opacity: {
+            value: [0, 1],
+            duration: 300,
+            easing: 'linear',
+            delay: 1000
+        }
+    });
+
+    var lineDrawing = anime({
+        targets: '.color-1',
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeOutElastic',
+        duration: 4000,
+        delay: 1000,
+        loop: false,
+        direction: 'alternate',
+    });
+
+    var lineDrawing = anime({
+        targets: '.color-3',
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeOutElastic',
+        duration: 4000,
+        delay: 1200,
+        loop: false,
+        direction: 'alternate',
+    });
+
+    var lineDrawing = anime({
+        targets: '.color-2',
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeOutElastic',
+        duration: 4000,
+        delay: 1400,
+        loop: false,
+        direction: 'alternate',
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    const body = document.body;
+    const btn = document.querySelectorAll('.button')[0];
+
+    btn.addEventListener('mouseenter', () => {
+        body.classList.add('show');
+    });
+
+    btn.addEventListener('mouseleave', () => {
+        body.classList.remove('show');
+    });
+</script>
+
+<style>
+    .example_a {
+        color: #fff !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        background: #7c9e16;
+        padding: 20px;
+        border-radius: 5px;
+        display: inline-block;
+        border: none;
+        margin-left: 20px;
+        margin-top: 92px;
+        transition: all 0.4s ease 0s;
+    }
+
+        .example_a:hover {
+            letter-spacing: 1px;
+            -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+            -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+            box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+            transition: all 0.4s ease 0s;
+        }
+
+
+    .field {
+        --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #ffffff);
+    }
+
+    .field__input {
+        background-color: transparent;
+        border-radius: 3px;
+        border: none;
+        color: white;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        font-family: inherit;
+        font-size: 1em;
+    }
+
+        .field__input:focus::-webkit-input-placeholder {
+            color: #698bad;
+            font-size: 13px;
+        }
+
+        .field__input:focus::-moz-placeholder {
+            color: var(--uiFieldPlaceholderColor);
+            opacity: 1;
+        }
+
+    /*
+        =====
+        LEVEL 2. CORE STYLES
+        =====
+        */
+
+    .a-field {
+        display: inline-block;
+    }
+
+    .a-field__input {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+        .a-field__input:focus {
+            outline: none;
+        }
+
+    /*
+        =====
+        LEVEL 3. PRESENTATION STYLES
+        =====
+        */
+
+    /* a-field */
+
+    .a-field {
+        --uiFieldHeight: var(--fieldHeight, 2.5rem);
+        --uiFieldBorderWidth: var(--fieldBorderWidth, 2px);
+        --uiFieldBorderColor: var(--fieldBorderColor);
+        --uiFieldFontSize: var(--fieldFontSize, 1rem);
+        --uiFieldHintFontSize: var(--fieldHintFontSize, 1rem);
+        --uiFieldPaddingRight: var(--fieldPaddingRight, 1rem);
+        --uiFieldPaddingBottom: var(--fieldPaddingBottom, 1rem);
+        --uiFieldPaddingLeft: var(--fieldPaddingLeft, 1rem);
+        position: relative;
+        box-sizing: border-box;
+        font-size: var(--uiFieldFontSize);
+        padding-top: 1rem;
+    }
+
+    .a-field__input {
+        height: var(--uiFieldHeight);
+        padding: 0 var(--uiFieldPaddingRight) 0 var(--uiFieldPaddingLeft);
+        border-bottom: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColor);
+    }
+
+        .a-field__input::-webkit-input-placeholder {
+            opacity: 0;
+            transition: opacity .2s ease-out;
+        }
+
+        .a-field__input::-moz-placeholder {
+            opacity: 0;
+            transition: opacity .2s ease-out;
+        }
+
+        .a-field__input:not(:placeholder-shown) ~ .a-field__label-wrap .a-field__label {
+            opacity: 0;
+            bottom: var(--uiFieldPaddingBottom);
+        }
+
+        .a-field__input:focus::-webkit-input-placeholder {
+            opacity: 1;
+            transition-delay: .2s;
+        }
+
+        .a-field__input:focus::-moz-placeholder {
+            opacity: 1;
+            transition-delay: .2s;
+        }
+
+    .a-field__label-wrap {
+        box-sizing: border-box;
+        width: 100%;
+        height: var(--uiFieldHeight);
+        pointer-events: none;
+        cursor: text;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .a-field__label {
+        position: absolute;
+        left: var(--uiFieldPaddingLeft);
+        bottom: calc(50% - .5em);
+        line-height: 1;
+        font-size: var(--uiFieldHintFontSize);
+        pointer-events: none;
+        transition: bottom .2s cubic-bezier(0.9, -0.15, 0.1, 1.15), opacity .2s ease-out;
+        will-change: bottom, opacity;
+        color: white;
+    }
+
+    .a-field__input:focus ~ .a-field__label-wrap .a-field__label {
+        opacity: 1;
+        bottom: var(--uiFieldHeight);
+    }
+
+    /* a-field_a1 */
+
+    .a-field_a1 .a-field__input {
+        transition: border-color .2s ease-out;
+        will-change: border-color;
+    }
+
+        .a-field_a1 .a-field__input:focus {
+            border-color: var(--fieldBorderColorActive);
+        }
+
+    /* a-field_a2 */
+
+    .a-field_a2 .a-field__label-wrap::after {
+        content: "";
+        box-sizing: border-box;
+        width: 0;
+        height: var(--uiFieldBorderWidth);
+        background-color: var(--fieldBorderColorActive);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        will-change: width;
+        transition: width .285s ease-out;
+    }
+
+    .a-field_a2 .a-field__input:focus ~ .a-field__label-wrap::after {
+        width: 100%;
+    }
+
+    /* a-field_a3 */
+
+    .a-field_a3 {
+        padding-top: 1.5rem;
+    }
+
+        .a-field_a3 .a-field__label-wrap::after {
+            content: "";
+            box-sizing: border-box;
+            width: 100%;
+            height: 0;
+            opacity: 0;
+            border: var(--uiFieldBorderWidth) solid var(--fieldBorderColorActive);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            will-change: opacity, height;
+            transition: height .2s ease-out, opacity .2s ease-out;
+        }
+
+        .a-field_a3 .a-field__input:focus ~ .a-field__label-wrap::after {
+            height: 100%;
+            opacity: 1;
+        }
+
+        .a-field_a3 .a-field__input:focus ~ .a-field__label-wrap .a-field__label {
+            bottom: calc(var(--uiFieldHeight) + .5em);
+        }
+
+    /*
+        =====
+        LEVEL 4. SETTINGS
+        =====
+        */
+
+    .field {
+        --fieldBorderColor: #5a92cf;
+        --fieldBorderColorActive: white;
+    }
+
+    /*
+        =====
+        DEMO
+        =====
+        */
+
+
+    .page {
+        box-sizing: border-box;
+        width: 410px;
+        max-width: 430px;
+        margin-left: 13px;
+        margin-top: 100px;
+        padding: 10px;
+        display: grid;
+        grid-gap: 30px;
+        align-items: flex-end;
+        order: 1;
+    }
+
+    media (min-width: 481px) {
+        .page
+
+    {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    }
+
+
+
+
+
+
+
+
+    .banner {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background-image: url(/Sekiller/2776881.jpg);
+        background-size: cover;
+    }
+</style>
+
+<style>
+    .bax:hover {
+        cursor: pointer;
+    }
+</style>

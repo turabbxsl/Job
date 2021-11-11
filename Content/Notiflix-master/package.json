@@ -1,0 +1,64 @@
+{
+  "name": "notiflix",
+  "main": "dist/notiflix-aio-2.4.0.min.js",
+  "version": "2.4.0",
+  "description": "Notiflix is a JavaScript library for client-side non-blocking notifications, popup boxes, loading indicators, and more...",
+  "homepage": "https://github.com/notiflix/Notiflix",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "notification",
+    "notifications",
+    "notiflix",
+    "notify",
+    "toast",
+    "alert",
+    "popup boxes",
+    "loading indicator",
+    "javascript alert",
+    "javascript confirm",
+    "confirm box",
+    "ui block",
+    "block ui element",
+    "react notifications",
+    "angular notifications",
+    "nextjs notifications",
+    "client-side",
+    "non-blocking",
+    "zero dependency"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/notiflix/Notiflix.git"
+  },
+  "bugs": {
+    "url": "https://github.com/notiflix/Notiflix/issues"
+  },
+  "author": "Furkan MT (https://github.com/furcan)",
+  "contributors": [
+    "Furkan MT (https://github.com/furcan)"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "babel-minify": "^0.5.1",
+    "clean-css": "^4.2.3",
+    "eslint": "^7.6.0",
+    "stylelint": "^13.6.1",
+    "stylelint-config-standard": "^20.0.0"
+  },
+  "scripts": {
+    "notiflix-helpers-constants-eslint": "eslint helpers/notiflix-dev-constants.js",
+    "notiflix-helpers-allinone-eslint": "eslint helpers/notiflix-dev-allinone.js",
+    "notiflix-helpers-minifier-eslint": "eslint helpers/notiflix-dev-minifier.js",
+    "notiflix-helpers-lint": "npm run notiflix-helpers-constants-eslint && npm run notiflix-helpers-allinone-eslint && npm run notiflix-helpers-minifier-eslint",
+    "notiflix-src-stylelint": "stylelint src/notiflix.css",
+    "notiflix-src-eslint": "eslint src/notiflix.js",
+    "notiflix-src-lint": "npm run notiflix-src-stylelint && npm run notiflix-src-eslint",
+    "notiflix-helpers-allinone": "npm run notiflix-helpers-lint && npm run notiflix-src-lint && node helpers/notiflix-dev-allinone.js",
+    "notiflix-src-allinone-eslint": "eslint src/all-in-one/notiflix-aio.js",
+    "notiflix-helpers-minifier": "npm run notiflix-helpers-allinone && npm run notiflix-src-allinone-eslint && node helpers/notiflix-dev-minifier.js",
+    "notiflix-build": "npm run notiflix-helpers-minifier"
+  }
+}

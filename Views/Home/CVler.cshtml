@@ -1,0 +1,275 @@
+﻿@model IEnumerable<IsAxtaris.Models.tbl_CCVV>
+
+<link rel="stylesheet" href="~/car.css" />
+<link rel="stylesheet" href="~/sa.css" />
+<link rel="stylesheet" href="~/ox.css" />
+
+
+<link href="~/Content/Hover-master/css/hover.css" rel="stylesheet" media="all">
+<link href="~/Content/Hover-master/css/demo-page.css" rel="stylesheet" media="all">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+
+@helper IcerikQisalt(string icerik)
+{if (icerik.Length > 100)
+    {@icerik.Substring(0, 100)<span style="color:#255288">...</span>
+}
+else
+{
+    @icerik         ;
+}
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="~/but.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<br />
+<table>
+    <tr>
+        <td>
+            <h1 style="margin-left:610px;color:#122c3c;" class="h11">Ən Son CV-lər</h1>
+        </td>
+        <td>
+            <button type="button" id="btn-2" class="button ripple" data-ripple-color="#888" style="float:left;width:200px;height:60px;margin-left:410px;background-image: linear-gradient(to right, #6fb2d1 0%, #a1c4fd 80%, #c2e9fb 100%);
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius:3px;">
+                CV Elan Et
+            </button>
+        </td>
+    </tr>
+</table>
+<script>
+    (function () {
+        document.querySelectorAll('.ripple').forEach(setRippleElement);
+    })()
+
+    function setRippleElement(el) {
+        const dot = document.createElement('SPAN');
+        const largestSide = Math.sqrt(
+            Math.pow(el.offsetWidth, 2) +
+            Math.pow(el.offsetHeight, 2)
+        );
+        const dotSize = Math.ceil((largestSide * 2) / 100);
+        const rippleColor = el.dataset.rippleColor || '#768b8c';
+
+        dot.style = `
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: ${dotSize}px;
+                height: ${dotSize}px;
+                z-index: 3;
+                border-radius: 50%;
+                background: white;
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.5;
+                animation: ripple 1s ease-out forwards;
+            `;
+
+        el.style.position = 'relative';
+        el.style.overflow = 'hidden';
+
+        el.addEventListener('click', ({ pageX, pageY, currentTarget }) => {
+            // x and y in percentages
+            const x = ((pageX - currentTarget.offsetLeft) * 100) / currentTarget.offsetWidth;
+            const y = ((pageY - currentTarget.offsetTop) * 100) / currentTarget.offsetHeight;
+
+            el.appendChild(dot);
+
+            dot.style.left = x + '%';
+            dot.style.top = y + '%';
+        })
+
+    }
+</script>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<style>
+    .ds {
+        margin-top: -35px;
+    }
+
+    .ss {
+        margin-top: -10px;
+    }
+</style>
+<link rel="stylesheet" href="~/Content/WOW-20848c410fe32d161c2330e1d261b59512094f81/css/libs/animate.css">
+<link rel="stylesheet" href="~/Content/WOW-20848c410fe32d161c2330e1d261b59512094f81/css/site.css">
+<style>
+
+    .wow:first-child {
+        visibility: hidden;
+    }
+</style>
+
+<div id="main" style="height:1000px;">
+    <section class="section--blue wow bounceInLeft" data-wow-offset="10" style="height:1000px;">
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <div class="gls" style="width:350px;height:530px;float:left;margin-left:27px;margin-top:90px;">
+                    <div class="card" style="margin-left:172px;">
+                        <div>
+                            @if (item.tbl_resm1.Count > 0)
+                            {
+                                <div class="containerg">
+                                    <div class="containerg__image" style="background-image: url('@item.tbl_resm1.FirstOrDefault(x => x.varsayilan == true).kicikolculu');">
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                if (item.cinsiyyeti == "Kişi")
+                                {
+                                    <div class="containerg">
+                                        <div class="" style="">
+                                            <img src="~/Sekiller/man.png" width="150" height="150"/>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="containerg">
+                                        <div class="" style="">
+                                            <img src="~/Sekiller/woman (2).png"/>
+                                        </div>
+                                    </div>
+                                }
+                                <style>
+
+                                </style>
+                            }
+
+                            <h1 class="wrapword" style="font-size:22px;color:white;word-wrap:break-word">
+                                @item.vezifesi dsdsasasa<br>
+                                <span style="color:#294565;font-size:17px;" class="wrapword">@item.adi @item.soyadi</span>
+                            </h1>
+                            <p style="text-align:match-parent;color:white;">@IcerikQisalt(item.bacarigi) as </p>
+                            <ul>
+                                <li class="wrapword">
+                                    <div>
+                                        <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px saee" style="text-align: center;display: inline-block;border: solid 2px #7ea018;padding: 5px 0;border-radius: 5px;max-height:30px;font-size:10px;width:auto;">
+                                            <span style="font-size:13px;margin-left:5px;font-family:fantasy;">@item.tbl_kategoriya.kategoriyaadi</span>
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <a class="btn" style="" href="/Home/CVDetails/@item.id">Ətraflı Bax</a>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+
+            <a href="/Home/ButunCVler">
+                <table>
+                    <tr>
+                        <td>
+                            <div style="margin-top:-237px;margin-left:10px;">
+
+                                <a class="bax" href="/Home/ButunCVler" style="color:black;margin-left:1220px;margin-top:0px;font-size:21px;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Bütün CV-Ləri Göstər</a>
+
+                            </div>
+                        </td>
+                        <td>
+                            <a href="/Home/Butuncvler">
+                                <div class="arrow" style="margin-left:70px;margin-top:2603px">
+
+
+                                </div>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </a>
+
+        }
+    </section>
+</div>
+
+
+
+    <p style="font-family: 'PT Sans', sans-serif;position:absolute;margin-top:770px;font-weight:500;font-size:24px;margin-bottom:-50px;color:black;margin-left:680px">CV Üzrə Kategoriyalar</p>
+
+
+    <div id="effects" class="effects" style="width:1150px;height:-100px;text-align:center;margin-left:180px;">
+
+        @foreach (var item in ViewBag.kategoriyalar)
+        {
+            <a href="/Home/KatCV/@item.id" class="hvr-bounce-in" style="width:auto;height:50px;font-family: 'PT Sans', sans-serif;padding:10px;background-color:#75c0cc;margin:20px;color:white;border-radius:10px;">@item.kategoriyaadi</a>
+        }
+
+    </div>
+
+
+
+
+
+
+
+<script src="~/Content/WOW-20848c410fe32d161c2330e1d261b59512094f81/dist/wow.js"></script>
+
+
+
+
+
+
+<style>
+
+    .card ul li {
+        position: fixed;
+        top: 68%;
+        left: 26%;
+    }
+
+    .btn {
+        position: fixed;
+        top: 84%;
+        left: 26%;
+    }
+
+    .c {
+        border: 2px #7ea018 solid;
+    }
+
+        .c:hover {
+            background: url('https://iweb.uz/azik/wp-content/uploads/2012/10/samarkand3.jpg');
+            ackground-position: bottom right;
+            transition: 1s linear;
+            background-position: -600px -550px;
+            transform: rotate(360deg);
+        }
+
+
+    .saee {
+        color: white;
+    }
+
+        .saee:hover {
+            background: #7ea018;
+            color: white;
+            cursor: pointer;
+        }
+
+    .wrapword {
+        white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        white-space: pre-wrap; /* css-3 */
+        word-wrap: break-word; /* Internet Explorer 5.5+ */
+        white-space: -webkit-pre-wrap; /* Newer versions of Chrome/Safari*/
+        word-break: break-all;
+        white-space: normal;
+    }
+</style>

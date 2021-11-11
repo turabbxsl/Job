@@ -1,0 +1,353 @@
+﻿@model IEnumerable<IsAxtaris.Models.tbl_vakansiya>
+
+<link rel="stylesheet" href="~/raaa.css" />
+<link rel="stylesheet" href="~/href.css" />
+<link rel="stylesheet" href="~/siiirr.css" />
+<link rel="stylesheet" href="~/learn.css" />
+<link rel="stylesheet" href="~/but.css" />
+
+<link href="~/Content/Hover-master/css/hover.css" rel="stylesheet" media="all">
+<link href="~/Content/Hover-master/css/demo-page.css" rel="stylesheet" media="all">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+
+
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+@helper IcerikQisalt(string icerik)
+{if (icerik.Length > 260)
+    {@icerik.Substring(0, 270)<span style="float:right;margin-right:10px;color:#255288">...</span>
+}
+else
+{
+    @icerik;
+}
+}
+<br />
+
+<table>
+    <tr>
+        <td>
+            <h1 style="margin-left:610px;color:#122c3c;" class="h11">Ən Son İş Elanları</h1>
+        </td>
+        <td>
+            <button type="button" id="btn-2" class="button ripple" data-ripple-color="#888" style="float:left;width:200px;height:60px;margin-left:350px;background-image: linear-gradient(to right, #6fb2d1 0%, #a1c4fd 80%, #c2e9fb 100%);
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius:3px;">
+                İş Elan Et
+            </button>
+        </td>
+    </tr>
+</table>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="~/Content/WOW-20848c410fe32d161c2330e1d261b59512094f81/css/libs/animate.css">
+<link rel="stylesheet" href="~/Content/WOW-20848c410fe32d161c2330e1d261b59512094f81/css/site.css">
+<style>
+
+    .wow:first-child {
+        visibility: hidden;
+    }
+</style>
+
+
+<script>
+    (function () {
+        document.querySelectorAll('.ripple').forEach(setRippleElement);
+    })()
+
+    function setRippleElement(el) {
+        const dot = document.createElement('SPAN');
+        const largestSide = Math.sqrt(
+            Math.pow(el.offsetWidth, 2) +
+            Math.pow(el.offsetHeight, 2)
+        );
+        const dotSize = Math.ceil((largestSide * 2) / 100);
+        const rippleColor = el.dataset.rippleColor || '#768b8c';
+
+        dot.style = `
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: ${dotSize}px;
+                height: ${dotSize}px;
+                z-index: 3;
+                border-radius: 50%;
+                background: white;
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.5;
+                animation: ripple 1s ease-out forwards;
+            `;
+
+        el.style.position = 'relative';
+        el.style.overflow = 'hidden';
+
+        el.addEventListener('click', ({ pageX, pageY, currentTarget }) => {
+            // x and y in percentages
+            const x = ((pageX - currentTarget.offsetLeft) * 100) / currentTarget.offsetWidth;
+            const y = ((pageY - currentTarget.offsetTop) * 100) / currentTarget.offsetHeight;
+
+            el.appendChild(dot);
+
+            dot.style.left = x + '%';
+            dot.style.top = y + '%';
+        })
+
+    }
+</script>
+
+
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<div id="main">
+    <section class="section--blue wow bounceInLeft" data-wow-offset="10">
+        @foreach (var item in Model)
+        {
+
+        <div class="my-2 mx-auto p-relative bg-white shadow-1 blue-hover" style="box-shadow: 2px 2px 5px rgba(0,0,0,0.5);width: 350px;height:466px;overflow: hidden;background-color:#f4f9f9;float:left;border-radius: 1px;margin-left:25px;border-top-left-radius:15px;border-top-right-radius:15px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;">
+            @if (item.tbl_resm.Count > 0)
+            {
+                <img style="height:170px;border-bottom-left-radius:3px;border-bottom-right-radius:3px;border-top-left-radius:15px;border-top-right-radius:15px;" src="@item.tbl_resm.FirstOrDefault(x => x.varsayilan == true).kicikolculu" alt="Man with backpack"
+                     class="d-block w-full">
+
+            }
+            else
+            {
+                
+                    <img style="height:170px;border-bottom-left-radius:3px;border-bottom-right-radius:3px;border-top-left-radius:15px;border-top-right-radius:15px;" src="~/Sekiller/YeniKicikVK.jpg" alt="Man with backpack"
+                         class="d-block w-full">
+                
+            }
+
+
+            <div class="px-2 py-2">
+                <table>
+                    <tr>
+                        <td>
+                            <div style="margin-top:-14px;margin-left:-20px;">
+                                <p class="mb-0 small font-weight-medium text-uppercase mb-1 text-muted lts-2px sae" style="text-align: center;display: inline-block;border: solid 2px #2bbecc;padding: 5px 0;border-radius: 5px;max-height:30px;font-size:10px;width:auto;">
+                                    <span style="font-size:13px;margin-left:5px;font-family:Algerian">@item.tbl_kategoriya.kategoriyaadi</span>
+                                </p>
+                            </div>
+                        </td>
+
+                    </tr>
+                </table>
+
+
+
+
+                <div class="ycontainer wrapword" style="top:57%;left:50%;text-align:center;max-width:350px;max-height:50px;width:350px;height:60px;padding-bottom:20px;">
+
+                    <li>
+                        <a href="#" class="cool-link" style="font-family:Georgia, 'Times New Roman', Times, serif;font-size:21px;">@item.isinadi</a>
+                    </li>
+
+                </div>
+                <br />
+
+                <div class="ycontainer wrapword" style="top:70%;left:50%;text-align:center;width:350px;height:40px;max-width:350px;max-height:50px;">
+
+                    <li>
+                        <a href="#" class="cool-linkq" style="font-family:'Mongolian Baiti';font-size:20px;">@item.sirketadi</a>
+                    </li>
+
+                </div>
+
+            </div>
+            <br />
+            <table style="margin-top:30px;">
+                <tr>
+                    <td>
+                        <div class="section" style="margin-bottom:30px;margin-left:13px;background-color:transparent">
+                            <div class="section__item">
+                                <div class="section__box" style="width:130px;background-color:transparent;">
+                                    <a href="#0" class="r-link ai-element ai-element_type2 ai-element3">
+                                        <span class="ai-element__label" style="font-family:Impact;color:#b2e616">3000-5000 AZN</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td>
+
+                        <p class="text-uppercase d-inline-block font-weight-medium lts-2px ml-2 mb-2 text-center styled-link" style="font-size:15px;width:150px;margin-left:70px;color:black;font-family:'Cambria Math'"><img style="margin-top:10px;" src="~/Sekiller/watch.png" /> @Convert.ToDateTime(item.tarix).ToString("dd.MM.yyyy")</p>
+
+                    </td>
+
+                </tr>
+            </table>
+            <a href="/Home/VakansiyaDetails/@item.id">
+                <div class="basicBox" style="margin-top:-20px;left:32%;">
+                    Ətraflı Bax
+                    <svg width="130" height="50" viewBox="0 0 130 65" xmlns="http://www.w3.org/2000/svg">
+                        <rect x='0' y='0' fill='none' width='130' height='65' />
+                    </svg>
+                </div>
+            </a>
+        </div>
+
+        }
+    </section>
+</div>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+
+
+
+<div id="effects" class="effects" style="width:1150px;height:-100px;text-align:center;margin-left:170px">
+
+    <div style="width:1150px;height:50px;margin-top:1700px;margin-left:60px">
+        <p style="font-family: 'PT Sans', sans-serif;font-weight:500;font-size:24px;color:black;text-align:center;margin-top:100px;">Vakansiya Üzrə Kategoriyalar</p>
+    </div>
+    <br />
+    @foreach (var item in ViewBag.kategoriyalar)
+    {
+        <a href="/Home/KatV/@item.id" class="hvr-bounce-in" style="width:auto;height:50px;font-family: 'PT Sans', sans-serif;padding:10px;background-color:#75c0cc;margin:20px;color:white;border-radius:10px;">@item.kategoriyaadi</a>
+    }
+
+</div>
+
+
+
+<style>
+    .ds {
+        margin-top: -35px;
+    }
+
+    .ss {
+        margin-top: -10px;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="~/Content/WOW-20848c410fe32d161c2330e1d261b59512094f81/dist/wow.js"></script>
+<script>
+    wow = new WOW(
+        {
+            animateClass: 'animated',
+            offset: 100,
+            callback: function (box) {
+                console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+            }
+        }
+    );
+    wow.init();
+    document.getElementById('moar').onclick = function () {
+        var section = document.createElement('section');
+        section.className = 'section--purple wow fadeInDown';
+        this.parentNode.insertBefore(section, this);
+    };
+</script>
+
+
+
+<style>
+    .blue-hover:hover {
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        position: relative;
+        z-index: 5;
+    }
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/ScrollTrigger.min.js"></script>
+<script>
+    AOS.init();
+</script>
+
+
+
+
+
+<style>
+
+
+    .wrapword {
+        white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        white-space: pre-wrap; /* css-3 */
+        word-wrap: break-word; /* Internet Explorer 5.5+ */
+        white-space: -webkit-pre-wrap; /* Newer versions of Chrome/Safari*/
+        word-break: break-all;
+        white-space: normal;
+    }
+
+    .ycontainer {
+        position: absolute;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    li {
+        display: inline-block;
+    }
+
+        li a {
+            text-decoration: none;
+            color: #090c25;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida; Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: lighter;
+            font-size: 20px;
+        }
+
+    .cool-link::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #2bbecc;
+        transition: width .3s;
+    }
+
+    .cool-link:hover::after {
+        width: 100%;
+        transition: width .3s;
+    }
+
+    .cool-linkq::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #c1ff06;
+        transition: width .3s;
+    }
+
+    .cool-linkq:hover::after {
+        width: 100%;
+        transition: width .3s;
+    }
+
+
+
+
+
+    .sae {
+        color: black;
+    }
+
+        .sae:hover {
+            background: #2bbecc;
+            color: white;
+            cursor: pointer;
+        }
+</style>
